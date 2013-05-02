@@ -12,6 +12,7 @@
 #include <sys/wait.h>
 
 #include "Pipe.h"
+#include "Carta.h"
 
 #define BUFFSIZE 3
 
@@ -24,6 +25,8 @@ int main () {
 	int pid = fork ();
 
 	if ( pid == 0 ) {
+
+
 
 		// lector
 		char buffer [ BUFFSIZE ];
@@ -53,7 +56,11 @@ int main () {
 	} else {
 
 		// escritor
-		char *dato = (char *) "E12";
+		//char *dato = (char *) "E12";
+
+		Carta c = Carta(1,4);
+		char *dato = c.convertir();
+
 		//sleep ( 5 );
 		canal.escribir ( dato,strlen(dato) );
 
@@ -61,7 +68,7 @@ int main () {
 		cout << "Escritor: fin del proceso" << endl;
 
 
-		dato = (char *) "C01";
+		dato = Carta(3,12).convertir();
 		canal.escribir ( dato,strlen(dato) );
 
 		cout << "Escritor: escribi el dato [" << dato << "] en el pipe" << endl;
