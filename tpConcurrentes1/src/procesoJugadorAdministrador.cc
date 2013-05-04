@@ -1,9 +1,9 @@
 #include <iostream>
-#include "ProcesoAdministrador.h"
+#include "ProcesoCoordinador.h"
 
 using namespace std;
 
-int main3(int argc, char **argv) {
+int main(int argc, char **argv) {
 	
 	cout << "Jugador Administrador" << endl;
 	//ProcesoCoordinador coord;

@@ -6,6 +6,8 @@
 #include <string.h>
 #include <ostream>
 #include <stdlib.h>
+#include <errno.h>
+#include <iostream>
 
 #include "Comunicador.h"
 
@@ -14,7 +16,7 @@
 
 using namespace std;
 
-class Pipe : public Comunicador {
+class Pipe  {
 
 private:
 
