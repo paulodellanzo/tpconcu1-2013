@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+#include <string.h>
+#include <sstream>
 
 #define ESPADA 1
 #define ORO 2
@@ -15,15 +17,15 @@ using namespace std;
 
 class Carta {
 	private:
-		int palo, numero;
+		string palo, numero;
 	
 	public:
-		Carta(int palo,int numero);
+		Carta(string palo,string numero);
 		~Carta();
-		int getPalo();
-		int getNumero();
+		string getPalo();
+		string getNumero();
 		
-		char* convertir();
+		string convertir();
 		
 };
 

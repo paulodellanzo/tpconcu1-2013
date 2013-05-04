@@ -5,85 +5,56 @@
  *      Author: paulo
  */
 
-
+#ifdef MAIN
 #include <string.h>
 #include <iostream>
+#include <sstream>
 #include <stdlib.h>
 #include <sys/wait.h>
 
+#include "SIGINT_Handler.h"
+#include "SignalHandler.h"
 #include "Pipe.h"
-#include "Carta.h"
 
-#define BUFFSIZE 3
+#define TAMBUFFER 100
 
 using namespace std;
 
-int main () {
+void pruebaRonda(int cantJug){
+
+	char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
 
 	Pipe canal;
 
-	int pid = fork ();
-
-	if ( pid == 0 ) {
-
-
-
-		// lector
-		char buffer [ BUFFSIZE ];
-
-		cout << "Lector: esperando para leer..." << endl;
-		int bytes = canal.leer ( buffer,BUFFSIZE );
-		buffer [ bytes ] = '\0';
-
-		cout << "Lector: lei el dato [" << buffer << "] (" << bytes << " bytes) del pipe" << endl;
-		cout << "Lector: fin del proceso" << endl;
-
-		bytes = canal.leer ( buffer,BUFFSIZE );
-		buffer [ bytes ] = '\0';
-
-		cout << "Lector: lei el dato [" << buffer << "] (" << bytes << " bytes) del pipe" << endl;
-		cout << "Lector: fin del proceso" << endl;
-
-		char buffer1 [ 12 ];
-		canal.leer(buffer1,12);
-		buffer1 [ 12 ] = '\0';
-
-		cout << "Lector: lei el dato [" << buffer1 << endl;
-
-		//canal.cerrar ();
-		exit ( 0 );
-
-	} else {
-
-		// escritor
-		//char *dato = (char *) "E12";
-
-		Carta c = Carta(1,4);
-		char *dato = c.convertir();
-
-		//sleep ( 5 );
-		canal.escribir ( dato,strlen(dato) );
-
-		cout << "Escritor: escribi el dato [" << dato << "] en el pipe" << endl;
-		cout << "Escritor: fin del proceso" << endl;
-
-
-		dato = Carta(3,12).convertir();
-		canal.escribir ( dato,strlen(dato) );
-
-		cout << "Escritor: escribi el dato [" << dato << "] en el pipe" << endl;
-		cout << "Escritor: fin del proceso" << endl;
-		canal.escribir ( dato,strlen(dato) );
-		canal.escribir ( dato,strlen(dato) );
-		canal.escribir ( dato,strlen(dato) );
-		canal.escribir ( dato,strlen(dato) );
-
-
-		// espero a que termine el hijo
-		wait ( NULL );
-
-		//canal.cerrar ();
-		exit ( 0 );
+	int pid = fork();
+	if(pid == 0) {
+		execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador", jugadores[cantJugadores - 2], (char*) NULL);
 	}
+
+
+	for (int i = 0; i <= cantJugadores - 2; i++) {
+		pid = fork();
+		if(pid == 0){
+			execlp((char*) "./procJugador", (char*) "procJugador", jugadores[i], jugadores[cantJugadores - 2], (char*) NULL);
+		}
+	}
+
+	Estadistico est(cantJugadores);
+	est.correr();
+
+	for (int i = 0; i < cantJugadores; i++)
+		wait(NULL);
+
 }
 
+int main () {
+
+	//pruebaJCRepartir();
+	//pruebaLogger();
+	//pruebaRondaCoordinador(4);
+	pruebaRonda(2);
+
+	return 0;
+
+}
+#endif

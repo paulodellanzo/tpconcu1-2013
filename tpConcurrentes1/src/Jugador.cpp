@@ -32,7 +32,7 @@ bool Jugador::gano() {
 		cout << (*it) << " ";
 	cout << endl;*/
 	
-	int numero = cartas.front().getNumero();
+	string numero = cartas.front().getNumero();
 	for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++)
 		if (numero != it->getNumero())
 			return false;

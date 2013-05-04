@@ -14,6 +14,7 @@ class Mazo {
 		bool estaVacio();
 		void barajar();
 		Carta getCarta();
+		string itos(int number);
 };
 
 #endif /* MAZO_H_ */

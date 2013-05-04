@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Pipe : public Comunicador {
+class Pipe  {
 
 private:
 

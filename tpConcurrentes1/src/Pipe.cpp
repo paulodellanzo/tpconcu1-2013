@@ -1,11 +1,16 @@
 #include "Pipe.h"
 
 Pipe :: Pipe() {
-	pipe ( this->descriptores );
-	/*fcntl ( this->descriptors[0],F_SETFL,O_NONBLOCK );
-	fcntl ( this->descriptors[1],F_SETFL,O_NONBLOCK );*/
-	this->lectura = true;
-	this->escritura = true;
+	int res = pipe ( this->descriptores );
+	if res == -1 {
+	    printf("Algo salio mal con la creacion del Pipe %s\n", strerror(errno));
+	}
+	else {
+		/*fcntl ( this->descriptors[0],F_SETFL,O_NONBLOCK );
+		fcntl ( this->descriptors[1],F_SETFL,O_NONBLOCK );*/
+		this->lectura = true;
+		this->escritura = true;
+	}
 }
 
 void Pipe :: setearModo ( int modo ) {
@@ -19,23 +24,23 @@ void Pipe :: setearModo ( int modo ) {
 	}
 }
 
-int Pipe :: escribir ( char* dato,int datoSize ) {
+int Pipe :: escribir ( string dato,int datoSize ) {
 	if ( this->lectura == true ) {
 		close ( this->descriptores[0] );
 		this->lectura = false;
 	}
 
-	int resultado = write ( this->descriptores[1],dato,datoSize );
+	int resultado = write ( this->descriptores[1],(char*) dato.c_str(),datoSize );
 	return resultado;
 }
 
-int Pipe :: leer ( char* buffer,int buffSize ) {
+int Pipe :: leer ( string buffer,int buffSize ) {
 	if ( this->escritura == true ) {
 		close ( this->descriptores[1] );
 		this->escritura = false;
 	}
 
-	int resultado = read ( this->descriptores[0],buffer,buffSize );
+	int resultado = read ( this->descriptores[0],(char*) buffer.c_str(),buffSize );
 	return resultado;
 }
 

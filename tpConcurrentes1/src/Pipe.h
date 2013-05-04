@@ -3,11 +3,18 @@
 
 #include <unistd.h>
 #include <fcntl.h>
+#include <string.h>
+#include <ostream>
+#include <stdlib.h>
+
+#include "Comunicador.h"
 
 #define	LECTURA		0
 #define	ESCRITURA	1
 
-class Pipe {
+using namespace std;
+
+class Pipe : public Comunicador {
 
 private:
 
@@ -21,8 +28,8 @@ public:
 
 	void setearModo ( int modo );
 
-	int escribir ( char* dato,int datoSize );
-	int leer ( char* buffer,int buffSize );
+	int escribir ( string dato,int datoSize );
+	int leer ( string buffer,int buffSize );
 
 	int getFdLectura ();
 	int getFdEscritura ();
