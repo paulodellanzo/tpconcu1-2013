@@ -5,25 +5,25 @@
 #include <list>
 #include <string>
 
+using namespace std;
+
 class Jugador {
 	
 	private:
-		std::string nombreJugador;
-		std::list<Carta> cartas;
+		string idJugador;
+		list<Carta> cartas;
 		int jugada;
+		Carta dejarCartaRand();
 		//Carta dejarCartaInteligente();
-		Carta dejarCartaRandom();
 		
+
 	public:
 		Jugador();
 		~Jugador();
+		Carta dejarCarta();
 		void tomarCarta(Carta carta);
+		bool gane();
 		
-		/* Devuelve una carta para pasarla a un rival.
-		 * Pre: debe tener al menos una carta. */
-		Carta dejarCarta(); 
-		bool gano();
-
 };
 
 

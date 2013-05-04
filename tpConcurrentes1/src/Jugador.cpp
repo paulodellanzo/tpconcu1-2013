@@ -3,13 +3,9 @@
 #include <iostream>
 #include <cstdlib>     	/* srand, rand*/
 #include <ctime>       	/* time */
-#include <sys/types.h> 	/* getpid */
-#include <unistd.h>		/* getpid */
 
 #define JUGADARANDOM 4
-#define CANTCARTAS 4
-
-using namespace std;
+#define CANTIDADCARTAS 4
 
 Jugador::Jugador() {
 	cartas = list<Carta>();
@@ -24,8 +20,25 @@ void Jugador::tomarCarta(Carta carta) {
 	cartas.push_back(carta);
 }
 
+Carta Jugador::dejarCartaRand() {
+	srand ( time(NULL));
+	int n_rand = rand() % CANTIDADCARTAS;
+	int i = 0;
 
-bool Jugador::gano() {
+	cout << "jugada random:"<<n_rand<<endl;
+	list<Carta>::iterator it;
+	for(it = cartas.begin(); it != cartas.end(); it++) {
+		if (i == n_rand) {
+			Carta aux = *it;
+			cartas.erase(it);
+			return aux;
+		}
+		i++;
+	}
+	return Carta(0,0);
+}
+
+bool Jugador::gane() {
 	/* debug:
 	cout << "mis cartas son: ";
 	for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++)
@@ -33,7 +46,8 @@ bool Jugador::gano() {
 	cout << endl;*/
 	
 	string numero = cartas.front().getNumero();
-	for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++)
+	list<Carta>::iterator it;
+	for (it = cartas.begin() ; it != cartas.end() ; it++)
 		if (numero != it->getNumero())
 			return false;
 	return true;
@@ -42,14 +56,14 @@ bool Jugador::gano() {
 
 /* Deja una carta.
  * Cada JUGADARANDOM jugadas hace una jugada random.*/
-/*Carta Jugador::dejarCarta() {
+Carta Jugador::dejarCarta() {
 	jugada++;
 	if (jugada % JUGADARANDOM == 0) {
 		jugada = 1;
-		return dejarCartaRandom();
+		return dejarCartaRand();
 	}
-	return dejarCartaInteligente();
-}*/
+	return dejarCartaRand();
+}
 
 /*
 Carta Jugador::dejarCartaInteligente() {
@@ -84,22 +98,6 @@ Carta Jugador::dejarCartaInteligente() {
 }
 */
 	
-Carta Jugador::dejarCartaRandom() {
-	srand ( getpid() * 101 + time(NULL));
-	int n_rand = rand() % CANTCARTAS;
-	int i = 0;
-	
-	cout << "jugada random con valor "<<n_rand<<endl;
-	
-	for(list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++) {
-		if (i == n_rand) {
-			Carta aux = *it;
-			cartas.erase(it);
-			return aux;
-		}
-		i++;
-	}
-	return Carta(0,0);
-}
+
 
 

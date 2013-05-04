@@ -31,6 +31,7 @@ void Logger::log(string mensaje) {
 	string pid = itos(getpid());
 	res.append(pid);
 	res.append(mensaje);
+	res.append("\n");
 	lock.escribir((char*) res.c_str(), (int) res.size() );
 	lock.liberarLock();
 }

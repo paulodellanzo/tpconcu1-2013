@@ -24,23 +24,23 @@ void Pipe :: setearModo ( int modo ) {
 	}
 }
 
-int Pipe :: escribir ( string dato,int datoSize ) {
+int Pipe :: escribir ( char* dato,int datoSize ) {
 	if ( this->lectura == true ) {
 		close ( this->descriptores[0] );
 		this->lectura = false;
 	}
 
-	int resultado = write ( this->descriptores[1],(char*) dato.c_str(),datoSize );
+	int resultado = write ( this->descriptores[1],dato,datoSize );
 	return resultado;
 }
 
-int Pipe :: leer ( string buffer,int buffSize ) {
+int Pipe :: leer ( char* buffer,int buffSize ) {
 	if ( this->escritura == true ) {
 		close ( this->descriptores[1] );
 		this->escritura = false;
 	}
 
-	int resultado = read ( this->descriptores[0],(char*) buffer.c_str(),buffSize );
+	int resultado = read ( this->descriptores[0],buffer,buffSize );
 	return resultado;
 }
 

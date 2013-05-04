@@ -13,13 +13,15 @@ using namespace std;
 /* Creo un mazo de cartas según la cantidad de cartas*/
 Mazo::Mazo(int cantCartas) {
 	mazo = vector<Carta>();
-	for (int i = 1; i <= cantCartas; i++)
+	for (int i = 0; i < cantCartas; i++){
 		mazo.push_back(Carta("E", this->itos(i)));
-	for (int i = 1; i <= cantCartas; i++)
+		//cout << "CartaNRO:" << i << endl;
+	}
+	for (int i = 0; i < cantCartas; i++)
 		mazo.push_back(Carta("O", this->itos(i)));
-	for (int i = 1; i <= cantCartas; i++)
+	for (int i = 0; i < cantCartas; i++)
 		mazo.push_back(Carta("C", this->itos(i)));
-	for (int i = 1; i <= cantCartas; i++)
+	for (int i = 0; i < cantCartas; i++)
 		mazo.push_back(Carta("B", this->itos(i)));
 }
 
@@ -29,6 +31,13 @@ Mazo::~Mazo() {
 
 bool Mazo::estaVacio() {
 	return mazo.empty();
+}
+
+/* Saco la ultima carta del mazo si el mazo no está vacío */
+Carta Mazo::getCarta() {
+	Carta aux = mazo.back();
+	mazo.pop_back();
+	return aux;
 }
 
 string Mazo::itos(int number) {
@@ -42,10 +51,5 @@ void Mazo::barajar() {
 	random_shuffle (mazo.begin(), mazo.end() );
 }
 
-/* Saco la ultima carta del mazo si el mazo no está vacío */
-Carta Mazo::getCarta() {
-	Carta aux = mazo.back();
-	mazo.pop_back();
-	return aux;
-}
+
 	

@@ -30,8 +30,8 @@ public:
 
 	void setearModo ( int modo );
 
-	int escribir ( string dato,int datoSize );
-	int leer ( string buffer,int buffSize );
+	int escribir ( char* dato,int datoSize );
+	int leer ( char* buffer,int buffSize );
 
 	int getFdLectura ();
 	int getFdEscritura ();
