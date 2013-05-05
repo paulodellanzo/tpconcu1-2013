@@ -1,19 +1,26 @@
 #ifndef COMUNICADOR_H_
 #define COMUNICADOR_H_
 
+#include "Pipe.h"
+
 class Comunicador {
 	
+	private:
+
+		Pipe pipe;
+
 	public:
-		/*
+	/*
+	 * Esta clase se ocupa de administrar el canal de comunicacion
+	 * entre los procesos utilizando Pipes
+	 */
 		Comunicador();
-		virtual ~Comunicador();
-		*/
+		~Comunicador();
 		
-		virtual int escribir ( char* dato,int datoSize ) = 0;
-		virtual int leer ( char* buffer,int buffSize ) = 0;
-		
-		virtual void cerrar () = 0;
-		virtual void eliminar () = 0;
+		int escribir ( char* mensaje ,int datoSize );
+		int leer ( char* mensaje ,int buffSize );
+
+		void cerrar ();
 };
 
 #endif /* COMUNICADOR_H_ */

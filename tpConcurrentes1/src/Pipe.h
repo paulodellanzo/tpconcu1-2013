@@ -9,8 +9,6 @@
 #include <errno.h>
 #include <iostream>
 
-#include "Comunicador.h"
-
 #define	LECTURA		0
 #define	ESCRITURA	1
 

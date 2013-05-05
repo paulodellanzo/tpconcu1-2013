@@ -9,7 +9,16 @@
 
 Jugador::Jugador() {
 	cartas = list<Carta>();
-	jugada = 0;
+	tipo = 0;
+}
+
+Jugador::Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda) {
+	cartas = list<Carta>();
+	tipo = 0;
+	this->comJugadorCentral = comJugadorCentral;
+	this->comCentralJugador = comCentralJugador;
+	this->comJugDerecha = comJugDerecha;
+	this->comJugIzquierda = comJugIzquierda;
 }
 
 Jugador::~Jugador() {
@@ -25,7 +34,7 @@ Carta Jugador::dejarCartaRand() {
 	int n_rand = rand() % CANTIDADCARTAS;
 	int i = 0;
 
-	cout << "jugada random:"<<n_rand<<endl;
+	cout << "tipo random:"<<n_rand<<endl;
 	list<Carta>::iterator it;
 	for(it = cartas.begin(); it != cartas.end(); it++) {
 		if (i == n_rand) {
@@ -54,15 +63,36 @@ bool Jugador::gane() {
 }
 
 
+
 /* Deja una carta.
  * Cada JUGADARANDOM jugadas hace una jugada random.*/
 Carta Jugador::dejarCarta() {
-	jugada++;
-	if (jugada % JUGADARANDOM == 0) {
-		jugada = 1;
+	tipo++;
+	if (tipo % JUGADARANDOM == 0) {
+		tipo = 1;
 		return dejarCartaRand();
 	}
 	return dejarCartaRand();
+}
+
+
+
+void Jugador::pasarCarta(){
+	Carta c = this->dejarCarta();
+	cout << c.convertir() << endl;
+	char* cc = (char*) "DEB";
+	this->comJugDerecha->escribir(cc,3);
+}
+void Jugador::leerCarta(){
+	char b[3];
+	this->comJugDerecha->leer(b,3);
+	cout << "Lei la carta:" << b << endl;
+}
+void Jugador::enviarMensajeCentral(){
+
+}
+void Jugador::leerMensajeCentral(){
+
 }
 
 /*
@@ -97,7 +127,3 @@ Carta Jugador::dejarCartaInteligente() {
 	return Carta(0,0);
 }
 */
-	
-
-
-

@@ -15,8 +15,10 @@
 #include "SignalHandler.h"
 #include "Pipe.h"
 #include "Logger.h"
-#include "Jugador.h"
+#include "JugadorAdministrador.h"
 #include "Mazo.h"
+#include "Comunicador.h"
+#include "Mensajes.h"
 
 
 #define TAMBUFFER 100
@@ -28,22 +30,46 @@ void pruebaRonda(int cantJugadores){
 	char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
 
 	Pipe* canal = new Pipe();
-	Pipe canal2 = Pipe();
-	Logger log;
 
-	log.setDebug();
-	log.log("123");
+	Logger::setDebug();
+
+	/*
+	 * Creacion de los comunicadores entre procesos
+
+
+	list<Comunicador*> comunicadores;
+	comunicadores.push_back(new Comunicador());
+	comunicadores.push_back(new Comunicador());
+	comunicadores.push_back(new Comunicador());
+	comunicadores.push_back(new Comunicador());
+*/
+	Comunicador* com1 = new Comunicador();
+	Comunicador* com2 = new Comunicador();
+	Comunicador* com3 = new Comunicador();
+	Comunicador* com4 = new Comunicador();
+
+	Comunicador commm;
+
+	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores, com1, com2, com3, com4);
+
+	Mazo m(10);
+			Carta c1 = m.getCarta();
+			Carta c2 = m.getCarta();
+			Carta c3 = m.getCarta();
+			Carta c4 = m.getCarta();
+
+			jAdmin->tomarCarta(c1);
+			jAdmin->tomarCarta(c2);
+			jAdmin->tomarCarta(c3);
+			jAdmin->tomarCarta(c4);
+
+	//JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores);
 
 	int pid = fork();
 	if(pid == 0) {
 
-		canal2.escribir("asd21",5);
-		//canal.setearModo(ESCRITURA);
-		//dup2(canal->getFdEscritura(),1);
-		//close(canal->getFdEscritura());
-		//close(canal->getFdLectura());
-		//dup2(canal.getFdLectura(),0);
-		//cout << "HOLA123" << endl;
+		cout << "soy el hijo voy a pasar una carta" << endl;
+		jAdmin->pasarCarta();
 
 		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
 	}
@@ -58,33 +84,11 @@ void pruebaRonda(int cantJugadores){
 	}
 */
 	else{
-		//Estadistico est(cantJugadores);
-		//est.correr();
-		sleep(2);
-		string s;
-		//canal.setearModo(LECTURA);
-		//dup2(canal->getFdLectura(),0);
 
-		//canal.leer(s,50);
-		//close(desc[0]);
-		//int resultado = 1;
-		char bbbbbbb[5];
-		//resultado = read ( canal->getFdLectura(),bbbbbbb,5 );
+		sleep(3);
+		jAdmin->leerCarta();
 
-		int y = canal2.leer(bbbbbbb,5);
-		cout << " A: " << bbbbbbb << " -- "<< y << endl;
-
-		log.log(s);
-
-		string hs;
-		//canal2.leer(hs,4);
-/*
-		while (cin >> s){
-			cout << s << endl;
-		}
-*/
-
-		Mazo m(10);
+		/*Mazo m(10);
 		Carta c1 = m.getCarta();
 		Carta c2 = m.getCarta();
 		Carta c3 = m.getCarta();
@@ -98,16 +102,25 @@ void pruebaRonda(int cantJugadores){
 
 		Carta c = j->dejarCarta();
 
-		cout << c.convertir() << endl;
-
+		//cout << c.convertir() << endl;
 		delete j;
 
+		 */
 
 
-		canal2.cerrar();
+
+		//delete jAdmin;
+
+		Comunicador* com = new Comunicador();
+
+		//cout << Mensajes::REPARTIR << endl;
+
+
 		canal->cerrar();
 		delete canal;
-		log.log(hs);
+		delete com;
+
+		Logger::log("SABE");
 
 		for (int i = 0; i < cantJugadores; i++)
 			wait(NULL);

@@ -12,7 +12,7 @@ class Convertidor {
 		 * con los datos que sean necesarios para enviar datos
 		 * */
 
-		virtual ~Convertidor();
+		//virtual ~Convertidor();
 		virtual std::string convertir () = 0;
 
 };
