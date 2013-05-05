@@ -98,7 +98,7 @@ void pruebaRonda(int cantJugadores){
 
 		Carta c = j->dejarCarta();
 
-		cout << c.getNumero() << c.getPalo() << endl;
+		cout << c.convertir() << endl;
 
 		delete j;
 

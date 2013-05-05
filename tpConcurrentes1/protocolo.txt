@@ -1,0 +1,191 @@
+Mensajes:
+
+REPARTIR REP
+VER_CARTAS VER
+GANAR WIN
+PERDER LOS
+LISTO RDY
+CONTINUAR CON
+TERMINAR_PASAR PAS
+FIN_JUEGO FIN
+SYNCRONIZAR SYN
+PILA PILA.txt
+
+Procesos:
+
+C = Proceso Central (el padre de todos) mother of procesos
+1 = Jugador 1 (el Administrador que reparte las cartas)
+2 = Jugador 2
+...
+N = Jugador N (ultimo)
+X = Conjunto de Jugadores:= {1,2,...,N}
+
+
+PROTOCOLO JUEGO:
+
+Proceso1-Proceso2:= "El Proceso1 envia/espera un mensaje al/del Proceso2"
+
+Para producir un sincronismo en el accionar de los procesos se debe asegurar
+que exista una estructura de enviar-esperar para que nadie quede colgado.
+
+-Empieza Juego{
+
+1-C: lee canal C-1 esperando REPARTIR
+2-C: lee canal C-2 esperando REPARTIR
+N-C: lee canal C-N esperando REPARTIR
+
+C-1: envia REPARTIR
+C-2: envia REPARTIR
+C-N: envia REPARTIR
+
+C-1: espera REPARTIR
+C-2: espera REPARTIR
+C-N: espera REPARTIR
+
+----PUNTO REPARTIR----
+
+{
+	1-1: toma 4 cartas
+	1-2: envia 4 cartas
+	1-N: envia 4 cartas
+}
+{
+	2-1: espera recibir 4 cartas
+	N-1: espera recibir 4 cartas
+}
+
+1-C: envia REPARTIR
+2-C: envia REPARTIR
+N-C: envia REPARTIR
+
+1-C: lee canal C-1 esperando VER_CARTAS
+2-C: lee canal C-2 esperando VER_CARTAS
+N-C: lee canal C-N esperando VER_CARTAS
+
+----PUNTO VER_CARTAS----
+
+C-1: envia VER_CARTAS
+C-2: envia VER_CARTAS
+C-N: envia VER_CARTAS
+
+C-1: espera en el canal 1-C
+C-2: espera en el canal 2-C
+C-N: espera en el canal N-C
+
+1-C: lee VER_CARTAS
+2-C: lee VER_CARTAS
+N-C: lee VER_CARTAS
+
+Cada Jugador mira sus cartas y determina si gano o no:
+
+X = Jugadores que ganaron
+IF X > 0:{
+	X-C: escribe GANAR
+	X lockea archivo PILA.txt
+	escribe su numero X
+	libera archivo
+	
+	X-C: espera leer SYNCRONIZAR
+	
+	}
+ELSE{
+	(NOT X)-C: escribe PERDER
+	(NOT X)-C: lee canal C-(NOT X) esperando 
+	}
+
+
+IF Jugador X escribio GANAR:{
+	C-(NOT X): envia WIN
+	C-X: envia SYNCRONIZAR
+	
+	C-1: espera en el canal 1-C el mensaje LISTO
+	C-2: espera en el canal 2-C el mensaje LISTO
+	C-N: espera en el canal N-C el mensaje LISTO
+	
+	X-C: escribe LISTO
+	
+	NOT X lockea archivo PILA.txt
+	escribe su numero NOT X
+	libera archivo
+	NOT X-C: escribe LISTO
+	
+	1-C: espera mensaje REPARTIR/FIN_JUEGO
+	2-C: espera mensaje REPARTIR/FIN_JUEGO
+	N-C: espera mensaje REPARTIR/FIN_JUEGO
+	
+	C-1: lee LISTO
+	C-2: lee LISTO
+	C-N: lee LISTO
+	
+	C lockea PILA.txt y lee ultima linea -> ese numero de Jugador perdio
+	C.actualizarPuntaje()
+	
+	IF JUEGO termino:{
+		C-1: escribe FIN_JUEGO
+		C-2: escribe FIN_JUEGO
+		C-N: escribe FIN_JUEGO
+		
+		Aca estarian los wait(NULL) esperando que los hijos terminen
+		
+		1-C: lee FIN_JUEGO y exit(0)
+		2-C: lee FIN_JUEGO y exit(0)
+		N-C: lee FIN_JUEGO y exit(0)
+	}
+	ELSE:{
+		C-1: escribe REPARTIR
+		C-2: escribe REPARTIR
+		C-N: escribe REPARTIR
+		
+		VOLVER A : PUNTO REPARTIR
+}
+
+ELSE Todos escribieron PERDER:{
+
+	C-1: escribe CONTINUAR
+	C-2: escribe CONTINUAR
+	C-N: escribe CONTINUAR
+	
+	C-1: espera
+	C-2: espera
+	C-N: espera
+	
+	1-C: lee CONTINUAR
+	2-C: lee CONTINUAR
+	N-C: lee CONTINUAR
+	
+	1-2: escribe carta a pasar
+	2-N: escribe carta a pasar
+	N-1: escribe carta a pasar
+	
+	2-1: lee carta
+	N-2: lee carta
+	1-N: lee carta
+	
+	1-C: envia TERMINAR_PASAR
+	2-C: envia TERMINAR_PASAR
+	N-C: envia TERMINAR_PASAR
+	
+	C-1: lee TERMINAR_PASAR
+	C-2: lee TERMINAR_PASAR
+	C-N: lee TERMINAR_PASAR
+	
+	VOLVER a PUNTO VER_CARTAS
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

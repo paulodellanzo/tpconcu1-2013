@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string.h>
 #include <sstream>
+#include "Convertidor.h"
 
 #define ESPADA 1
 #define ORO 2
@@ -15,7 +16,7 @@
 
 using namespace std;
 
-class Carta {
+class Carta : Convertidor {
 	private:
 		string palo, numero;
 	
