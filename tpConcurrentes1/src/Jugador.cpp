@@ -45,7 +45,7 @@ Carta Jugador::dejarCartaRand() {
 		}
 		i++;
 	}
-	return Carta(0,0);
+	return Carta("0","0");
 }
 
 bool Jugador::gane() {
@@ -71,30 +71,59 @@ Carta Jugador::dejarCarta() {
 	tipo++;
 	if (tipo % JUGADARANDOM == 0) {
 		tipo = 1;
-		return dejarCartaRand();
+		//return dejarCartaRand();
+
 	}
-	return dejarCartaRand();
+	Carta carta = this->cartas.back();
+	this->cartas.pop_back();
+	return carta;
+	//return dejarCartaRand();
 }
 
 
 
 void Jugador::pasarCarta(){
 	Carta c = this->dejarCarta();
-	cout << c.convertir() << endl;
-	char* cc = (char*) "DEB";
-	this->comJugDerecha->escribir(cc,strlen(cc));
+	string mensaje = c.convertir();
+	//cout << c.convertir() << endl;
+	//char* cc = (char*) "DEB";
+	int bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
+	while (bytesleidos < Mensajes::SIZE){
+			//sleep(1);
+			bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
+	}
 }
-void Jugador::leerCarta(){
-	char b[Mensajes::SIZE];
-	int bytesleidos = this->comJugDerecha->leer(b,Mensajes::SIZE);
-	b [bytesleidos] = '\0';
-	cout << "Lei la carta:" << b << endl;
-}
-void Jugador::enviarMensajeCentral(){
 
+int Jugador::leerCarta(){
+	char buffer[Mensajes::SIZE];
+	int bytesleidos = this->comJugDerecha->leer(buffer,Mensajes::SIZE);
+	//cout << "bien" <<bytesleidos;
+	while (bytesleidos < Mensajes::SIZE){
+		//sleep(1);
+		bytesleidos = this->comJugDerecha->leer(buffer,Mensajes::SIZE);
+	}
+	buffer [bytesleidos] = '\0';
+	cout << "Lei la carta:" << buffer << endl;
+	return bytesleidos;
 }
-void Jugador::leerMensajeCentral(){
 
+void Jugador::enviarMensajeCentral(string mensaje){
+	int bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
+	while (bytesleidos < Mensajes::SIZE){
+		//sleep(1);
+		bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
+	}
+}
+
+void Jugador::leerMensajeCentral(string mensaje){
+	char buffer[Mensajes::SIZE];
+	int bytesleidos = this->comCentralJugador->leer(buffer,Mensajes::SIZE);
+	//cout << "bien" <<bytesleidos;
+	while (bytesleidos < Mensajes::SIZE){
+		//sleep(1);
+		bytesleidos = this->comCentralJugador->leer(buffer,Mensajes::SIZE);
+	}
+	buffer [bytesleidos] = '\0';
 }
 
 /*

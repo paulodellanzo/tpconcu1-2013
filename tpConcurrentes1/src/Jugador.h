@@ -27,9 +27,9 @@ class Jugador {
 		Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda);
 		~Jugador();
 		void pasarCarta();
-		void leerCarta();
-		void enviarMensajeCentral();
-		void leerMensajeCentral();
+		int leerCarta();
+		void enviarMensajeCentral(string mensaje);
+		void leerMensajeCentral(string mensaje);
 
 		Carta dejarCarta();
 		void tomarCarta(Carta carta);

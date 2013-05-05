@@ -26,7 +26,7 @@ using namespace std;
 int main (){
 
 	int cantJugadores = 2;
-	char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
+	//char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
 
 	Pipe* canal = new Pipe();
 
@@ -53,29 +53,34 @@ int main (){
 
 	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores, com1, com2, com3, com4);
 
-	Mazo m(10);
-			Carta c1 = m.getCarta();
-			Carta c2 = m.getCarta();
-			Carta c3 = m.getCarta();
-			Carta c4 = m.getCarta();
+	Mazo* m = new Mazo(10);
+	m->barajar();
+	Carta c1 = m->getCarta();
+	Carta c2 = m->getCarta();
+	Carta c3 = m->getCarta();
+	Carta c4 = m->getCarta();
 
-			jAdmin->tomarCarta(c1);
-			jAdmin->tomarCarta(c2);
-			jAdmin->tomarCarta(c3);
-			jAdmin->tomarCarta(c4);
+	jAdmin->tomarCarta(c1);
+	jAdmin->tomarCarta(c2);
+	jAdmin->tomarCarta(c3);
+	jAdmin->tomarCarta(c4);
 
 	//JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores);
 
 	int pid = fork();
 	if(pid == 0) {
 
-		jAdmin->leerCarta();
+		cout << "soy el padre voy a pasar una carta" << endl;
 
-		//int size = 100;
-		char ppp [ TAMBUFFER ];
+		jAdmin->pasarCarta();
+		jAdmin->pasarCarta();
+		jAdmin->pasarCarta();
+		jAdmin->pasarCarta();
+		//delete jAdmin;
+		//char* lo = (char*) "hola";
 
-		int lei = canal2.leer(ppp,TAMBUFFER);
-		ppp [ lei ] = '\0';
+		//canal->escribir(lo,strlen(lo));
+		//canal2.escribir(lo,strlen(lo));
 		//cout << ppp << endl;
 
 		//jAdmin->leerCarta();
@@ -97,15 +102,20 @@ int main (){
 */
 	else{
 
-		sleep(1);
+		//sleep(1);
 
-		cout << "soy el padre voy a pasar una carta" << endl;
-		jAdmin->pasarCarta();
+		jAdmin->leerCarta();
+		jAdmin->leerCarta();
+		jAdmin->leerCarta();
+		jAdmin->leerCarta();
 
-		char* lo = (char*) "hola";
+		//int size = 100;
+		//char ppp [ TAMBUFFER ];
 
-		//canal->escribir(lo,strlen(lo));
-		canal2.escribir(lo,strlen(lo));
+		//int lei = canal2.leer(ppp,TAMBUFFER);
+		//ppp [ lei ] = '\0';
+
+
 
 		//canal2.cerrar();
 
@@ -149,7 +159,7 @@ int main (){
 		for (int i = 0; i < cantJugadores; i++)
 			wait(NULL);
 
-		delete jAdmin;
+		//delete jAdmin;
 		canal2.cerrar();
 		exit ( 0 );
 	}

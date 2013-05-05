@@ -12,7 +12,7 @@ JugadorAdministrador::JugadorAdministrador(int cantJugadores, Comunicador* comJu
 
 
 void JugadorAdministrador::repartir(){
-	cout << "asd" ;
+	this->mazo->barajar();
 }
 
 JugadorAdministrador::~JugadorAdministrador() {
