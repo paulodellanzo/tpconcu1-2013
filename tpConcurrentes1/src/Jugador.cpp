@@ -175,9 +175,26 @@ int Jugador::correr(){
 	string msg = this->leerMensajeCentral();
 	if (msg == REPARTIR){
 		cout << "salimosss";
+		this->recibirCartaRepartida();
+
 	}
 
 	return 0;
+}
+
+void Jugador::recibirCartaRepartida(){
+	for (int i=0; i<4; i++){
+		char buffer[SIZE];
+		int bytesleidos = this->comJugAdmin->leer(buffer,SIZE);
+		//cout << "bien" <<bytesleidos;
+		while (bytesleidos < SIZE){
+			//sleep(1);
+			bytesleidos = this->comJugAdmin->leer(buffer,SIZE);
+		}
+		buffer [bytesleidos] = '\0';
+		cout << "Me repartieron la carta:" << buffer << endl;
+		this->crearCarta(buffer);
+	}
 }
 
 /*

@@ -14,6 +14,7 @@ public:
 		string idJugador;
 		list<Carta> cartas;
 		int tipo;
+		int cantJugadores;
 		Carta dejarCartaRand();
 		//Carta dejarCartaInteligente();
 		Comunicador* comJugadorCentral;
@@ -40,6 +41,7 @@ public:
 		void tomarCarta(Carta carta);
 		bool gane();
 		void crearCarta(string cartaEnMensaje);
+		void recibirCartaRepartida();
 		
 		int correr();
 

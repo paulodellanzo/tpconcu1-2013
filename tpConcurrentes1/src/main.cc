@@ -65,7 +65,7 @@ int main (){
 
 	itDesdeJugadores++;
 	itHaciaJugadores++;
-	itAdmin++;
+	//itAdmin++;
 
 	//El primer jugador es el administrador por eso empiezo en 1
 	for(int i=1; i<cantJugadores; i++){
@@ -119,16 +119,17 @@ int main (){
 
 		if (pid == 0) {
 
+			/*jAdmin->pasarCarta();
 			jAdmin->pasarCarta();
 			jAdmin->pasarCarta();
 			jAdmin->pasarCarta();
-			jAdmin->pasarCarta();
+			*/
 
 			jAdmin->correr();
 			//delete jAdmin;
 		}
 		else{
-			listaJugadores.front()->pasarCarta();
+			//listaJugadores.front()->pasarCarta();
 			listaJugadores.front()->correr();
 		}
 		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
@@ -143,12 +144,12 @@ int main (){
 	}
 */
 	else{
-		//sleep(1);
+		sleep(2);
 
+		/*jAdmin->leerCarta();
 		jAdmin->leerCarta();
 		jAdmin->leerCarta();
-		jAdmin->leerCarta();
-		jAdmin->leerCarta();
+		jAdmin->leerCarta();*/
 
 		central->correr();
 

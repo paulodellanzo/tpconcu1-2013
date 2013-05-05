@@ -8,6 +8,7 @@ class JugadorAdministrador : public Jugador {
 	
 	private:
 		Mazo* mazo;
+		//Para repartir las cartas
 		list<Comunicador*> comunicadorJugadores;
 	
 	public:
@@ -16,6 +17,8 @@ class JugadorAdministrador : public Jugador {
 		void agregarComunicacionJugador(Comunicador* comOtroJugador);
 		~JugadorAdministrador();
 		void repartir();
+		void enviarCarta(Comunicador* alJugadorSiguiente);
+		int correr();
 		
 };
 		
