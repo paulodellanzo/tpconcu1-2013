@@ -1,10 +1,11 @@
 #ifndef JUGADOR_H_
 #define JUGADOR_H_
 
-#include "Carta.h"
-#include "Comunicador.h"
 #include <list>
 #include <string>
+#include "Carta.h"
+#include "Comunicador.h"
+
 
 using namespace std;
 

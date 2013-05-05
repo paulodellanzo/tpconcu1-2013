@@ -1,4 +1,5 @@
 #include "Jugador.h"
+#include "Mensajes.h"
 #include <map>
 #include <iostream>
 #include <cstdlib>     	/* srand, rand*/
@@ -84,8 +85,8 @@ void Jugador::pasarCarta(){
 	this->comJugDerecha->escribir(cc,strlen(cc));
 }
 void Jugador::leerCarta(){
-	char b[4];
-	int bytesleidos = this->comJugDerecha->leer(b,4);
+	char b[Mensajes::SIZE];
+	int bytesleidos = this->comJugDerecha->leer(b,Mensajes::SIZE);
 	b [bytesleidos] = '\0';
 	cout << "Lei la carta:" << b << endl;
 }

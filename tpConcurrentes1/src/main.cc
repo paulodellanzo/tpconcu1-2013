@@ -18,9 +18,8 @@
 #include "JugadorAdministrador.h"
 #include "Mazo.h"
 #include "Comunicador.h"
-#include "Mensajes.h"
 
-#define TAMBUFFER 20
+#define TAMBUFFER 4
 
 using namespace std;
 
