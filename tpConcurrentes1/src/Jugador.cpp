@@ -81,11 +81,12 @@ void Jugador::pasarCarta(){
 	Carta c = this->dejarCarta();
 	cout << c.convertir() << endl;
 	char* cc = (char*) "DEB";
-	this->comJugDerecha->escribir(cc,3);
+	this->comJugDerecha->escribir(cc,strlen(cc));
 }
 void Jugador::leerCarta(){
-	char b[3];
-	this->comJugDerecha->leer(b,3);
+	char b[4];
+	int bytesleidos = this->comJugDerecha->leer(b,4);
+	b [bytesleidos] = '\0';
 	cout << "Lei la carta:" << b << endl;
 }
 void Jugador::enviarMensajeCentral(){

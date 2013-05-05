@@ -20,16 +20,18 @@
 #include "Comunicador.h"
 #include "Mensajes.h"
 
-
-#define TAMBUFFER 100
+#define TAMBUFFER 20
 
 using namespace std;
 
-void pruebaRonda(int cantJugadores){
+int main (){
 
+	int cantJugadores = 2;
 	char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
 
 	Pipe* canal = new Pipe();
+
+	Pipe canal2;
 
 	Logger::setDebug();
 
@@ -68,8 +70,19 @@ void pruebaRonda(int cantJugadores){
 	int pid = fork();
 	if(pid == 0) {
 
-		cout << "soy el hijo voy a pasar una carta" << endl;
-		jAdmin->pasarCarta();
+		jAdmin->leerCarta();
+
+		//int size = 100;
+		char ppp [ TAMBUFFER ];
+
+		int lei = canal2.leer(ppp,TAMBUFFER);
+		ppp [ lei ] = '\0';
+		//cout << ppp << endl;
+
+		//jAdmin->leerCarta();
+
+		//lei = canal2.leer(ppp,TAMBUFFER);
+
 
 		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
 	}
@@ -85,8 +98,19 @@ void pruebaRonda(int cantJugadores){
 */
 	else{
 
-		sleep(3);
-		jAdmin->leerCarta();
+		sleep(1);
+
+		cout << "soy el padre voy a pasar una carta" << endl;
+		jAdmin->pasarCarta();
+
+		char* lo = (char*) "hola";
+
+		//canal->escribir(lo,strlen(lo));
+		canal2.escribir(lo,strlen(lo));
+
+		//canal2.cerrar();
+
+
 
 		/*Mazo m(10);
 		Carta c1 = m.getCarta();
@@ -111,30 +135,35 @@ void pruebaRonda(int cantJugadores){
 
 		//delete jAdmin;
 
-		Comunicador* com = new Comunicador();
+		//Comunicador* com = new Comunicador();
 
 		//cout << Mensajes::REPARTIR << endl;
 
 
 		canal->cerrar();
-		delete canal;
-		delete com;
 
-		Logger::log("SABE");
+		//delete canal;
+		//delete com;
+
+		//Logger::log("SABE");
 
 		for (int i = 0; i < cantJugadores; i++)
 			wait(NULL);
+
+		delete jAdmin;
+		canal2.cerrar();
+		exit ( 0 );
 	}
 
 }
 
-int main () {
+int main2 () {
 
 	//pruebaJCRepartir();
 	//pruebaLogger();
 	//pruebaRondaCoordinador(4);
-	pruebaRonda(2);
-
+	//pruebaRonda(2);
+cout << "main2" << endl;
 	return 0;
 
 }

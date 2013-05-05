@@ -16,7 +16,7 @@ void Comunicador::cerrar() {
 }
 
 int Comunicador::escribir ( char* mensaje ,int datoSize ){
-	//cout << mensaje << endl;
+	cout << mensaje << endl;
 	int res = this->pipe.escribir(mensaje,datoSize);
 	if (res == -1){
 		cout << "No se pudo escribir en el canal: " << this->pipe.getFdEscritura() << "-->" << strerror(errno) << endl;
