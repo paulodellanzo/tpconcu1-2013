@@ -4,15 +4,16 @@
 #include "Jugador.h"
 #include "Mazo.h"
 
-
 class JugadorAdministrador : public Jugador {
 	
 	private:
 		Mazo* mazo;
+		list<Comunicador*> comunicadorJugadores;
 	
 	public:
 		JugadorAdministrador(int cantJugadores);
 		JugadorAdministrador(int cantJugadores, Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda);
+		void agregarComunicacionJugador(Comunicador* comOtroJugador);
 		~JugadorAdministrador();
 		void repartir();
 		

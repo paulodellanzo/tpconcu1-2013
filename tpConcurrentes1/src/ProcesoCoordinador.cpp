@@ -5,14 +5,12 @@
 #include <cstdlib>	//atoi
 #include <string>
 
-#define AJUGADOR "fifo_coord_a_jugador_"
-#define DEJUGADOR "fifo_a_coord_"
 #define TAMBUFFER 100
 
 using namespace std;
 
 /*
-ProcesoCoordinador::ProcesoCoordinador(char* totalJugadores) :
+Central::Central(char* totalJugadores) :
 		ProcesoJugador((char*)"0", totalJugadores) {
 	// Abro los canales de comunicación
 	cantJugadores = atoi(totalJugadores);

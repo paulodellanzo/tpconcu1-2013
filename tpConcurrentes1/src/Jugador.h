@@ -6,12 +6,11 @@
 #include "Carta.h"
 #include "Comunicador.h"
 
-
 using namespace std;
 
 class Jugador {
 	
-	private:
+public:
 		string idJugador;
 		list<Carta> cartas;
 		int tipo;
@@ -21,20 +20,29 @@ class Jugador {
 		Comunicador* comCentralJugador;
 		Comunicador* comJugDerecha;
 		Comunicador* comJugIzquierda;
+		Comunicador* comJugAdmin;
 
-	public:
+
 		Jugador();
 		Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda);
 		~Jugador();
+		void agregarJugAdmin(Comunicador* comJugAdmin);
+		void agregarcomJugadorCentral(Comunicador* comJugadorCentral);
+		void agregarcomCentralJugador(Comunicador* comCentralJugador);
+		void agregarcomJugDerecha(Comunicador* comJugDerecha);
+		void agregarcomJugIzquierda(Comunicador* comJugIzquierda);
 		void pasarCarta();
 		int leerCarta();
 		void enviarMensajeCentral(string mensaje);
-		void leerMensajeCentral(string mensaje);
+		string leerMensajeCentral();
 
 		Carta dejarCarta();
 		void tomarCarta(Carta carta);
 		bool gane();
+		void crearCarta(string cartaEnMensaje);
 		
+		int correr();
+
 };
 
 

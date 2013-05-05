@@ -1,5 +1,4 @@
 #include "Jugador.h"
-#include "Mensajes.h"
 #include <map>
 #include <iostream>
 #include <cstdlib>     	/* srand, rand*/
@@ -23,11 +22,49 @@ Jugador::Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador,
 }
 
 Jugador::~Jugador() {
+	delete this->comCentralJugador;
+	delete this->comJugadorCentral;
+	delete this->comJugDerecha;
+	delete this->comJugIzquierda;
+	if (this->comJugAdmin != NULL){
+		delete this->comJugAdmin;
+	}
+}
+
+void Jugador::agregarJugAdmin(Comunicador* comJugAdmin){
+	this->comJugAdmin = comJugAdmin;
+}
+
+void Jugador::agregarcomJugadorCentral(Comunicador* comJugadorCentral){
+	this->comJugadorCentral = comJugadorCentral;
+}
+
+void Jugador::agregarcomCentralJugador(Comunicador* comCentralJugador){
+	this->comCentralJugador = comCentralJugador;
+
+}
+void Jugador::agregarcomJugDerecha(Comunicador* comJugDerecha){
+	this->comJugDerecha = comJugDerecha;
+
+}
+
+void Jugador::agregarcomJugIzquierda(Comunicador* comJugIzquierda){
+	this->comJugIzquierda = comJugIzquierda;
 
 }
 
 void Jugador::tomarCarta(Carta carta) {
 	cartas.push_back(carta);
+}
+
+/*
+ * Se crea una nueva carta con el mensaje recibido del jugador de la izquierda
+ * Los 2 primero caracteres deben corresponder con el palo y el ultimo es el numero
+ */
+void Jugador::crearCarta(string cartaEnMensaje){
+	Carta cartaNueva(cartaEnMensaje.substr(0,2),cartaEnMensaje.substr(2,1));
+	//cout << "Nueva:" << cartaNueva.convertir() << endl;
+	this->tomarCarta(cartaNueva);
 }
 
 Carta Jugador::dejarCartaRand() {
@@ -45,9 +82,12 @@ Carta Jugador::dejarCartaRand() {
 		}
 		i++;
 	}
-	return Carta("0","0");
+	return Carta("00","0");
 }
 
+/*
+ * Determina si el jugador gano si y solo si tiene todas sus cartas con el mismo numero
+ */
 bool Jugador::gane() {
 	/* debug:
 	cout << "mis cartas son: ";
@@ -87,43 +127,57 @@ void Jugador::pasarCarta(){
 	string mensaje = c.convertir();
 	//cout << c.convertir() << endl;
 	//char* cc = (char*) "DEB";
-	int bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
-	while (bytesleidos < Mensajes::SIZE){
+	int bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),SIZE);
+	while (bytesleidos < SIZE){
 			//sleep(1);
-			bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
+			bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),SIZE);
 	}
 }
 
 int Jugador::leerCarta(){
-	char buffer[Mensajes::SIZE];
-	int bytesleidos = this->comJugDerecha->leer(buffer,Mensajes::SIZE);
+	char buffer[SIZE];
+	int bytesleidos = this->comJugDerecha->leer(buffer,SIZE);
 	//cout << "bien" <<bytesleidos;
-	while (bytesleidos < Mensajes::SIZE){
+	while (bytesleidos < SIZE){
 		//sleep(1);
-		bytesleidos = this->comJugDerecha->leer(buffer,Mensajes::SIZE);
+		bytesleidos = this->comJugDerecha->leer(buffer,SIZE);
 	}
 	buffer [bytesleidos] = '\0';
 	cout << "Lei la carta:" << buffer << endl;
+	this->crearCarta(buffer);
 	return bytesleidos;
 }
 
 void Jugador::enviarMensajeCentral(string mensaje){
-	int bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
-	while (bytesleidos < Mensajes::SIZE){
+	int bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),SIZE);
+	while (bytesleidos < SIZE){
 		//sleep(1);
-		bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),Mensajes::SIZE);
+		bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),SIZE);
 	}
 }
 
-void Jugador::leerMensajeCentral(string mensaje){
-	char buffer[Mensajes::SIZE];
-	int bytesleidos = this->comCentralJugador->leer(buffer,Mensajes::SIZE);
+string Jugador::leerMensajeCentral(){
+	char buffer[SIZE];
+	int bytesleidos = this->comCentralJugador->leer(buffer,SIZE);
 	//cout << "bien" <<bytesleidos;
-	while (bytesleidos < Mensajes::SIZE){
+	while (bytesleidos < SIZE){
 		//sleep(1);
-		bytesleidos = this->comCentralJugador->leer(buffer,Mensajes::SIZE);
+		bytesleidos = this->comCentralJugador->leer(buffer,SIZE);
 	}
 	buffer [bytesleidos] = '\0';
+	return buffer;
+
+}
+
+int Jugador::correr(){
+
+	bool corriendo = true;
+	string msg = this->leerMensajeCentral();
+	if (msg == REPARTIR){
+		cout << "salimosss";
+	}
+
+	return 0;
 }
 
 /*

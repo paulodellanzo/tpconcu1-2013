@@ -2,6 +2,7 @@
 #define COMUNICADOR_H_
 
 #include "Pipe.h"
+#include "Mensajes.h"
 
 class Comunicador {
 	

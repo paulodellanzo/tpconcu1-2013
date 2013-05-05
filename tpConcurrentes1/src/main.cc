@@ -1,9 +1,3 @@
-/*
- * main.cc
- *
- *  Created on: 01/05/2013
- *      Author: paulo
- */
 
 #include <string.h>
 #include <iostream>
@@ -13,11 +7,11 @@
 
 #include "SIGINT_Handler.h"
 #include "SignalHandler.h"
-#include "Pipe.h"
 #include "Logger.h"
 #include "JugadorAdministrador.h"
-#include "Mazo.h"
-#include "Comunicador.h"
+#include "Mensajes.h"
+//#include "Comunicador.h"
+#include "Central.h"
 
 #define TAMBUFFER 4
 
@@ -28,32 +22,72 @@ int main (){
 	int cantJugadores = 2;
 	//char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
 
-	Pipe* canal = new Pipe();
-
-	Pipe canal2;
-
 	Logger::setDebug();
 
 	/*
 	 * Creacion de los comunicadores entre procesos
+	 * Las posiciones son relativas al numero de jugador
+	 */
 
+	list<Comunicador*> comunicadoresHaciaJugadores;
+	for(int i=0; i<cantJugadores; i++){
+		comunicadoresHaciaJugadores.push_back(new Comunicador());
+	}
 
-	list<Comunicador*> comunicadores;
-	comunicadores.push_back(new Comunicador());
-	comunicadores.push_back(new Comunicador());
-	comunicadores.push_back(new Comunicador());
-	comunicadores.push_back(new Comunicador());
-*/
+	list<Comunicador*> comunicadoresDesdeJugadores;
+	for(int i=0; i<cantJugadores; i++){
+		comunicadoresDesdeJugadores.push_back(new Comunicador());
+	}
+
 	Comunicador* com1 = new Comunicador();
 	Comunicador* com2 = new Comunicador();
 	Comunicador* com3 = new Comunicador();
 	Comunicador* com4 = new Comunicador();
 
-	Comunicador commm;
+	list<Comunicador*> comJugAdminOtrosJug;
+	for(int i=0; i<cantJugadores; i++){
+		comJugAdminOtrosJug.push_back(new Comunicador());
+	}
 
-	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores, com1, com2, com3, com4);
+	Central* central = new Central(cantJugadores,comunicadoresHaciaJugadores,comunicadoresDesdeJugadores);
 
-	Mazo* m = new Mazo(10);
+	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores, comunicadoresDesdeJugadores.front(), comunicadoresHaciaJugadores.front(), com3, com4);
+
+	list<Comunicador*>::iterator it;
+	for (it = comJugAdminOtrosJug.begin() ; it != comJugAdminOtrosJug.end() ; it++){
+		jAdmin->agregarComunicacionJugador(*it);
+	}
+
+	list<Jugador*> listaJugadores;
+	list<Comunicador*>::iterator itHaciaJugadores = comunicadoresHaciaJugadores.begin();
+	list<Comunicador*>::iterator itDesdeJugadores = comunicadoresDesdeJugadores.begin();
+	list<Comunicador*>::iterator itAdmin = comJugAdminOtrosJug.begin();
+
+	itDesdeJugadores++;
+	itHaciaJugadores++;
+	itAdmin++;
+
+	//El primer jugador es el administrador por eso empiezo en 1
+	for(int i=1; i<cantJugadores; i++){
+
+		Jugador* jug = new Jugador();
+		jug->agregarcomJugadorCentral(*itDesdeJugadores);
+		jug->agregarcomCentralJugador(*itHaciaJugadores);
+		jug->agregarJugAdmin(*itAdmin);
+
+		listaJugadores.push_back(jug);
+
+		itDesdeJugadores++;
+		itHaciaJugadores++;
+		itAdmin++;
+	}
+
+	//Prueba de 2 jugadores
+	//jAdmin->agregarcomJugDerecha(new Comunicador);
+	listaJugadores.front()->agregarcomJugDerecha(jAdmin->comJugIzquierda);
+	listaJugadores.front()->agregarcomJugIzquierda(jAdmin->comJugDerecha);
+
+	Mazo* m = new Mazo(cantJugadores);
 	m->barajar();
 	Carta c1 = m->getCarta();
 	Carta c2 = m->getCarta();
@@ -65,29 +99,38 @@ int main (){
 	jAdmin->tomarCarta(c3);
 	jAdmin->tomarCarta(c4);
 
+	Carta c11 = m->getCarta();
+	Carta c22 = m->getCarta();
+	Carta c33 = m->getCarta();
+	Carta c44 = m->getCarta();
+
+	listaJugadores.front()->tomarCarta(c11);
+	listaJugadores.front()->tomarCarta(c22);
+	listaJugadores.front()->tomarCarta(c33);
+	listaJugadores.front()->tomarCarta(c44);
+
+
 	//JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores);
 
 	int pid = fork();
-	if(pid == 0) {
+	if (pid == 0) {
 
-		cout << "soy el padre voy a pasar una carta" << endl;
+		pid = fork();
 
-		jAdmin->pasarCarta();
-		jAdmin->pasarCarta();
-		jAdmin->pasarCarta();
-		jAdmin->pasarCarta();
-		//delete jAdmin;
-		//char* lo = (char*) "hola";
+		if (pid == 0) {
 
-		//canal->escribir(lo,strlen(lo));
-		//canal2.escribir(lo,strlen(lo));
-		//cout << ppp << endl;
+			jAdmin->pasarCarta();
+			jAdmin->pasarCarta();
+			jAdmin->pasarCarta();
+			jAdmin->pasarCarta();
 
-		//jAdmin->leerCarta();
-
-		//lei = canal2.leer(ppp,TAMBUFFER);
-
-
+			jAdmin->correr();
+			//delete jAdmin;
+		}
+		else{
+			listaJugadores.front()->pasarCarta();
+			listaJugadores.front()->correr();
+		}
 		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
 	}
 
@@ -95,13 +138,11 @@ int main (){
 	for (int i = 0; i <= cantJugadores - 2; i++) {
 		pid = fork();
 		if(pid == 0){
-			//dup2(canal.getFdEscritura(),1);
 			execlp((char*) "./procJugador", (char*) "procJugador", jugadores[i], jugadores[cantJugadores - 2], (char*) NULL);
 		}
 	}
 */
 	else{
-
 		//sleep(1);
 
 		jAdmin->leerCarta();
@@ -109,50 +150,7 @@ int main (){
 		jAdmin->leerCarta();
 		jAdmin->leerCarta();
 
-		//int size = 100;
-		//char ppp [ TAMBUFFER ];
-
-		//int lei = canal2.leer(ppp,TAMBUFFER);
-		//ppp [ lei ] = '\0';
-
-
-
-		//canal2.cerrar();
-
-
-
-		/*Mazo m(10);
-		Carta c1 = m.getCarta();
-		Carta c2 = m.getCarta();
-		Carta c3 = m.getCarta();
-		Carta c4 = m.getCarta();
-
-		Jugador* j = new Jugador();
-		j->tomarCarta(c1);
-		j->tomarCarta(c2);
-		j->tomarCarta(c3);
-		j->tomarCarta(c4);
-
-		Carta c = j->dejarCarta();
-
-		//cout << c.convertir() << endl;
-		delete j;
-
-		 */
-
-
-
-		//delete jAdmin;
-
-		//Comunicador* com = new Comunicador();
-
-		//cout << Mensajes::REPARTIR << endl;
-
-
-		canal->cerrar();
-
-		//delete canal;
-		//delete com;
+		central->correr();
 
 		//Logger::log("SABE");
 
@@ -160,7 +158,6 @@ int main (){
 			wait(NULL);
 
 		//delete jAdmin;
-		canal2.cerrar();
 		exit ( 0 );
 	}
 

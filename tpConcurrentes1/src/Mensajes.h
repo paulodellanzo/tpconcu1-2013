@@ -5,6 +5,18 @@
 #include <iostream>
 #include <string.h>
 
+#define REPARTIR "REP"
+#define VER_CARTAS = "VER";
+#define GANAR = "WIN";
+#define PERDER = "LOS";
+#define LISTO = "RDY";
+#define CONTINUAR = "CON";
+#define TERMINAR_PASAR = "PAS";
+#define FIN_JUEGO = "FIN";
+#define SYNCRONIZAR = "SYN";
+#define SIZE 3
+#define PILA "PILA.txt"
+/*
 class Mensajes {
 
 public:
@@ -20,7 +32,32 @@ public:
 	static std::string SYNCRONIZAR;
 	static int SIZE;
 
-};
+
+	 *  static Mensajes* instance;
+		Mensajes ( void );
+		static Mensajes* getInstance ();
+		static void destruir ();
+
+
+
+};*/
+/*
+Mensajes* Mensajes :: instance = NULL;
+
+Mensajes* Mensajes :: getInstance () {
+
+	if ( instance == NULL )
+		instance = new Mensajes ();
+
+	return instance;
+}
+
+void Mensajes :: destruir () {
+	if ( instance != NULL ) {
+		delete ( instance );
+		instance = NULL;
+	}
+}
 
 std::string Mensajes::REPARTIR = "REP";
 std::string Mensajes::VER_CARTAS = "VER";
@@ -32,5 +69,5 @@ std::string Mensajes::TERMINAR_PASAR = "PAS";
 std::string Mensajes::FIN_JUEGO = "FIN";
 std::string Mensajes::SYNCRONIZAR = "SYN";
 int Mensajes::SIZE = 3;
-
+*/
 #endif /* MENSAJES_H_ */
