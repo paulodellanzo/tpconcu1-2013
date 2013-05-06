@@ -10,11 +10,13 @@
 Jugador::Jugador() {
 	cartas = list<Carta>();
 	tipo = 0;
+	this->idJugador = 0;
 }
 
 Jugador::Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda) {
 	cartas = list<Carta>();
 	tipo = 0;
+	this->idJugador = 0;
 	this->comJugadorCentral = comJugadorCentral;
 	this->comCentralJugador = comCentralJugador;
 	this->comJugDerecha = comJugDerecha;
@@ -53,6 +55,14 @@ void Jugador::agregarcomJugIzquierda(Comunicador* comJugIzquierda){
 
 }
 
+void Jugador::setID(int ID){
+	this->idJugador = ID;
+}
+
+int Jugador::getID(){
+	return this->idJugador;
+}
+
 void Jugador::tomarCarta(Carta carta) {
 	cartas.push_back(carta);
 }
@@ -86,14 +96,9 @@ Carta Jugador::dejarCartaRand() {
 }
 
 /*
- * Determina si el jugador gano si y solo si tiene todas sus cartas con el mismo numero
+ * Determina si el jugador gano si y solo si tiene todas sus cartas tienen el mismo numero
  */
 bool Jugador::gane() {
-	/* debug:
-	cout << "mis cartas son: ";
-	for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++)
-		cout << (*it) << " ";
-	cout << endl;*/
 	
 	string numero = cartas.front().getNumero();
 	list<Carta>::iterator it;
@@ -109,11 +114,29 @@ bool Jugador::gane() {
  * Cada JUGADARANDOM jugadas hace una jugada random.*/
 Carta Jugador::dejarCarta() {
 	tipo++;
-	if (tipo % JUGADARANDOM == 0) {
+
+	srand (11 * getpid() * time(NULL));
+	int n_rand = rand() % 3;
+
+	//if (tipo % JUGADARANDOM == 0) {
+	if (n_rand == 0) {
 		tipo = 1;
 		//return dejarCartaRand();
-
+		Carta carta = this->cartas.front();
+		this->cartas.pop_front();
+		return carta;
 	}
+
+	else if (n_rand == 1) {
+		//tipo = 1;
+		//return dejarCartaRand();
+		list<Carta>::iterator it = this->cartas.begin();
+		it++;
+		Carta carta = *it;
+		this->cartas.erase(it);
+		return carta;
+	}
+
 	Carta carta = this->cartas.back();
 	this->cartas.pop_back();
 	return carta;
@@ -129,18 +152,16 @@ void Jugador::pasarCarta(){
 	//char* cc = (char*) "DEB";
 	int bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),SIZE);
 	while (bytesleidos < SIZE){
-			//sleep(1);
 			bytesleidos = this->comJugDerecha->escribir((char*)mensaje.c_str(),SIZE);
 	}
 }
 
 int Jugador::leerCarta(){
 	char buffer[SIZE];
-	int bytesleidos = this->comJugDerecha->leer(buffer,SIZE);
+	int bytesleidos = this->comJugIzquierda->leer(buffer,SIZE);
 	//cout << "bien" <<bytesleidos;
 	while (bytesleidos < SIZE){
-		//sleep(1);
-		bytesleidos = this->comJugDerecha->leer(buffer,SIZE);
+		bytesleidos = this->comJugIzquierda->leer(buffer,SIZE);
 	}
 	buffer [bytesleidos] = '\0';
 	cout << "Lei la carta:" << buffer << endl;
@@ -151,7 +172,6 @@ int Jugador::leerCarta(){
 void Jugador::enviarMensajeCentral(string mensaje){
 	int bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),SIZE);
 	while (bytesleidos < SIZE){
-		//sleep(1);
 		bytesleidos = this->comJugadorCentral->escribir((char*)mensaje.c_str(),SIZE);
 	}
 }
@@ -161,25 +181,11 @@ string Jugador::leerMensajeCentral(){
 	int bytesleidos = this->comCentralJugador->leer(buffer,SIZE);
 	//cout << "bien" <<bytesleidos;
 	while (bytesleidos < SIZE){
-		//sleep(1);
 		bytesleidos = this->comCentralJugador->leer(buffer,SIZE);
 	}
 	buffer [bytesleidos] = '\0';
 	return buffer;
 
-}
-
-int Jugador::correr(){
-
-	bool corriendo = true;
-	string msg = this->leerMensajeCentral();
-	if (msg == REPARTIR){
-		cout << "salimosss";
-		this->recibirCartaRepartida();
-
-	}
-
-	return 0;
 }
 
 void Jugador::recibirCartaRepartida(){
@@ -196,6 +202,100 @@ void Jugador::recibirCartaRepartida(){
 		this->crearCarta(buffer);
 	}
 }
+
+void Jugador::chancho(){
+	this->pila = new LockFile((char*)PILA);
+	this->pila->tomarLock();
+	stringstream salida;
+	salida << this->idJugador;
+	string s = salida.str();
+	s.append("\n");
+	char* miNombre = (char*) s.c_str() ;
+	this->pila->escribir(miNombre,2);
+	this->pila->liberarLock();
+	delete this->pila;
+}
+
+int Jugador::correr(){
+
+	this->enviarMensajeCentral(SYNCRONIZAR);
+
+	string msg = this->leerMensajeCentral();
+	if (msg == REPARTIR){
+		cout << "salimossssss";
+		//Los jugadores solo reciben cartas no reparten
+		this->recibirCartaRepartida();
+		this->jugar();
+	}
+
+	return 0;
+}
+
+/*
+ * Proseguir segun protocolo
+ */
+void Jugador::jugar(){
+
+	//Todos avisan que tienen sus cartas para comenzar a jugar
+	this->enviarMensajeCentral(REPARTIR);
+
+	string msg = this->leerMensajeCentral();
+
+	while (msg == VERCARTAS){
+		if(this->gane()){
+			this->enviarMensajeCentral(GANAR);
+			this->chancho();
+			//Ignoro el mensaje de ganar porque yo ya gane
+			//msg = this->leerMensajeCentral();
+			//this->enviarMensajeCentral(LISTO);
+		}
+		else{
+			this->enviarMensajeCentral(PERDER);
+
+		}
+
+		msg = this->leerMensajeCentral();
+			if (msg == CONTINUAR){
+				this->pasarCarta();
+				this->leerCarta();
+				this->enviarMensajeCentral(TERMINARPASAR);
+			}
+			else if (msg == GANAR){
+				if(this->gane()){
+					this->enviarMensajeCentral(LISTO);
+				}
+				else{
+					this->chancho();
+					this->enviarMensajeCentral(LISTO);
+				}
+			}
+
+		msg = this->leerMensajeCentral();
+		if (msg == FINJUEGO){
+			exit(0);
+		}
+
+/*
+		msg = this->leerMensajeCentral();
+		if (msg == CONTINUAR){
+			this->pasarCarta();
+			this->leerCarta();
+			this->enviarMensajeCentral(TERMINARPASAR);
+		}*/
+
+		//msg = this->leerMensajeCentral();
+		cout << msg;
+		if (msg == VERCARTAS){
+			cout << "Vuelve a comenzar ronda" << endl;
+		}
+
+	}
+
+	this->correr();
+
+}
+
+
 
 /*
 Carta Jugador::dejarCartaInteligente() {

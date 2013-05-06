@@ -6,14 +6,14 @@
 #include <string.h>
 
 #define REPARTIR "REP"
-#define VER_CARTAS = "VER";
-#define GANAR = "WIN";
-#define PERDER = "LOS";
-#define LISTO = "RDY";
-#define CONTINUAR = "CON";
-#define TERMINAR_PASAR = "PAS";
-#define FIN_JUEGO = "FIN";
-#define SYNCRONIZAR = "SYN";
+#define VERCARTAS "VER"
+#define GANAR "WIN"
+#define PERDER "LOS"
+#define LISTO "RDY"
+#define CONTINUAR "CON"
+#define TERMINARPASAR "PAS"
+#define FINJUEGO "FIN"
+#define SYNCRONIZAR "SYN"
 #define SIZE 3
 #define PILA "PILA.txt"
 /*

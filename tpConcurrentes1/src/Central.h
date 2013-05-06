@@ -5,6 +5,13 @@
 #include <list>
 #include <string>
 #include "Comunicador.h"
+#include "LockFile.h"
+#include <fstream>
+
+struct perdedores {
+	int idJugador;
+	int cantPerdidas;
+};
 
 class Central  {
 
@@ -15,16 +22,21 @@ class Central  {
 		list<Comunicador*> comunicadoresHaciaJugadores;
 		list<Comunicador*> comunicadoresDesdeJugadores;
 		int cantJugadores;
+		list<perdedores> puntaje;
+		string chancho;
+		LockFile* pila;
 
 		int verificarJugadores();
 		void escribirJugadores(string mensaje);
-		void leerJugadores();
+		list<string> leerJugadores();
 
 		//Mensajes* protocolo = Mensajes::getInstance();
 
 	public:
 		Central(int totalJugadores, list<Comunicador*> & comunicadoresHaciaJugadores, list<Comunicador*> & comunicadoresDesdeJugadores);
 		~Central();
+		bool actualizarPuntaje(int IDJugador);
+		int obtenerPerdedor();
 		int correr();
 
 };

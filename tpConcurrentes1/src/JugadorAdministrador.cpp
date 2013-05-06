@@ -4,13 +4,13 @@
 JugadorAdministrador::JugadorAdministrador(int cantJugadores) : Jugador() {
 	this->mazo = new Mazo(cantJugadores);
 	this->cantJugadores = cantJugadores;
-	this->idJugador = "1";
+	this->idJugador = 1;
 }
 
 JugadorAdministrador::JugadorAdministrador(int cantJugadores, Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda) : Jugador(comJugadorCentral, comCentralJugador, comJugDerecha, comJugIzquierda){
 	this->mazo = new Mazo(cantJugadores);
 	this->cantJugadores = cantJugadores;
-	this->idJugador = "1";
+	this->idJugador = 1;
 }
 
 
@@ -37,6 +37,7 @@ void JugadorAdministrador::enviarCarta(Comunicador* alJugadorSiguiente){
 				bytesleidos = alJugadorSiguiente->escribir((char*)mensaje.c_str(),SIZE);
 		}
 	}
+	cout << "Termine de repartir" << endl;
 }
 
 JugadorAdministrador::~JugadorAdministrador() {
@@ -55,13 +56,15 @@ void JugadorAdministrador::agregarComunicacionJugador(Comunicador* comOtroJugado
 
 int JugadorAdministrador::correr(){
 
-	bool corriendo = true;
+	this->enviarMensajeCentral(SYNCRONIZAR);
+
 	string msg = this->leerMensajeCentral();
 	if (msg == REPARTIR){
 		cout << "salimosss";
-		if (this->idJugador == "1"){
+		if (this->idJugador == 1){
 			//Soy el administrado
 			this->repartir();
+			this->jugar();
 		}
 	}
 

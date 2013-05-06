@@ -39,13 +39,13 @@ int main (){
 		comunicadoresDesdeJugadores.push_back(new Comunicador());
 	}
 
-	Comunicador* com1 = new Comunicador();
-	Comunicador* com2 = new Comunicador();
+	//Comunicador* com1 = new Comunicador();
+	//Comunicador* com2 = new Comunicador();
 	Comunicador* com3 = new Comunicador();
 	Comunicador* com4 = new Comunicador();
 
 	list<Comunicador*> comJugAdminOtrosJug;
-	for(int i=0; i<cantJugadores; i++){
+	for(int i=1; i<cantJugadores; i++){
 		comJugAdminOtrosJug.push_back(new Comunicador());
 	}
 
@@ -68,12 +68,13 @@ int main (){
 	//itAdmin++;
 
 	//El primer jugador es el administrador por eso empiezo en 1
-	for(int i=1; i<cantJugadores; i++){
+	for(int i=2; i < cantJugadores + 1; i++){
 
 		Jugador* jug = new Jugador();
 		jug->agregarcomJugadorCentral(*itDesdeJugadores);
 		jug->agregarcomCentralJugador(*itHaciaJugadores);
 		jug->agregarJugAdmin(*itAdmin);
+		jug->setID(i);
 
 		listaJugadores.push_back(jug);
 
@@ -86,7 +87,7 @@ int main (){
 	//jAdmin->agregarcomJugDerecha(new Comunicador);
 	listaJugadores.front()->agregarcomJugDerecha(jAdmin->comJugIzquierda);
 	listaJugadores.front()->agregarcomJugIzquierda(jAdmin->comJugDerecha);
-
+/*
 	Mazo* m = new Mazo(cantJugadores);
 	m->barajar();
 	Carta c1 = m->getCarta();
@@ -108,7 +109,7 @@ int main (){
 	listaJugadores.front()->tomarCarta(c22);
 	listaJugadores.front()->tomarCarta(c33);
 	listaJugadores.front()->tomarCarta(c44);
-
+*/
 
 	//JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores);
 
@@ -129,8 +130,19 @@ int main (){
 			//delete jAdmin;
 		}
 		else{
-			//listaJugadores.front()->pasarCarta();
-			listaJugadores.front()->correr();
+			//Itero sobre el resto de los jugadores y los pongo a jugar
+			list<Jugador*>::iterator it;
+			for (it = listaJugadores.begin() ; it != listaJugadores.end() ; it++){
+				pid = fork();
+				if (pid == 0) {
+					(*it)->correr();
+				}
+				else{
+					cout << "adios"<< endl ;
+					exit(0);
+				}
+			}
+
 		}
 		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
 	}
@@ -144,7 +156,7 @@ int main (){
 	}
 */
 	else{
-		sleep(2);
+		//sleep(2);
 
 		/*jAdmin->leerCarta();
 		jAdmin->leerCarta();

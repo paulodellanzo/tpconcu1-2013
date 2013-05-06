@@ -5,13 +5,15 @@
 #include <string>
 #include "Carta.h"
 #include "Comunicador.h"
+#include "LockFile.h"
+#include "Logger.h"
 
 using namespace std;
 
 class Jugador {
 	
 public:
-		string idJugador;
+		int idJugador;
 		list<Carta> cartas;
 		int tipo;
 		int cantJugadores;
@@ -22,11 +24,14 @@ public:
 		Comunicador* comJugDerecha;
 		Comunicador* comJugIzquierda;
 		Comunicador* comJugAdmin;
+		LockFile* pila;
 
 
 		Jugador();
 		Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda);
 		~Jugador();
+		void setID(int ID);
+		int getID();
 		void agregarJugAdmin(Comunicador* comJugAdmin);
 		void agregarcomJugadorCentral(Comunicador* comJugadorCentral);
 		void agregarcomCentralJugador(Comunicador* comCentralJugador);
@@ -44,6 +49,8 @@ public:
 		void recibirCartaRepartida();
 		
 		int correr();
+		void chancho();
+		void jugar();
 
 };
 
