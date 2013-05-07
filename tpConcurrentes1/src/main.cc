@@ -185,10 +185,10 @@ int main() {
 					Logger::log(mensaje);
 
 					(*it)->correr();
-				} else {
-					exit(0);
 				}
 			}
+			//Crea los hijos y termina
+			exit(0);
 
 		}
 		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
