@@ -161,6 +161,11 @@ void Jugador::pasarCarta() {
 		bytesleidos = this->comJugDerecha->escribir((char*) mensaje.c_str(),
 				SIZE);
 	}
+
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Pasé carta a la derecha: ");
+	logMessage.append(mensaje);
+	Logger::log(logMessage);
 }
 
 int Jugador::leerCarta() {
@@ -173,6 +178,12 @@ int Jugador::leerCarta() {
 	buffer[bytesleidos] = '\0';
 //	cout << "Lei la carta:" << buffer << endl;
 	this->crearCarta(buffer);
+
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Me pasaron carta: ");
+	logMessage.append(buffer);
+	Logger::log(logMessage);
+
 	return bytesleidos;
 }
 
