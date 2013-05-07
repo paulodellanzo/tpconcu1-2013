@@ -113,16 +113,12 @@ void JugadorAdministrador::jugar() {
 		}
 
 		this->msg = this->leerMensajeCentral();
-		if (this->msg == PERDER) {
-			this->enviarMensajeCentral(LISTO);
-			this->msg = this->leerMensajeCentral();
 
-			if (this->msg == CONTINUAR) {
-				this->pasarCarta();
-				this->leerCarta();
-				this->enviarMensajeCentral(TERMINARPASAR);
-				this->msg = this->leerMensajeCentral();
-			}
+		if (this->msg == PASARDERECHA) {
+			this->pasarCarta();
+			this->leerCarta();
+			this->enviarMensajeCentral(TERMINARPASAR);
+			this->msg = this->leerMensajeCentral();
 		} else if (this->msg == GANAR) {
 			if (this->gane()) {
 				this->enviarMensajeCentral(LISTO);

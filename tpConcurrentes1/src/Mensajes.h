@@ -9,6 +9,7 @@
 #define VERCARTAS "VER"
 #define GANAR "WIN"
 #define PERDER "LOS"
+#define PASARDERECHA "DER"
 #define LISTO "RDY"
 #define CONTINUAR "CON"
 #define TERMINARPASAR "PAS"

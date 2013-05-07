@@ -201,22 +201,10 @@ int Central::correr() {
 			//Todos escribieron que perdieron
 			else {
 
-				this->escribirJugadores(PERDER);
+				this->escribirJugadores(PASARDERECHA);
 
+				//Espero TERMINARPASAR
 				mensajesLeidos = this->leerJugadores();
-				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end();
-						it++) {
-//						cout << " Listo " << *it;
-				}
-
-				this->escribirJugadores(CONTINUAR);
-				mensajesLeidos = this->leerJugadores();
-				//Deberia leer TERMINARPASAR
-				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end();
-						it++) {
-//						cout << "PAS  " << *it;
-				}
-				//this->escribirJugadores(VERCARTAS);
 			}
 		}
 		/*
