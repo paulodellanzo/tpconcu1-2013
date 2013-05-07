@@ -27,10 +27,14 @@ Jugador::Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador,
 }
 
 Jugador::~Jugador() {
+	if (this->comJugDerecha != NULL) {
+		delete this->comJugDerecha;
+	}
+	if (this->comJugIzquierda != NULL) {
+		delete this->comJugIzquierda;
+	}
 	delete this->comCentralJugador;
 	delete this->comJugadorCentral;
-	delete this->comJugDerecha;
-	delete this->comJugIzquierda;
 	if (this->comJugAdmin != NULL) {
 		delete this->comJugAdmin;
 	}

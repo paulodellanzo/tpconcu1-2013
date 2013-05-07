@@ -24,7 +24,7 @@ int main() {
 
 	Logger::log("Main - Comienza el juego");
 
-	int cantJugadores = 2;
+	int cantJugadores = 4;
 	//char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
 
 	/*
@@ -50,10 +50,10 @@ int main() {
 		comunicadoresDesdeJugadores.push_back(new Comunicador());
 	}
 
-	Logger::log("Main - Creo comunicador jugador admin derecha");
-	Comunicador* com3 = new Comunicador();
-	Logger::log("Main - Creo comunicador jugador admin izquierda");
-	Comunicador* com4 = new Comunicador();
+//	Logger::log("Main - Creo comunicador jugador admin derecha");
+//	Comunicador* com3 = new Comunicador();
+//	Logger::log("Main - Creo comunicador jugador admin izquierda");
+//	Comunicador* com4 = new Comunicador();
 
 	list<Comunicador*> comJugAdminOtrosJug;
 	for (int i = 1; i < cantJugadores; i++) {
@@ -70,7 +70,7 @@ int main() {
 	Logger::log("Main - Creo jugador admin");
 	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores,
 			comunicadoresDesdeJugadores.front(),
-			comunicadoresHaciaJugadores.front(), com3, com4);
+			comunicadoresHaciaJugadores.front(), NULL, NULL);
 	jAdmin->setID(1);
 
 	list<Comunicador*>::iterator it;
@@ -90,6 +90,8 @@ int main() {
 	itHaciaJugadores++;
 	//itAdmin++;
 
+	Jugador* jugadorAnterior = jAdmin;
+	Jugador* jug;
 	//El primer jugador es el administrador por eso empiezo en 1
 	for (int i = 2; i < cantJugadores + 1; i++) {
 
@@ -97,7 +99,7 @@ int main() {
 		mensaje.append(Logger::itos(i));
 		Logger::log(mensaje);
 
-		Jugador* jug = new Jugador();
+		jug = new Jugador();
 		jug->agregarcomJugadorCentral(*itDesdeJugadores);
 		jug->agregarcomCentralJugador(*itHaciaJugadores);
 		jug->agregarJugAdmin(*itAdmin);
@@ -105,10 +107,22 @@ int main() {
 
 		listaJugadores.push_back(jug);
 
+		Comunicador* comAux = new Comunicador();
+
+		jug->agregarcomJugIzquierda(comAux);
+		jugadorAnterior->agregarcomJugDerecha(comAux);
+
+		jugadorAnterior = jug;
+
 		itDesdeJugadores++;
 		itHaciaJugadores++;
 		itAdmin++;
 	}
+
+	//El ultimo con el primero y el primero con el último
+	Comunicador* comAux = new Comunicador();
+	jug->agregarcomJugDerecha(comAux);
+	jAdmin->agregarcomJugIzquierda(comAux);
 
 	//Prueba de 2 jugadores
 	//jAdmin->agregarcomJugDerecha(new Comunicador);
@@ -225,8 +239,7 @@ int main() {
 			delete *itBorrador;
 		}
 
-		delete com3;
-		delete com4;
+
 		delete jAdmin;
 
 		exit(0);
