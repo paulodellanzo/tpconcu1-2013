@@ -45,7 +45,6 @@ void JugadorAdministrador::enviarCarta(Comunicador* alJugadorSiguiente) {
 		int bytesleidos = alJugadorSiguiente->escribir((char*) mensaje.c_str(),
 				SIZE);
 		while (bytesleidos < SIZE) {
-			//sleep(1);
 			bytesleidos = alJugadorSiguiente->escribir((char*) mensaje.c_str(),
 					SIZE);
 		}
@@ -105,7 +104,6 @@ void JugadorAdministrador::jugar() {
 		if (this->gane()) {
 			this->enviarMensajeCentral(GANAR);
 			this->chancho();
-			sleep(2);
 			//Ignoro el mensaje de ganar porque yo ya gane
 			//msg = this->leerMensajeCentral();
 			//this->enviarMensajeCentral(LISTO);
