@@ -70,6 +70,11 @@ list<string> Central::leerJugadores() {
 		}
 		buffer[bytesleidos] = '\0';
 		mensajesRecibidos.push_back(buffer);
+
+		string logMessage = "Central - Recibo de jugador: ";
+		logMessage.append(buffer);
+		Logger::log(logMessage);
+
 	}
 	return mensajesRecibidos;
 }
@@ -123,6 +128,8 @@ int Central::correr() {
 	list<string> mensajesLeidos;
 	while (!fin) {
 
+		Logger::log("Central - Comienza una ronda nueva");
+
 		if (contarVueltas == 1) {
 			this->escribirJugadores(REPARTIR);
 		}
@@ -131,14 +138,12 @@ int Central::correr() {
 		list<string>::iterator it;
 
 		for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++) {
-			//Deberia leer REP
-//			cout << "repartir " << *it;
 		}
 
 		bool huboGanador = false;
 		while (!huboGanador) {
 
-			//sleep(1);
+			Logger::log("Central - Comienza una transferencia de cartas");
 
 			//Hago que lean sus cartas y me avisen si ganaron o no
 			this->escribirJugadores(VERCARTAS);

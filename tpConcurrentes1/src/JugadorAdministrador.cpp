@@ -86,7 +86,7 @@ int JugadorAdministrador::correr() {
 void JugadorAdministrador::jugar() {
 
 	//Todos avisan que tienen sus cartas para comenzar a jugar
-	this->enviarMensajeCentral(REPARTIR);
+	this->enviarMensajeCentral(RECIBI);
 
 	//deberia leer VER
 	this->msg = this->leerMensajeCentral();

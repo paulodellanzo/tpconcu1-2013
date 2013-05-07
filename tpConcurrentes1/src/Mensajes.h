@@ -5,6 +5,7 @@
 #include <string.h>
 
 #define REPARTIR "REP"
+#define RECIBI "REC"
 #define VERCARTAS "VER"
 #define GANAR "WIN"
 #define PERDER "LOS"

@@ -180,6 +180,7 @@ void Jugador::enviarMensajeCentral(string mensaje) {
 }
 
 string Jugador::leerMensajeCentral() {
+
 	char buffer[SIZE];
 	int bytesleidos = this->comCentralJugador->leer(buffer, SIZE);
 	//cout << "bien" <<bytesleidos;
@@ -187,6 +188,11 @@ string Jugador::leerMensajeCentral() {
 		bytesleidos = this->comCentralJugador->leer(buffer, SIZE);
 	}
 	buffer[bytesleidos] = '\0';
+
+	string logMessage = "Jugador - Recibo de central: ";
+	logMessage.append(buffer);
+	Logger::log(logMessage);
+
 	return buffer;
 
 }
@@ -203,6 +209,10 @@ void Jugador::recibirCartaRepartida() {
 		buffer[bytesleidos] = '\0';
 //		cout << "Me repartieron la carta:" << buffer << endl;
 		this->crearCarta(buffer);
+
+		string logMessage = "Jugador - Recibo carta: ";
+		logMessage.append(buffer);
+		Logger::log(logMessage);
 	}
 }
 
@@ -228,8 +238,6 @@ int Jugador::correr() {
 	this->primerRonda = false;
 	//string msg = this->leerMensajeCentral();
 	if (this->msg == REPARTIR) {
-//		cout << "salimossssss";
-		sleep(1);
 		//Los jugadores solo reciben cartas no reparten
 		this->recibirCartaRepartida();
 		this->jugar();
@@ -244,7 +252,7 @@ int Jugador::correr() {
 void Jugador::jugar() {
 
 	//Todos avisan que tienen sus cartas para comenzar a jugar
-	this->enviarMensajeCentral(REPARTIR);
+	this->enviarMensajeCentral(RECIBI);
 
 	//deberia leer VER
 	this->msg = this->leerMensajeCentral();
