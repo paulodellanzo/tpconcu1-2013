@@ -3,20 +3,45 @@
 #include <sstream>
 #include <stdlib.h>
 #include <sys/wait.h>
+#include <cstdlib>
 
 #include "SIGINT_Handler.h"
 #include "SignalHandler.h"
 #include "Logger.h"
 #include "JugadorAdministrador.h"
 #include "Mensajes.h"
-//#include "Comunicador.h"
 #include "Central.h"
 
-#define TAMBUFFER 4
+#define MAXJUGADORES 10
 
 using namespace std;
 
-int main() {
+int main(int argc, char **argv) {
+
+	cout << "Uso del Programa: ./tpconcu1-2013 n d" << endl;
+	cout << "Donde n es el numero de jugadores y d es modo debug" << endl;
+	cout << "Deben haber mas de 1 jugador y "<< MAXJUGADORES << " como maximo" << endl;
+
+	int cant = 4;
+	/*
+	if (argc <= 1 || argc > 3){
+		cout << "Incorrecto uso del programa, adios" << endl;
+		return 0;
+	}
+	int cant = atoi(argv[1]);
+	if (cant < 2 || cant > MAXJUGADORES){
+		cout << "Cantidad incorrecta o mal formato de jugadores" << endl;
+		return 0;
+	}
+	if (argc == 3){
+		if (strcmp (argv[2],"d") == 0){
+			Logger::setDebug();
+		}
+		else{
+			cout << "Se debe pasar d ultimo parametro para debuggear" << endl;
+			return 0;
+		}
+	}*/
 
 	Logger::emptyLog();
 
@@ -24,8 +49,7 @@ int main() {
 
 	Logger::log("Main - Comienza el juego");
 
-	int cantJugadores = 4;
-	//char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
+	int cantJugadores = cant;
 
 	/*
 	 * Creacion de los comunicadores entre procesos
@@ -49,11 +73,6 @@ int main() {
 		Logger::log(mensaje);
 		comunicadoresDesdeJugadores.push_back(new Comunicador());
 	}
-
-//	Logger::log("Main - Creo comunicador jugador admin derecha");
-//	Comunicador* com3 = new Comunicador();
-//	Logger::log("Main - Creo comunicador jugador admin izquierda");
-//	Comunicador* com4 = new Comunicador();
 
 	list<Comunicador*> comJugAdminOtrosJug;
 	for (int i = 1; i < cantJugadores; i++) {
@@ -123,36 +142,6 @@ int main() {
 	listaJugadores.back()->agregarcomJugDerecha(comAux);
 	jAdmin->agregarcomJugIzquierda(comAux);
 
-	//Prueba de 2 jugadores
-	//jAdmin->agregarcomJugDerecha(new Comunicador);
-//	Logger::log("Main - Agrego a jugador 2 su comunicador a izquierda y derecha");
-//	listaJugadores.front()->agregarcomJugDerecha(jAdmin->comJugIzquierda);
-//	listaJugadores.front()->agregarcomJugIzquierda(jAdmin->comJugDerecha);
-	/*
-	 Mazo* m = new Mazo(cantJugadores);
-	 m->barajar();
-	 Carta c1 = m->getCarta();
-	 Carta c2 = m->getCarta();
-	 Carta c3 = m->getCarta();
-	 Carta c4 = m->getCarta();
-
-	 jAdmin->tomarCarta(c1);
-	 jAdmin->tomarCarta(c2);
-	 jAdmin->tomarCarta(c3);
-	 jAdmin->tomarCarta(c4);
-
-	 Carta c11 = m->getCarta();
-	 Carta c22 = m->getCarta();
-	 Carta c33 = m->getCarta();
-	 Carta c44 = m->getCarta();
-
-	 listaJugadores.front()->tomarCarta(c11);
-	 listaJugadores.front()->tomarCarta(c22);
-	 listaJugadores.front()->tomarCarta(c33);
-	 listaJugadores.front()->tomarCarta(c44);
-	 */
-
-	//JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores);
 	int pid = fork();
 	if (pid == 0) {
 
@@ -164,14 +153,8 @@ int main() {
 
 			Logger::log("Main - Comienza proceso Jugador Admin");
 
-			/*jAdmin->pasarCarta();
-			 jAdmin->pasarCarta();
-			 jAdmin->pasarCarta();
-			 jAdmin->pasarCarta();
-			 */
-
 			jAdmin->correr();
-			//delete jAdmin;
+
 		} else {
 			//Itero sobre el resto de los jugadores y los pongo a jugar
 			list<Jugador*>::iterator it;
@@ -190,30 +173,16 @@ int main() {
 			exit(0);
 
 		}
-		//execlp((char*) "./procJugadorCoordinador", (char*) "procJugadorCoordinador",(char*) sal.c_str(), jugadores[cantJugadores - 2], (char*) NULL);
+
 	}
 
-	/*
-	 for (int i = 0; i <= cantJugadores - 2; i++) {
-	 pid = fork();
-	 if(pid == 0){
-	 execlp((char*) "./procJugador", (char*) "procJugador", jugadores[i], jugadores[cantJugadores - 2], (char*) NULL);
-	 }
-	 }
-	 */
 	else {
 
 		Logger::log("Main - Comienza proceso central");
-		//sleep(2);
-
-		/*jAdmin->leerCarta();
-		 jAdmin->leerCarta();
-		 jAdmin->leerCarta();
-		 jAdmin->leerCarta();*/
 
 		central->correr();
 
-		Logger::log("Main - Terminó el juego, comienzo a borrar todo");
+		Logger::log("Main - Termino el juego, comienzo a borrar todo");
 
 		for (int i = 0; i < cantJugadores; i++)
 			wait(NULL);
@@ -237,7 +206,6 @@ int main() {
 				itBorrador != comJugAdminOtrosJug.end(); itBorrador++) {
 			delete *itBorrador;
 		}
-
 
 		delete jAdmin;
 
