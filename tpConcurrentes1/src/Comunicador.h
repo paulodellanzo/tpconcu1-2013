@@ -5,23 +5,23 @@
 #include "Mensajes.h"
 
 class Comunicador {
-	
-	private:
 
-		Pipe pipe;
+private:
 
-	public:
+	Pipe pipe;
+
+public:
 	/*
 	 * Esta clase se ocupa de administrar el canal de comunicacion
 	 * entre los procesos utilizando Pipes
 	 */
-		Comunicador();
-		~Comunicador();
-		
-		int escribir ( char* mensaje ,int datoSize );
-		int leer ( char* mensaje ,int buffSize );
+	Comunicador();
+	~Comunicador();
 
-		void cerrar ();
+	int escribir(char* mensaje, int datoSize);
+	int leer(char* mensaje, int buffSize);
+
+	void cerrar();
 };
 
 #endif /* COMUNICADOR_H_ */

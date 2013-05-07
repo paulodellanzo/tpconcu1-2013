@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class Pipe  {
+class Pipe {
 
 private:
 
@@ -26,15 +26,15 @@ public:
 	Pipe();
 	virtual ~Pipe();
 
-	void setearModo ( int modo );
+	void setearModo(int modo);
 
-	int escribir ( char* dato,int datoSize );
-	int leer ( char* buffer,int buffSize );
+	int escribir(char* dato, int datoSize);
+	int leer(char* buffer, int buffSize);
 
-	int getFdLectura ();
-	int getFdEscritura ();
+	int getFdLectura();
+	int getFdEscritura();
 
-	void cerrar ();
+	void cerrar();
 };
 
 #endif /* PIPE_H_ */

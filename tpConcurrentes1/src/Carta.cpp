@@ -1,18 +1,19 @@
 #include "Carta.h"
 #include <cstring>
 
-Carta::Carta(string palo, string numero) : palo(palo), numero(numero) {
+Carta::Carta(string palo, string numero) :
+		palo(palo), numero(numero) {
 }
 
 Carta::~Carta() {
 }
 
 string Carta::getPalo() {
-	return palo; 
+	return palo;
 }
 
 string Carta::getNumero() {
-	return numero; 
+	return numero;
 }
 
 string Carta::convertir() {
@@ -21,7 +22,4 @@ string Carta::convertir() {
 	p.append(this->getNumero());
 	return p;
 }
-
-
-
 

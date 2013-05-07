@@ -16,18 +16,18 @@
 
 using namespace std;
 
-class Carta : Convertidor {
-	private:
-		string palo, numero;
-	
-	public:
-		Carta(string palo,string numero);
-		~Carta();
-		string getPalo();
-		string getNumero();
-		
-		string convertir();
-		
+class Carta: Convertidor {
+private:
+	string palo, numero;
+
+public:
+	Carta(string palo, string numero);
+	~Carta();
+	string getPalo();
+	string getNumero();
+
+	string convertir();
+
 };
 
 #endif /* CARTA_H_ */

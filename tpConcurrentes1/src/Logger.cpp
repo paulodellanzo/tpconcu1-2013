@@ -13,7 +13,8 @@ Logger::~Logger() {
 int Logger::debug = 0;
 
 void Logger::log(string mensaje) {
-	if ( ! debug) return;
+	if (!debug)
+		return;
 	LockFile lock((char*) ARCHIVOLOG);
 	lock.tomarLock();
 
@@ -21,9 +22,9 @@ void Logger::log(string mensaje) {
 	time_t timeAux;
 	struct tm * timeinfo;
 	char buffer[BUFFSIZE];
-	time (&timeAux);
-	timeinfo = localtime (&timeAux);
-	strftime (buffer,BUFFSIZE,"%F %T ",timeinfo);
+	time(&timeAux);
+	timeinfo = localtime(&timeAux);
+	strftime(buffer, BUFFSIZE, "%F %T ", timeinfo);
 	string res = string(buffer);
 	res.append(":");
 
@@ -32,10 +33,10 @@ void Logger::log(string mensaje) {
 	res.append(pid);
 	res.append(mensaje);
 	res.append("\n");
-	lock.escribir((char*) res.c_str(), (int) res.size() );
+	lock.escribir((char*) res.c_str(), (int) res.size());
 	lock.liberarLock();
+	cout << res.c_str() << endl;
 }
-
 
 string Logger::itos(int number) {
 	stringstream salida;

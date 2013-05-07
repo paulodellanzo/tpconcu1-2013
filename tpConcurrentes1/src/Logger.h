@@ -11,17 +11,16 @@ using namespace std;
 /* El logeo debe ser activado mediante la variable debug
  */
 class Logger {
-	public:
-		Logger();
-		~Logger();
-		static void log(string mensaje);
-		static void setDebug();
-		
-	private:
-		static int debug;
-		static string itos(int num);
+public:
+	Logger();
+	~Logger();
+	static void log(string mensaje);
+	static void setDebug();
+
+private:
+	static int debug;
+	static string itos(int num);
 
 };
-
 
 #endif /* LOGGER_H_ */

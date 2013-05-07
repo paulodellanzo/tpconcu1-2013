@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include <iostream>
 
 class LockFile {
 
@@ -11,16 +12,16 @@ private:
 
 	struct flock fl;
 	int fd;
-	char nombre [ 255 ];
+	char nombre[255];
 
 public:
 
-	LockFile ( char* nombre );
+	LockFile(char* nombre);
 	virtual ~LockFile();
 
-	int tomarLock ();
-	int liberarLock ();
-	int escribir ( char* buffer,int buffsize );
+	int tomarLock();
+	int liberarLock();
+	int escribir(char* buffer, int buffsize);
 };
 
 #endif /* LOCKFILE_H_ */

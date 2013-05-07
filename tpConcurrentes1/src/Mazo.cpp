@@ -15,7 +15,7 @@ using namespace std;
  * */
 Mazo::Mazo(int cantCartas) {
 	mazo = vector<Carta>();
-	for (int i = 0; i < cantCartas; i++){
+	for (int i = 0; i < cantCartas; i++) {
 		mazo.push_back(Carta("ES", this->itos(i)));
 		//cout << "CartaNRO:" << i << endl;
 	}
@@ -26,7 +26,6 @@ Mazo::Mazo(int cantCartas) {
 	for (int i = 0; i < cantCartas; i++)
 		mazo.push_back(Carta("BA", this->itos(i)));
 }
-
 
 Mazo::~Mazo() {
 }
@@ -51,9 +50,7 @@ string Mazo::itos(int number) {
 }
 
 void Mazo::barajar() {
-	srand ( unsigned ( time(0) ) );
-	random_shuffle (mazo.begin(), mazo.end());
+	srand(unsigned(time(0)));
+	random_shuffle(mazo.begin(), mazo.end());
 }
 
-
-	

@@ -1,4 +1,3 @@
-
 #ifndef CENTRAL_H_
 #define CENTRAL_H_
 
@@ -13,33 +12,34 @@ struct perdedores {
 	int cantPerdidas;
 };
 
-class Central  {
+class Central {
 
-	private:
-		/*
-		 * Tiene todos los comunicadores necesarios para comunicarse con todos los jugadores
-		 */
-		list<Comunicador*> comunicadoresHaciaJugadores;
-		list<Comunicador*> comunicadoresDesdeJugadores;
-		int cantJugadores;
-		list<perdedores> puntaje;
-		string chancho;
-		LockFile* pila;
+private:
+	/*
+	 * Tiene todos los comunicadores necesarios para comunicarse con todos los jugadores
+	 */
+	list<Comunicador*> comunicadoresHaciaJugadores;
+	list<Comunicador*> comunicadoresDesdeJugadores;
+	int cantJugadores;
+	list<perdedores> puntaje;
+	string chancho;
+	LockFile* pila;
 
-		int verificarJugadores();
-		void escribirJugadores(string mensaje);
-		list<string> leerJugadores();
+	int verificarJugadores();
+	void escribirJugadores(string mensaje);
+	list<string> leerJugadores();
 
-		//Mensajes* protocolo = Mensajes::getInstance();
+	//Mensajes* protocolo = Mensajes::getInstance();
 
-	public:
-		Central(int totalJugadores, list<Comunicador*> & comunicadoresHaciaJugadores, list<Comunicador*> & comunicadoresDesdeJugadores);
-		~Central();
-		bool actualizarPuntaje(int IDJugador);
-		int obtenerPerdedor();
-		int correr();
+public:
+	Central(int totalJugadores,
+			list<Comunicador*> & comunicadoresHaciaJugadores,
+			list<Comunicador*> & comunicadoresDesdeJugadores);
+	~Central();
+	bool actualizarPuntaje(int IDJugador);
+	int obtenerPerdedor();
+	int correr();
 
 };
-
 
 #endif /* CENTRAL_H_ */
