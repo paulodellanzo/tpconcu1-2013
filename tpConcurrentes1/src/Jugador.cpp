@@ -112,11 +112,6 @@ Carta Jugador::dejarCartaRand() {
  * Determina si el jugador gano si y solo si tiene todas sus cartas tienen el mismo numero
  */
 bool Jugador::gane() {
-
-	if (this->idJugador==1) {
-		return true;
-	}
-
 	string numero = cartas.front().getNumero();
 	list<Carta>::iterator it;
 	for (it = cartas.begin(); it != cartas.end(); it++)
@@ -125,26 +120,17 @@ bool Jugador::gane() {
 	return true;
 }
 
-/* Deja una carta.
- * Cada JUGADARANDOM jugadas hace una jugada random.*/
+//Deja una carta
 Carta Jugador::dejarCarta() {
-	tipo++;
-
 	srand(11 * getpid() * time(NULL));
-	int n_rand = rand() % 3;
+	int n_rand = rand() % 5;
 
-	//if (tipo % JUGADARANDOM == 0) {
 	if (n_rand == 0) {
-		tipo = 1;
 		//return dejarCartaRand();
 		Carta carta = this->cartas.front();
 		this->cartas.pop_front();
 		return carta;
-	}
-
-	else if (n_rand == 1) {
-		//tipo = 1;
-		//return dejarCartaRand();
+	} else {
 		list<Carta>::iterator it = this->cartas.begin();
 		it++;
 		Carta carta = *it;
@@ -152,10 +138,6 @@ Carta Jugador::dejarCarta() {
 		return carta;
 	}
 
-	Carta carta = this->cartas.back();
-	this->cartas.pop_back();
-	return carta;
-	//return dejarCartaRand();
 }
 
 void Jugador::pasarCarta() {
@@ -351,8 +333,8 @@ void Jugador::jugar() {
 
 }
 
-/*
- Carta Jugador::dejarCartaInteligente() {
+
+ /*Carta Jugador::dejarCartaInteligente() {
  map<int,int> frec;
  // Cuento las frecuencias de las cartas (por número)
  for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++) {
@@ -381,5 +363,4 @@ void Jugador::jugar() {
  }
  }
  return Carta(0,0);
- }
- */
+ }*/
