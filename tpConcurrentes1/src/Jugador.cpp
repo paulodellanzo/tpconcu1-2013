@@ -246,6 +246,9 @@ void Jugador::chancho() {
 	this->pila->escribir(miNombre, 2);
 	this->pila->liberarLock();
 	delete this->pila;
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Me agrego en la pila: ");
+	Logger::log(logMessage);
 }
 
 int Jugador::correr() {

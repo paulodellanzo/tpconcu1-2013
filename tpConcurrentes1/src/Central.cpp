@@ -170,15 +170,13 @@ int Central::correr() {
 				this->escribirJugadores(GANAR);
 
 				contarVueltas++;
-				if (contarVueltas == 2) {
+				if (contarVueltas == 3) {
 					fin = true;
 				}
+
+				//Debería recibir LISTO
 				mensajesLeidos = this->leerJugadores();
-				//Deberia leer el LISTO de los jugadores
-				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end();
-						it++) {
-//						cout << " rdy:-- " << *it;
-				}
+				Logger::log("Central - Todos los jugadores se agregaron a la pila");
 
 				//int idPerdedor = this->obtenerPerdedor();
 				//fin = this->actualizarPuntaje(idPerdedor);
@@ -207,13 +205,6 @@ int Central::correr() {
 				mensajesLeidos = this->leerJugadores();
 			}
 		}
-		/*
-		 mensajesLeidos = this->leerJugadores();
-		 for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-		 cout << "cont: " << *it;
-		 }
-		 */ //
-
 	}
 
 //	cout << "TERMINO JUEGO" << endl;
