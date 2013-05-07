@@ -3,7 +3,7 @@
 Pipe :: Pipe() {
 	int res = pipe ( this->descriptores );
 	if (res == -1) {
-	    cout << "Algo salio mal con la creacion del Pipe %s\n" << strerror(errno);
+//	    cout << "Algo salio mal con la creacion del Pipe %s\n" << strerror(errno);
 	}
 	else {
 		/*fcntl ( this->descriptors[0],F_SETFL,O_NONBLOCK );

@@ -84,7 +84,7 @@ Carta Jugador::dejarCartaRand() {
 	int n_rand = rand() % CANTIDADCARTAS;
 	int i = 0;
 
-	cout << "tipo random:"<<n_rand<<endl;
+//	cout << "tipo random:"<<n_rand<<endl;
 	list<Carta>::iterator it;
 	for(it = cartas.begin(); it != cartas.end(); it++) {
 		if (i == n_rand) {
@@ -166,7 +166,7 @@ int Jugador::leerCarta(){
 		bytesleidos = this->comJugIzquierda->leer(buffer,SIZE);
 	}
 	buffer [bytesleidos] = '\0';
-	cout << "Lei la carta:" << buffer << endl;
+//	cout << "Lei la carta:" << buffer << endl;
 	this->crearCarta(buffer);
 	return bytesleidos;
 }
@@ -200,7 +200,7 @@ void Jugador::recibirCartaRepartida(){
 			bytesleidos = this->comJugAdmin->leer(buffer,SIZE);
 		}
 		buffer [bytesleidos] = '\0';
-		cout << "Me repartieron la carta:" << buffer << endl;
+//		cout << "Me repartieron la carta:" << buffer << endl;
 		this->crearCarta(buffer);
 	}
 }
@@ -227,7 +227,7 @@ int Jugador::correr(){
 	this->primerRonda = false;
 	//string msg = this->leerMensajeCentral();
 	if (this->msg == REPARTIR){
-		cout << "salimossssss";
+//		cout << "salimossssss";
 		sleep(1);
 		//Los jugadores solo reciben cartas no reparten
 		this->recibirCartaRepartida();

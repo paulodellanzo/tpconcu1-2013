@@ -37,7 +37,7 @@ void JugadorAdministrador::enviarCarta(Comunicador* alJugadorSiguiente){
 				bytesleidos = alJugadorSiguiente->escribir((char*)mensaje.c_str(),SIZE);
 		}
 	}
-	cout << "Termine de repartir" << endl;
+//	cout << "Termine de repartir" << endl;
 }
 
 JugadorAdministrador::~JugadorAdministrador() {
@@ -65,7 +65,7 @@ int JugadorAdministrador::correr(){
 
 	//this->msg = this->leerMensajeCentral();
 	if (this->msg == REPARTIR){
-		cout << "salimosss";
+//		cout << "salimosss";
 		if (this->idJugador == 1){
 			//Soy el administrador
 			this->repartir();
