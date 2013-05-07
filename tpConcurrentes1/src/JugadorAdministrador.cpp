@@ -42,7 +42,6 @@ void JugadorAdministrador::enviarCarta(Comunicador* alJugadorSiguiente) {
 	for (int i = 0; i < 4; i++) {
 		Carta c = this->mazo->getCarta();
 		string mensaje = c.convertir();
-		//cout << c.convertir() << endl;
 		int bytesleidos = alJugadorSiguiente->escribir((char*) mensaje.c_str(),
 				SIZE);
 		while (bytesleidos < SIZE) {
@@ -51,7 +50,6 @@ void JugadorAdministrador::enviarCarta(Comunicador* alJugadorSiguiente) {
 					SIZE);
 		}
 	}
-//	cout << "Termine de repartir" << endl;
 }
 
 JugadorAdministrador::~JugadorAdministrador() {
@@ -83,7 +81,6 @@ int JugadorAdministrador::correr() {
 
 	//this->msg = this->leerMensajeCentral();
 	if (this->msg == REPARTIR) {
-//		cout << "salimosss";
 		if (this->idJugador == 1) {
 			//Soy el administrador
 			this->repartir();
@@ -142,87 +139,9 @@ void JugadorAdministrador::jugar() {
 			}
 		}
 
-		/*
-		 msg = this->leerMensajeCentral();
-		 if (msg == CONTINUAR){
-		 this->pasarCarta();
-		 this->leerCarta();
-		 this->enviarMensajeCentral(TERMINARPASAR);
-		 }
-
-		 //msg = this->leerMensajeCentral();
-		 cout << msg;
-		 if (msg == VERCARTAS){
-		 cout << "Vuelve a comenzar ronda" << endl;
-		 break;
-		 }*/
-
 	}
 
 	this->correr();
 
 }
 
-/*	//Todos avisan que tienen sus cartas para comenzar a jugar
- this->enviarMensajeCentral(REPARTIR);
-
-
-
- while (true){
- string msg = this->leerMensajeCentral();
- if(this->gane()){
- this->enviarMensajeCentral(GANAR);
- this->chancho();
- //Ignoro el mensaje de ganar porque yo ya gane
- //msg = this->leerMensajeCentral();
- //this->enviarMensajeCentral(LISTO);
- }
- else{
- this->enviarMensajeCentral(PERDER);
-
- }
-
- msg = this->leerMensajeCentral();
- if (msg == CONTINUAR){
- this->pasarCarta();
- this->leerCarta();
- this->enviarMensajeCentral(TERMINARPASAR);
- }
- else if (msg == GANAR){
- if(this->gane()){
- this->enviarMensajeCentral(LISTO);
- msg = this->leerMensajeCentral();
- }
- else if (msg == PERDER){
- this->chancho();
- this->enviarMensajeCentral(LISTO);
- msg = this->leerMensajeCentral();
- }
- }
-
-
- if (msg == FINJUEGO){
- exit(0);
- }
-
-
- msg = this->leerMensajeCentral();
- if (msg == CONTINUAR){
- this->pasarCarta();
- this->leerCarta();
- this->enviarMensajeCentral(TERMINARPASAR);
- }
-
- //msg = this->leerMensajeCentral();
- cout << msg;
- if (msg == VERCARTAS){
- cout << "Vuelve a comenzar ronda" << endl;
- break;
- }
-
- }
-
- this->correr();
-
- }
- */

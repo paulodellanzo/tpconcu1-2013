@@ -87,7 +87,6 @@ int Central::obtenerPerdedor() {
 	while (!feof(archivo)) {
 		fscanf(archivo, "%d", &x);
 	}
-//	cout << "Perdio: " << x;
 	this->pila->liberarLock();
 	delete this->pila;
 	return x;
@@ -100,7 +99,6 @@ bool Central::actualizarPuntaje(int IDJugador) {
 
 	bool perdioAlguien = false;
 	list<perdedores>::iterator it;
-//	cout << "Puntaje actual: " << endl;
 	for (it = this->puntaje.begin(); it != this->puntaje.end(); it++) {
 		if (it->idJugador == IDJugador) {
 			it->cantPerdidas++;
@@ -193,7 +191,7 @@ int Central::correr() {
 		}
 	}
 
-//	cout << "TERMINO JUEGO" << endl;
+	cout << "TERMINO JUEGO" << endl;
 	return 0;
 }
 

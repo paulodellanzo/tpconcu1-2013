@@ -17,7 +17,6 @@ Mazo::Mazo(int cantCartas) {
 	mazo = vector<Carta>();
 	for (int i = 0; i < cantCartas; i++) {
 		mazo.push_back(Carta("ES", this->itos(i)));
-		//cout << "CartaNRO:" << i << endl;
 	}
 	for (int i = 0; i < cantCartas; i++)
 		mazo.push_back(Carta("OR", this->itos(i)));

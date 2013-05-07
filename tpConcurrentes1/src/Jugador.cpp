@@ -86,7 +86,6 @@ void Jugador::tomarCarta(Carta carta) {
  */
 void Jugador::crearCarta(string cartaEnMensaje) {
 	Carta cartaNueva(cartaEnMensaje.substr(0, 2), cartaEnMensaje.substr(2, 1));
-	//cout << "Nueva:" << cartaNueva.convertir() << endl;
 	this->tomarCarta(cartaNueva);
 }
 
@@ -95,7 +94,6 @@ Carta Jugador::dejarCartaRand() {
 	int n_rand = rand() % CANTIDADCARTAS;
 	int i = 0;
 
-//	cout << "tipo random:"<<n_rand<<endl;
 	list<Carta>::iterator it;
 	for (it = cartas.begin(); it != cartas.end(); it++) {
 		if (i == n_rand) {
@@ -114,9 +112,11 @@ Carta Jugador::dejarCartaRand() {
 bool Jugador::gane() {
 	string numero = cartas.front().getNumero();
 	list<Carta>::iterator it;
-	for (it = cartas.begin(); it != cartas.end(); it++)
-		if (numero != it->getNumero())
+	for (it = cartas.begin(); it != cartas.end(); it++){
+		if (numero != it->getNumero()){
 			return false;
+		}
+	}
 	return true;
 }
 
@@ -143,8 +143,6 @@ Carta Jugador::dejarCarta() {
 void Jugador::pasarCarta() {
 	Carta c = this->dejarCarta();
 	string mensaje = c.convertir();
-	//cout << c.convertir() << endl;
-	//char* cc = (char*) "DEB";
 	int bytesleidos = this->comJugDerecha->escribir((char*) mensaje.c_str(),
 			SIZE);
 	while (bytesleidos < SIZE) {
@@ -161,12 +159,10 @@ void Jugador::pasarCarta() {
 int Jugador::leerCarta() {
 	char buffer[SIZE];
 	int bytesleidos = this->comJugIzquierda->leer(buffer, SIZE);
-	//cout << "bien" <<bytesleidos;
 	while (bytesleidos < SIZE) {
 		bytesleidos = this->comJugIzquierda->leer(buffer, SIZE);
 	}
 	buffer[bytesleidos] = '\0';
-//	cout << "Lei la carta:" << buffer << endl;
 	this->crearCarta(buffer);
 
 	string logMessage = getDescripcionJugador();
@@ -190,7 +186,6 @@ string Jugador::leerMensajeCentral() {
 
 	char buffer[SIZE];
 	int bytesleidos = this->comCentralJugador->leer(buffer, SIZE);
-	//cout << "bien" <<bytesleidos;
 	while (bytesleidos < SIZE) {
 		bytesleidos = this->comCentralJugador->leer(buffer, SIZE);
 	}
@@ -209,13 +204,10 @@ void Jugador::recibirCartaRepartida() {
 	for (int i = 0; i < 4; i++) {
 		char buffer[SIZE];
 		int bytesleidos = this->comJugAdmin->leer(buffer, SIZE);
-		//cout << "bien" <<bytesleidos;
 		while (bytesleidos < SIZE) {
-			//sleep(1);
 			bytesleidos = this->comJugAdmin->leer(buffer, SIZE);
 		}
 		buffer[bytesleidos] = '\0';
-//		cout << "Me repartieron la carta:" << buffer << endl;
 		this->crearCarta(buffer);
 
 		string logMessage = getDescripcionJugador();
@@ -311,22 +303,6 @@ void Jugador::jugar() {
 				rondaVigente = false;
 			}
 		}
-
-		/*
-		 msg = this->leerMensajeCentral();
-		 if (msg == CONTINUAR){
-		 this->pasarCarta();
-		 this->leerCarta();
-		 this->enviarMensajeCentral(TERMINARPASAR);
-		 }
-
-		 //msg = this->leerMensajeCentral();
-		 cout << msg;
-		 if (msg == VERCARTAS){
-		 cout << "Vuelve a comenzar ronda" << endl;
-		 break;
-		 }*/
-
 	}
 
 	this->correr();
