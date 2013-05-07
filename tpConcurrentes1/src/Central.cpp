@@ -6,14 +6,24 @@ Central::Central(int totalJugadores,
 	this->cantJugadores = totalJugadores;
 	this->comunicadoresHaciaJugadores = comunicadoresHaciaJugadores;
 	this->comunicadoresDesdeJugadores = comunicadoresDesdeJugadores;
+
+	Logger::log("Central - Constructor de central");
+
 	list<perdedores> puntajeAux;
 	for (int i = 1; i < totalJugadores + 1; i++) {
+
 		perdedores p;
 		p.idJugador = i;
 		p.cantPerdidas = 0;
 		puntajeAux.push_back(p);
 	}
 	this->puntaje = puntajeAux;
+
+	string mensaje = "Central - Creo la lista de perdedores con ";
+	mensaje.append(Logger::itos((int)this->puntaje.size()));
+	mensaje.append(" jugadores");
+	Logger::log(mensaje);
+
 	this->chancho = "CHANCHO";
 }
 
@@ -36,6 +46,10 @@ int Central::verificarJugadores() {
 }
 
 void Central::escribirJugadores(string mensaje) {
+	string logMessage = "Central - envío a todos el mensaje: ";
+	logMessage.append(mensaje);
+	Logger::log(logMessage);
+
 	list<Comunicador*>::iterator it;
 	for (it = this->comunicadoresHaciaJugadores.begin();
 			it != this->comunicadoresHaciaJugadores.end(); it++) {

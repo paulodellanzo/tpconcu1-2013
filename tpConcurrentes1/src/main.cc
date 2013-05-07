@@ -18,6 +18,8 @@ using namespace std;
 
 int main() {
 
+	Logger::emptyLog();
+
 	Logger::setDebug();
 
 	Logger::log("Main - Comienza el juego");
@@ -167,6 +169,7 @@ int main() {
 					string mensaje = "Main - Comienza proceso Jugador ";
 					mensaje.append(Logger::itos((*it)->idJugador));
 					Logger::log(mensaje);
+
 					(*it)->correr();
 				} else {
 					exit(0);

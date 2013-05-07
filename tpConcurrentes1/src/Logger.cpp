@@ -48,3 +48,7 @@ string Logger::itos(int number) {
 void Logger::setDebug() {
 	Logger::debug = 1;
 }
+
+void Logger::emptyLog() {
+	remove(ARCHIVOLOG);
+}

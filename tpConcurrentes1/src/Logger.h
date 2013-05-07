@@ -16,6 +16,7 @@ public:
 	~Logger();
 	static void log(string mensaje);
 	static void setDebug();
+	static void emptyLog();
 	static string itos(int num);
 
 private:

@@ -6,6 +6,7 @@
 #include "Comunicador.h"
 #include "LockFile.h"
 #include <fstream>
+#include "Logger.h"
 
 struct perdedores {
 	int idJugador;

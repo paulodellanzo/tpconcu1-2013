@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <iostream>
+#include <stdio.h>
 
 class LockFile {
 
