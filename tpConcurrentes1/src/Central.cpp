@@ -62,7 +62,7 @@ int Central::obtenerPerdedor(){
 	while(!feof(archivo)){
 		fscanf(archivo ,"%d",&x);
 	}
-	cout << "Perdio: " << x;
+//	cout << "Perdio: " << x;
 	this->pila->liberarLock();
 	delete this->pila;
 	return x;
@@ -75,7 +75,7 @@ bool Central::actualizarPuntaje(int IDJugador){
 
 	bool perdioAlguien = false;
 	list<perdedores>::iterator it;
-	cout << "Puntaje actual: " << endl;
+//	cout << "Puntaje actual: " << endl;
 	for (it = this->puntaje.begin() ; it != this->puntaje.end() ; it++){
 		if (it->idJugador == IDJugador){
 			it->cantPerdidas++;
@@ -83,7 +83,7 @@ bool Central::actualizarPuntaje(int IDJugador){
 				perdioAlguien = true;
 			}
 		}
-		cout << it->idJugador << " - " << this->chancho.substr(0,it->cantPerdidas) << endl;
+//		cout << it->idJugador << " - " << this->chancho.substr(0,it->cantPerdidas) << endl;
 	}
 	return perdioAlguien;
 }
@@ -112,7 +112,7 @@ int Central::correr(){
 
 		for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
 			//Deberia leer REP
-			cout << "repartir " << *it;
+//			cout << "repartir " << *it;
 		}
 
 		bool huboGanador = false;
@@ -128,7 +128,7 @@ int Central::correr(){
 
 			for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
 				//Lee LOS o WIN
-				cout << "---- los o win " << *it;
+//				cout << "---- los o win " << *it;
 				if ( (*it) == GANAR ){
 					huboGanador = true;
 					break;
@@ -145,7 +145,7 @@ int Central::correr(){
 				mensajesLeidos = this->leerJugadores();
 				//Deberia leer el LISTO de los jugadores
 				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-						cout << " rdy:-- " << *it;
+//						cout << " rdy:-- " << *it;
 				}
 
 				//int idPerdedor = this->obtenerPerdedor();
@@ -174,14 +174,14 @@ int Central::correr(){
 
 				mensajesLeidos = this->leerJugadores();
 				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-						cout << " Listo " << *it;
+//						cout << " Listo " << *it;
 				}
 
 				this->escribirJugadores(CONTINUAR);
 				mensajesLeidos = this->leerJugadores();
 				//Deberia leer TERMINARPASAR
 				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-						cout << "PAS  " << *it;
+//						cout << "PAS  " << *it;
 				}
 				//this->escribirJugadores(VERCARTAS);
 			}
@@ -196,7 +196,7 @@ int Central::correr(){
 
 	}
 
-	cout << "TERMINO JUEGO" << endl;
+//	cout << "TERMINO JUEGO" << endl;
 	return 0;
 }
 
