@@ -20,7 +20,7 @@ int main() {
 
 	Logger::setDebug();
 
-	Logger::log("Comienza el juego");
+	Logger::log("Main - Comienza el juego");
 
 	int cantJugadores = 2;
 	//char* jugadores[] = {(char*)"2",(char*)"3",(char*)"4",(char*)"5",(char*)"6",(char*)"7",(char*) "8"};
@@ -30,27 +30,42 @@ int main() {
 	 * Las posiciones son relativas al numero de jugador
 	 */
 
+	Logger::log("Main - Creo comunicadores central-jugadores");
 	list<Comunicador*> comunicadoresHaciaJugadores;
 	for (int i = 0; i < cantJugadores; i++) {
+		string mensaje = "Main - Creo comunicador central-jugador ";
+		mensaje.append(Logger::itos(i+1));
+		Logger::log(mensaje);
 		comunicadoresHaciaJugadores.push_back(new Comunicador());
 	}
 
 	list<Comunicador*> comunicadoresDesdeJugadores;
 	for (int i = 0; i < cantJugadores; i++) {
+		string mensaje = "Main - Creo comunicador jugador ";
+		mensaje.append(Logger::itos(i+1));
+		mensaje.append("-central");
+		Logger::log(mensaje);
 		comunicadoresDesdeJugadores.push_back(new Comunicador());
 	}
 
+	Logger::log("Main - Creo comunicador jugador admin derecha");
 	Comunicador* com3 = new Comunicador();
+	Logger::log("Main - Creo comunicador jugador admin izquierda");
 	Comunicador* com4 = new Comunicador();
 
 	list<Comunicador*> comJugAdminOtrosJug;
 	for (int i = 1; i < cantJugadores; i++) {
+		string mensaje = "Main - Creo comunicador jugador admin-jugador ";
+				mensaje.append(Logger::itos(i));
+				Logger::log(mensaje);
 		comJugAdminOtrosJug.push_back(new Comunicador());
 	}
 
+	Logger::log("Main - Creo central");
 	Central* central = new Central(cantJugadores, comunicadoresHaciaJugadores,
 			comunicadoresDesdeJugadores);
 
+	Logger::log("Main - Creo jugador admin");
 	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores,
 			comunicadoresDesdeJugadores.front(),
 			comunicadoresHaciaJugadores.front(), com3, com4);
@@ -76,6 +91,10 @@ int main() {
 	//El primer jugador es el administrador por eso empiezo en 1
 	for (int i = 2; i < cantJugadores + 1; i++) {
 
+		string mensaje = "Main - Creo comunicador jugador ";
+		mensaje.append(Logger::itos(i));
+		Logger::log(mensaje);
+
 		Jugador* jug = new Jugador();
 		jug->agregarcomJugadorCentral(*itDesdeJugadores);
 		jug->agregarcomCentralJugador(*itHaciaJugadores);
@@ -91,6 +110,7 @@ int main() {
 
 	//Prueba de 2 jugadores
 	//jAdmin->agregarcomJugDerecha(new Comunicador);
+	Logger::log("Main - Agrego a jugador 2 su comunicador a izquierda y derecha");
 	listaJugadores.front()->agregarcomJugDerecha(jAdmin->comJugIzquierda);
 	listaJugadores.front()->agregarcomJugIzquierda(jAdmin->comJugDerecha);
 	/*
@@ -121,9 +141,13 @@ int main() {
 	int pid = fork();
 	if (pid == 0) {
 
+		Logger::log("Main - Comienza proceso creador de jugadores");
+
 		pid = fork();
 
 		if (pid == 0) {
+
+			Logger::log("Main - Comienza proceso Jugador Admin");
 
 			/*jAdmin->pasarCarta();
 			 jAdmin->pasarCarta();
@@ -140,6 +164,9 @@ int main() {
 					it++) {
 				pid = fork();
 				if (pid == 0) {
+					string mensaje = "Main - Comienza proceso Jugador ";
+					mensaje.append(Logger::itos((*it)->idJugador));
+					Logger::log(mensaje);
 					(*it)->correr();
 				} else {
 					exit(0);
@@ -159,6 +186,8 @@ int main() {
 	 }
 	 */
 	else {
+
+		Logger::log("Main - Comienza proceso central");
 		//sleep(2);
 
 		/*jAdmin->leerCarta();
@@ -168,7 +197,7 @@ int main() {
 
 		central->correr();
 
-		//Logger::log("SABE");
+		Logger::log("Main - Terminó el juego, comienzo a borrar todo");
 
 		for (int i = 0; i < cantJugadores; i++)
 			wait(NULL);

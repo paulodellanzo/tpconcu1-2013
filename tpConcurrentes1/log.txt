@@ -1,0 +1,77 @@
+2013-05-06 23:35:40 :9996Comienza el juego
+2013-05-06 23:38:07 [10086] Comienza el juego
+2013-05-06 23:49:33 [pid: 10553] Main - Comienza el juego
+2013-05-06 23:49:33 [pid: 10553] Main - Creo comunicadores central-jugadores
+2013-05-06 23:49:33 [pid: 10553] Main - Creo comunicador central-jugador 1
+2013-05-06 23:49:33 [pid: 10553] Main - Creo comunicador central-jugador 2
+2013-05-06 23:49:33 [pid: 10553] Main - Creo comunicador jugador 1-central
+2013-05-06 23:49:33 [pid: 10553] Main - Creo comunicador jugador 2-central
+2013-05-06 23:52:32 [pid: 10631] Main - Comienza el juego
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicadores central-jugadores
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador central-jugador 1
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador central-jugador 2
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador jugador 1-central
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador jugador 2-central
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador jugador admin derecha
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador jugador admin izquierda
+2013-05-06 23:52:32 [pid: 10631] Main - Creo comunicador jugador admin-jugador 1
+2013-05-06 23:56:10 [pid: 10701] Main - Comienza el juego
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicadores central-jugadores
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador central-jugador 1
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador central-jugador 2
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador jugador 1-central
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador jugador 2-central
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador jugador admin derecha
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador jugador admin izquierda
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador jugador admin-jugador 1
+2013-05-06 23:56:10 [pid: 10701] Main - Creo central
+2013-05-06 23:56:10 [pid: 10701] Main - Creo jugador admin
+2013-05-06 23:56:10 [pid: 10701] Main - Creo comunicador jugador 2
+2013-05-06 23:59:26 [pid: 10776] Main - Comienza el juego
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicadores central-jugadores
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador central-jugador 1
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador central-jugador 2
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador jugador 1-central
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador jugador 2-central
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador jugador admin derecha
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador jugador admin izquierda
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador jugador admin-jugador 1
+2013-05-06 23:59:26 [pid: 10776] Main - Creo central
+2013-05-06 23:59:26 [pid: 10776] Main - Creo jugador admin
+2013-05-06 23:59:26 [pid: 10776] Main - Creo comunicador jugador 2
+2013-05-06 23:59:26 [pid: 10776] Main - Agrego a jugador 2 su comunicador a izquierda y derecha
+2013-05-06 23:59:26 [pid: 10776] Main - Comienza proceso central
+2013-05-07 00:01:04 [pid: 10837] Main - Comienza el juego
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicadores central-jugadores
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador central-jugador 1
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador central-jugador 2
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador jugador 1-central
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador jugador 2-central
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador jugador admin derecha
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador jugador admin izquierda
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador jugador admin-jugador 1
+2013-05-07 00:01:04 [pid: 10837] Main - Creo central
+2013-05-07 00:01:04 [pid: 10837] Main - Creo jugador admin
+2013-05-07 00:01:04 [pid: 10837] Main - Creo comunicador jugador 2
+2013-05-07 00:01:04 [pid: 10837] Main - Agrego a jugador 2 su comunicador a izquierda y derecha
+2013-05-07 00:01:04 [pid: 10837] Main - Comienza proceso central
+2013-05-07 00:01:04 [pid: 10843] Main - Comienza proceso Jugador Admin
+2013-05-07 00:01:16 [pid: 10837] Main - Terminó el juego, comienzo a borrar todo
+2013-05-07 00:03:21 [pid: 10901] Main - Comienza el juego
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicadores central-jugadores
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador central-jugador 1
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador central-jugador 2
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador jugador 1-central
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador jugador 2-central
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador jugador admin derecha
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador jugador admin izquierda
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador jugador admin-jugador 1
+2013-05-07 00:03:21 [pid: 10901] Main - Creo central
+2013-05-07 00:03:21 [pid: 10901] Main - Creo jugador admin
+2013-05-07 00:03:21 [pid: 10901] Main - Creo comunicador jugador 2
+2013-05-07 00:03:21 [pid: 10901] Main - Agrego a jugador 2 su comunicador a izquierda y derecha
+2013-05-07 00:03:21 [pid: 10901] Main - Comienza proceso central
+2013-05-07 00:03:21 [pid: 10906] Main - Comienza proceso creador de jugadores
+2013-05-07 00:03:21 [pid: 10907] Main - Comienza proceso Jugador Admin
+2013-05-07 00:03:21 [pid: 10908] Main - Comienza proceso Jugador 2
+2013-05-07 00:03:34 [pid: 10901] Main - Terminó el juego, comienzo a borrar todo

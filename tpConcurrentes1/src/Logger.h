@@ -16,10 +16,10 @@ public:
 	~Logger();
 	static void log(string mensaje);
 	static void setDebug();
+	static string itos(int num);
 
 private:
 	static int debug;
-	static string itos(int num);
 
 };
 

@@ -26,16 +26,17 @@ void Logger::log(string mensaje) {
 	timeinfo = localtime(&timeAux);
 	strftime(buffer, BUFFSIZE, "%F %T ", timeinfo);
 	string res = string(buffer);
-	res.append(":");
+	res.append("[pid: ");
 
 	//Escribo el PID tambien
 	string pid = itos(getpid());
 	res.append(pid);
+	res.append("] ");
 	res.append(mensaje);
 	res.append("\n");
 	lock.escribir((char*) res.c_str(), (int) res.size());
 	lock.liberarLock();
-	cout << res.c_str() << endl;
+	cout << res.c_str();
 }
 
 string Logger::itos(int number) {
