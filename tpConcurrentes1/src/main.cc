@@ -39,8 +39,6 @@ int main (){
 		comunicadoresDesdeJugadores.push_back(new Comunicador());
 	}
 
-	//Comunicador* com1 = new Comunicador();
-	//Comunicador* com2 = new Comunicador();
 	Comunicador* com3 = new Comunicador();
 	Comunicador* com4 = new Comunicador();
 
@@ -52,6 +50,7 @@ int main (){
 	Central* central = new Central(cantJugadores,comunicadoresHaciaJugadores,comunicadoresDesdeJugadores);
 
 	JugadorAdministrador* jAdmin = new JugadorAdministrador(cantJugadores, comunicadoresDesdeJugadores.front(), comunicadoresHaciaJugadores.front(), com3, com4);
+	jAdmin->setID(1);
 
 	list<Comunicador*>::iterator it;
 	for (it = comJugAdminOtrosJug.begin() ; it != comJugAdminOtrosJug.end() ; it++){
@@ -138,7 +137,6 @@ int main (){
 					(*it)->correr();
 				}
 				else{
-					cout << "adios"<< endl ;
 					exit(0);
 				}
 			}
@@ -170,20 +168,30 @@ int main (){
 		for (int i = 0; i < cantJugadores; i++)
 			wait(NULL);
 
-		//delete jAdmin;
+		list<Jugador*>::iterator it;
+		for (it = listaJugadores.begin() ; it != listaJugadores.end() ; it++){
+			delete *it;
+		}
+
+		list<Comunicador*>::iterator itBorrador;
+
+		for (itBorrador = comunicadoresHaciaJugadores.begin(); itBorrador != comunicadoresHaciaJugadores.end() ; itBorrador++){
+					delete *itBorrador;
+		}
+		for (itBorrador = comunicadoresDesdeJugadores.begin(); itBorrador != comunicadoresDesdeJugadores.end() ; itBorrador++){
+					delete *itBorrador;
+		}
+		for (itBorrador = comJugAdminOtrosJug.begin(); itBorrador != comJugAdminOtrosJug.end() ; itBorrador++){
+					delete *itBorrador;
+		}
+
+		delete com3;
+		delete com4;
+		delete jAdmin;
+
 		exit ( 0 );
 	}
 
 }
 
-int main2 () {
-
-	//pruebaJCRepartir();
-	//pruebaLogger();
-	//pruebaRondaCoordinador(4);
-	//pruebaRonda(2);
-cout << "main2" << endl;
-	return 0;
-
-}
 

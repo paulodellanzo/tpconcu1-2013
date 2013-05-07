@@ -25,7 +25,8 @@ public:
 		Comunicador* comJugIzquierda;
 		Comunicador* comJugAdmin;
 		LockFile* pila;
-
+		bool primerRonda;
+		string msg;
 
 		Jugador();
 		Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda);
@@ -47,6 +48,7 @@ public:
 		bool gane();
 		void crearCarta(string cartaEnMensaje);
 		void recibirCartaRepartida();
+		void repartir();
 		
 		int correr();
 		void chancho();

@@ -10,12 +10,14 @@
 Jugador::Jugador() {
 	cartas = list<Carta>();
 	tipo = 0;
+	this->primerRonda = true;
 	this->idJugador = 0;
 }
 
 Jugador::Jugador(Comunicador* comJugadorCentral, Comunicador* comCentralJugador, Comunicador* comJugDerecha, Comunicador* comJugIzquierda) {
 	cartas = list<Carta>();
 	tipo = 0;
+	this->primerRonda = true;
 	this->idJugador = 0;
 	this->comJugadorCentral = comJugadorCentral;
 	this->comCentralJugador = comCentralJugador;
@@ -218,11 +220,15 @@ void Jugador::chancho(){
 
 int Jugador::correr(){
 
-	this->enviarMensajeCentral(SYNCRONIZAR);
-
-	string msg = this->leerMensajeCentral();
-	if (msg == REPARTIR){
+	if (this->primerRonda){
+		this->msg = this->leerMensajeCentral();
+		//this->enviarMensajeCentral(SYNCRONIZAR);
+	}
+	this->primerRonda = false;
+	//string msg = this->leerMensajeCentral();
+	if (this->msg == REPARTIR){
 		cout << "salimossssss";
+		sleep(1);
 		//Los jugadores solo reciben cartas no reparten
 		this->recibirCartaRepartida();
 		this->jugar();
@@ -239,9 +245,10 @@ void Jugador::jugar(){
 	//Todos avisan que tienen sus cartas para comenzar a jugar
 	this->enviarMensajeCentral(REPARTIR);
 
-	string msg = this->leerMensajeCentral();
+	//deberia leer VER
+	this->msg = this->leerMensajeCentral();
 
-	while (msg == VERCARTAS){
+	while (true){
 		if(this->gane()){
 			this->enviarMensajeCentral(GANAR);
 			this->chancho();
@@ -254,26 +261,46 @@ void Jugador::jugar(){
 
 		}
 
-		msg = this->leerMensajeCentral();
-			if (msg == CONTINUAR){
-				this->pasarCarta();
-				this->leerCarta();
-				this->enviarMensajeCentral(TERMINARPASAR);
-			}
-			else if (msg == GANAR){
+		this->msg = this->leerMensajeCentral();
+
+		if (this->msg == PERDER){
+			this->enviarMensajeCentral(LISTO);
+			this->msg = this->leerMensajeCentral();
+
+			if (this->msg == CONTINUAR){
+					this->pasarCarta();
+					this->leerCarta();
+					this->enviarMensajeCentral(TERMINARPASAR);
+					this->msg = this->leerMensajeCentral();
+				}
+		}
+		else if (this->msg == GANAR){
 				if(this->gane()){
 					this->enviarMensajeCentral(LISTO);
+					this->msg = this->leerMensajeCentral();
 				}
 				else{
 					this->chancho();
 					this->enviarMensajeCentral(LISTO);
+					this->msg = this->leerMensajeCentral();
+				}
+
+
+
+				if (this->msg == FINJUEGO){
+						exit(0);
+					}
+				//Me mando repartir ahora lo sincronizo
+				else{
+					this->msg = this->leerMensajeCentral();
+					if (this->msg == SYNCRONIZAR){
+						this->enviarMensajeCentral(SYNCRONIZAR);
+					}
 				}
 			}
 
-		msg = this->leerMensajeCentral();
-		if (msg == FINJUEGO){
-			exit(0);
-		}
+
+
 
 /*
 		msg = this->leerMensajeCentral();
@@ -281,13 +308,14 @@ void Jugador::jugar(){
 			this->pasarCarta();
 			this->leerCarta();
 			this->enviarMensajeCentral(TERMINARPASAR);
-		}*/
+		}
 
 		//msg = this->leerMensajeCentral();
 		cout << msg;
 		if (msg == VERCARTAS){
 			cout << "Vuelve a comenzar ronda" << endl;
-		}
+			break;
+		}*/
 
 	}
 

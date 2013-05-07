@@ -94,28 +94,31 @@ int Central::correr(){
 
 	//Comienzo todo con REPARTIR
 
-	list<string> mensajesLeidos = this->leerJugadores();
+	//list<string> mensajesLeidos = this->leerJugadores();
 
 	bool fin = false;
 
 	int contarVueltas = 1;
 
+	list<string> mensajesLeidos;
 	while(!fin){
-		this->escribirJugadores(REPARTIR);
 
-		list<string> mensajesLeidos = this->leerJugadores();
+		if (contarVueltas == 1){
+			this->escribirJugadores(REPARTIR);
+		}
+
+		mensajesLeidos = this->leerJugadores();
 		list<string>::iterator it;
 
 		for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-			cout << "lei: " << *it;
+			//Deberia leer REP
+			cout << "repartir " << *it;
 		}
-
-
 
 		bool huboGanador = false;
 		while (!huboGanador){
 
-			sleep(0.1);
+			//sleep(1);
 
 			//Hago que lean sus cartas y me avisen si ganaron o no
 			this->escribirJugadores(VERCARTAS);
@@ -124,39 +127,60 @@ int Central::correr(){
 			//int nroJugador = 1;
 
 			for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-				cout << "lei:-- " << *it;
+				//Lee LOS o WIN
+				cout << "---- los o win " << *it;
 				if ( (*it) == GANAR ){
 					huboGanador = true;
+					break;
 				}
 			}
 
 			if (huboGanador){
 				this->escribirJugadores(GANAR);
-				int idPerdedor = this->obtenerPerdedor();
-				fin = this->actualizarPuntaje(idPerdedor);
 
 				contarVueltas++;
-				if (contarVueltas == 2){
+				if (contarVueltas == 3){
 					fin = true;
 				}
 				mensajesLeidos = this->leerJugadores();
 				//Deberia leer el LISTO de los jugadores
 				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-						cout << "L:--- " << *it;
+						cout << " rdy:-- " << *it;
 				}
+
+				//int idPerdedor = this->obtenerPerdedor();
+				//fin = this->actualizarPuntaje(idPerdedor);
+
 				if (fin){
 					this->escribirJugadores(FINJUEGO);
+
+					break;
+
 				}
 				else{
 					this->escribirJugadores(REPARTIR);
+//					mensajesLeidos = this->leerJugadores();
+//					for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
+//							cout << " Sincronizo " << *it;
+//					}break;
+
 				}
 			}
 			//Todos escribieron que perdieron
 			else {
-				this->escribirJugadores(CONTINUAR);
+
+				this->escribirJugadores(PERDER);
+
 				mensajesLeidos = this->leerJugadores();
 				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-						cout << "Lee:--- " << *it;
+						cout << " Listo " << *it;
+				}
+
+				this->escribirJugadores(CONTINUAR);
+				mensajesLeidos = this->leerJugadores();
+				//Deberia leer TERMINARPASAR
+				for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
+						cout << "PAS  " << *it;
 				}
 				//this->escribirJugadores(VERCARTAS);
 			}
@@ -166,12 +190,12 @@ int Central::correr(){
 		for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
 				cout << "cont: " << *it;
 		}
-*/
+*///
 
 
 	}
 
-
+	cout << "TERMINO JUEGO" << endl;
 	return 0;
 }
 

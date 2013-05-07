@@ -19,6 +19,7 @@ class JugadorAdministrador : public Jugador {
 		void repartir();
 		void enviarCarta(Comunicador* alJugadorSiguiente);
 		int correr();
+		void jugar();
 		
 };
 		
