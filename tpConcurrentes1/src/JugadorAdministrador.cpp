@@ -72,10 +72,7 @@ void JugadorAdministrador::agregarComunicacionJugador(
 
 int JugadorAdministrador::correr() {
 
-	if (this->primerRonda) {
-		this->msg = this->leerMensajeCentral();
-		//this->enviarMensajeCentral(SYNCRONIZAR);
-	}
+	this->msg = this->leerMensajeCentral();
 	this->primerRonda = false;
 
 	//this->msg = this->leerMensajeCentral();
@@ -99,7 +96,9 @@ void JugadorAdministrador::jugar() {
 	this->msg = this->leerMensajeCentral();
 	assert(this->msg == VERCARTAS);
 
-	while (true) {
+	bool rondaVigente = true;
+
+	while (rondaVigente) {
 		if (this->gane()) {
 			this->enviarMensajeCentral(GANAR);
 			this->chancho();
@@ -132,12 +131,8 @@ void JugadorAdministrador::jugar() {
 			if (this->msg == FINJUEGO) {
 				exit(0);
 			}
-			//Me mando repartir ahora lo sincronizo
 			else {
-				this->msg = this->leerMensajeCentral();
-				if (this->msg == SYNCRONIZAR) {
-					this->enviarMensajeCentral(SYNCRONIZAR);
-				}
+				rondaVigente = false;
 			}
 		}
 

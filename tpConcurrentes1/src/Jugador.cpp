@@ -261,10 +261,11 @@ void Jugador::chancho() {
 
 int Jugador::correr() {
 
-	if (this->primerRonda) {
-		this->msg = this->leerMensajeCentral();
-		//this->enviarMensajeCentral(SYNCRONIZAR);
-	}
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Comienza la ronda");
+	Logger::log(logMessage);
+
+	this->msg = this->leerMensajeCentral();
 	this->primerRonda = false;
 	//string msg = this->leerMensajeCentral();
 	if (this->msg == REPARTIR) {
@@ -287,7 +288,9 @@ void Jugador::jugar() {
 	this->msg = this->leerMensajeCentral();
 	assert(this->msg == VERCARTAS);
 
-	while (true) {
+	bool rondaVigente = true;
+
+	while (rondaVigente) {
 		if (this->gane()) {
 			this->enviarMensajeCentral(GANAR);
 			this->chancho();
@@ -321,10 +324,7 @@ void Jugador::jugar() {
 			}
 			//Me mando repartir ahora lo sincronizo
 			else {
-				this->msg = this->leerMensajeCentral();
-				if (this->msg == SYNCRONIZAR) {
-					this->enviarMensajeCentral(SYNCRONIZAR);
-				}
+				rondaVigente = false;
 			}
 		}
 
