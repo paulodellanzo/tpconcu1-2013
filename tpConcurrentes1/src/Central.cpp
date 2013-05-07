@@ -139,7 +139,7 @@ int Central::correr(){
 				this->escribirJugadores(GANAR);
 
 				contarVueltas++;
-				if (contarVueltas == 3){
+				if (contarVueltas == 2){
 					fin = true;
 				}
 				mensajesLeidos = this->leerJugadores();
@@ -152,6 +152,7 @@ int Central::correr(){
 				//fin = this->actualizarPuntaje(idPerdedor);
 
 				if (fin){
+
 					this->escribirJugadores(FINJUEGO);
 
 					break;
