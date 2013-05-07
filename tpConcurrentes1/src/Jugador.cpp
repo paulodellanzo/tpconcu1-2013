@@ -262,8 +262,8 @@ void Jugador::jugar() {
 	//Todos avisan que tienen sus cartas para comenzar a jugar
 	this->enviarMensajeCentral(RECIBI);
 
-	//deberia leer VER
 	this->msg = this->leerMensajeCentral();
+	assert(this->msg == VERCARTAS);
 
 	while (true) {
 		if (this->gane()) {

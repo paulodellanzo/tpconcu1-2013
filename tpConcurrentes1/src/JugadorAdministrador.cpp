@@ -22,7 +22,15 @@ void JugadorAdministrador::repartir() {
 	this->mazo->barajar();
 	list<Comunicador*>::iterator it;
 	for (int i = 0; i < 4; i++) {
-		this->tomarCarta(this->mazo->getCarta());
+		Carta carta = this->mazo->getCarta();
+
+		string logMessage = getDescripcionJugador();
+		logMessage.append(" - Tomo carta: ");
+		logMessage.append(carta.getPalo());
+		logMessage.append(carta.getNumero());
+		Logger::log(logMessage);
+
+		this->tomarCarta(carta);
 	}
 	for (it = this->comunicadorJugadores.begin();
 			it != this->comunicadorJugadores.end(); it++) {
@@ -88,8 +96,8 @@ void JugadorAdministrador::jugar() {
 	//Todos avisan que tienen sus cartas para comenzar a jugar
 	this->enviarMensajeCentral(RECIBI);
 
-	//deberia leer VER
 	this->msg = this->leerMensajeCentral();
+	assert(this->msg == VERCARTAS);
 
 	while (true) {
 		if (this->gane()) {

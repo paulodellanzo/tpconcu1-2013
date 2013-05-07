@@ -149,19 +149,24 @@ int Central::correr() {
 			this->escribirJugadores(VERCARTAS);
 			mensajesLeidos = this->leerJugadores();
 
-			//int nroJugador = 1;
+			Logger::log("Central - Me fijo si alguien ganó");
 
 			for (it = mensajesLeidos.begin(); it != mensajesLeidos.end();
 					it++) {
-				//Lee LOS o WIN
-//				cout << "---- los o win " << *it;
+
 				if ((*it) == GANAR) {
+
+					Logger::log("Central - Ganó un jugador");
+
 					huboGanador = true;
 					break;
 				}
 			}
 
 			if (huboGanador) {
+
+				Logger::log("Central - Aviso que ganó alguien");
+
 				this->escribirJugadores(GANAR);
 
 				contarVueltas++;

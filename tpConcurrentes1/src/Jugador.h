@@ -3,6 +3,7 @@
 
 #include <list>
 #include <string>
+#include <assert.h>
 #include "Carta.h"
 #include "Comunicador.h"
 #include "LockFile.h"
