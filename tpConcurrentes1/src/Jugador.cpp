@@ -36,6 +36,12 @@ Jugador::~Jugador() {
 	}
 }
 
+string Jugador::getDescripcionJugador() {
+	stringstream salida;
+	salida << "Jugador " << this->idJugador;
+	return salida.str();
+}
+
 void Jugador::agregarJugAdmin(Comunicador* comJugAdmin) {
 	this->comJugAdmin = comJugAdmin;
 }
@@ -189,7 +195,8 @@ string Jugador::leerMensajeCentral() {
 	}
 	buffer[bytesleidos] = '\0';
 
-	string logMessage = "Jugador - Recibo de central: ";
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Recibo de central: ");
 	logMessage.append(buffer);
 	Logger::log(logMessage);
 
@@ -210,7 +217,8 @@ void Jugador::recibirCartaRepartida() {
 //		cout << "Me repartieron la carta:" << buffer << endl;
 		this->crearCarta(buffer);
 
-		string logMessage = "Jugador - Recibo carta: ";
+		string logMessage = getDescripcionJugador();
+		logMessage.append(" - Recibo carta: ");
 		logMessage.append(buffer);
 		Logger::log(logMessage);
 	}

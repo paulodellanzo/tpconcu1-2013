@@ -55,6 +55,9 @@ public:
 	void chancho();
 	void jugar();
 
+protected:
+	string getDescripcionJugador();
+
 };
 
 #endif /* JUGADOR_H_ */
