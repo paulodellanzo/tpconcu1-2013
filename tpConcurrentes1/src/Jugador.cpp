@@ -265,7 +265,9 @@ int Jugador::correr() {
 	logMessage.append(" - Comienza la ronda");
 	Logger::log(logMessage);
 
-	this->msg = this->leerMensajeCentral();
+	if (this->primerRonda) {
+		this->msg = this->leerMensajeCentral();
+	}
 	this->primerRonda = false;
 	//string msg = this->leerMensajeCentral();
 	if (this->msg == REPARTIR) {

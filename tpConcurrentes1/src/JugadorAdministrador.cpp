@@ -72,7 +72,13 @@ void JugadorAdministrador::agregarComunicacionJugador(
 
 int JugadorAdministrador::correr() {
 
-	this->msg = this->leerMensajeCentral();
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Comienza la ronda");
+	Logger::log(logMessage);
+
+	if (this->primerRonda) {
+		this->msg = this->leerMensajeCentral();
+	}
 	this->primerRonda = false;
 
 	//this->msg = this->leerMensajeCentral();

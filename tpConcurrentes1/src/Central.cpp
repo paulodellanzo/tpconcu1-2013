@@ -108,7 +108,9 @@ bool Central::actualizarPuntaje(int IDJugador) {
 				perdioAlguien = true;
 			}
 		}
-//		cout << it->idJugador << " - " << this->chancho.substr(0,it->cantPerdidas) << endl;
+	stringstream salida;
+	salida << it->idJugador << " - " << this->chancho.substr(0,it->cantPerdidas) << endl;
+	Logger::log(salida.str());
 	}
 	return perdioAlguien;
 }
@@ -123,16 +125,12 @@ int Central::correr() {
 
 	bool fin = false;
 
-	int contarVueltas = 1;
-
 	list<string> mensajesLeidos;
 	while (!fin) {
 
 		Logger::log("Central - Comienza una ronda nueva");
 
-		if (contarVueltas == 1) {
-			this->escribirJugadores(REPARTIR);
-		}
+		this->escribirJugadores(REPARTIR);
 
 		mensajesLeidos = this->leerJugadores();
 		list<string>::iterator it;
@@ -169,30 +167,18 @@ int Central::correr() {
 
 				this->escribirJugadores(GANAR);
 
-				contarVueltas++;
-				if (contarVueltas == 3) {
-					fin = true;
-				}
-
 				//Debería recibir LISTO
 				mensajesLeidos = this->leerJugadores();
 				Logger::log("Central - Todos los jugadores se agregaron a la pila");
 
-				//int idPerdedor = this->obtenerPerdedor();
-				//fin = this->actualizarPuntaje(idPerdedor);
+				int idPerdedor = this->obtenerPerdedor();
+				fin = this->actualizarPuntaje(idPerdedor);
 
 				if (fin) {
 
 					this->escribirJugadores(FINJUEGO);
 
 					break;
-
-				} else {
-					this->escribirJugadores(REPARTIR);
-//					mensajesLeidos = this->leerJugadores();
-//					for (it = mensajesLeidos.begin(); it != mensajesLeidos.end(); it++){
-//							cout << " Sincronizo " << *it;
-//					}break;
 
 				}
 			}
