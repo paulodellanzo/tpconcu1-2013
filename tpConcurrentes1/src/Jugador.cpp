@@ -113,6 +113,10 @@ Carta Jugador::dejarCartaRand() {
  */
 bool Jugador::gane() {
 
+	if (this->idJugador==1) {
+		return true;
+	}
+
 	string numero = cartas.front().getNumero();
 	list<Carta>::iterator it;
 	for (it = cartas.begin(); it != cartas.end(); it++)
@@ -251,7 +255,7 @@ void Jugador::chancho() {
 	this->pila->liberarLock();
 	delete this->pila;
 	string logMessage = getDescripcionJugador();
-	logMessage.append(" - Me agrego en la pila: ");
+	logMessage.append(" - Me agrego en la pila");
 	Logger::log(logMessage);
 }
 

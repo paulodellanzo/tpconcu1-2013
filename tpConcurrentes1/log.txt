@@ -1,78 +1,87 @@
-2013-05-07 02:36:44 [pid: 14084] Main - Comienza el juego
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicadores central-jugadores
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador central-jugador 1
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador central-jugador 2
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador central-jugador 3
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador central-jugador 4
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 1-central
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 2-central
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 3-central
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 4-central
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador admin-jugador 1
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador admin-jugador 2
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador admin-jugador 3
-2013-05-07 02:36:44 [pid: 14084] Main - Creo central
-2013-05-07 02:36:44 [pid: 14084] Central - Constructor de central
-2013-05-07 02:36:44 [pid: 14084] Central - Creo la lista de perdedores con 4 jugadores
-2013-05-07 02:36:44 [pid: 14084] Main - Creo jugador admin
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 2
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 3
-2013-05-07 02:36:44 [pid: 14084] Main - Creo comunicador jugador 4
-2013-05-07 02:36:44 [pid: 14084] Main - Agrego a jugador 2 su comunicador a izquierda y derecha
-2013-05-07 02:36:44 [pid: 14084] Main - Comienza proceso central
-2013-05-07 02:36:44 [pid: 14089] Main - Comienza proceso creador de jugadores
-2013-05-07 02:36:44 [pid: 14084] Central - Comienza una ronda nueva
-2013-05-07 02:36:44 [pid: 14084] Central - envío a todos el mensaje: REP
-2013-05-07 02:36:44 [pid: 14090] Main - Comienza proceso Jugador Admin
-2013-05-07 02:36:44 [pid: 14091] Main - Comienza proceso Jugador 2
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Recibo de central: REP
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo de central: REP
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Tomo carta: ES1
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Tomo carta: CO3
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Tomo carta: BA2
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Tomo carta: OR3
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo carta: OR0
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: REC
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo carta: ES3
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo carta: ES0
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo carta: CO0
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: REC
-2013-05-07 02:36:44 [pid: 14093] Main - Comienza proceso Jugador 4
-2013-05-07 02:36:44 [pid: 14092] Main - Comienza proceso Jugador 3
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo de central: REP
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo de central: REP
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo carta: ES2
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo carta: CO1
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo carta: BA3
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo carta: BA0
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo carta: OR1
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo carta: CO2
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo carta: BA1
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo carta: OR2
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: REC
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: REC
-2013-05-07 02:36:44 [pid: 14084] Central - Comienza una transferencia de cartas
-2013-05-07 02:36:44 [pid: 14084] Central - envío a todos el mensaje: VER
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Recibo de central: VER
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo de central: VER
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: LOS
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo de central: VER
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: LOS
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo de central: VER
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: LOS
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: LOS
-2013-05-07 02:36:44 [pid: 14084] Central - Me fijo si alguien ganó
-2013-05-07 02:36:44 [pid: 14084] Central - envío a todos el mensaje: DER
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Recibo de central: DER
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Recibo de central: DER
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Pasé carta a la derecha: ES3
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Pasé carta a la derecha: CO3
-2013-05-07 02:36:44 [pid: 14091] Jugador 2 - Me pasaron carta: CO3
-2013-05-07 02:36:44 [pid: 14090] Jugador 1 - Me pasaron carta: ES3
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Recibo de central: DER
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: PAS
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Pasé carta a la derecha: BA0
-2013-05-07 02:36:44 [pid: 14084] Central - Recibo de jugador: PAS
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Recibo de central: DER
-2013-05-07 02:36:44 [pid: 14092] Jugador 3 - Pasé carta a la derecha: OR2
-2013-05-07 02:36:44 [pid: 14093] Jugador 4 - Me pasaron carta: OR2
+2013-05-07 02:42:23 [pid: 14221] Main - Comienza el juego
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicadores central-jugadores
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador central-jugador 1
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador central-jugador 2
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador central-jugador 3
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador central-jugador 4
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 1-central
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 2-central
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 3-central
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 4-central
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador admin-jugador 1
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador admin-jugador 2
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador admin-jugador 3
+2013-05-07 02:42:23 [pid: 14221] Main - Creo central
+2013-05-07 02:42:23 [pid: 14221] Central - Constructor de central
+2013-05-07 02:42:23 [pid: 14221] Central - Creo la lista de perdedores con 4 jugadores
+2013-05-07 02:42:23 [pid: 14221] Main - Creo jugador admin
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 2
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 3
+2013-05-07 02:42:23 [pid: 14221] Main - Creo comunicador jugador 4
+2013-05-07 02:42:23 [pid: 14221] Main - Comienza proceso central
+2013-05-07 02:42:23 [pid: 14221] Central - Comienza una ronda nueva
+2013-05-07 02:42:23 [pid: 14226] Main - Comienza proceso creador de jugadores
+2013-05-07 02:42:23 [pid: 14221] Central - envío a todos el mensaje: REP
+2013-05-07 02:42:23 [pid: 14227] Main - Comienza proceso Jugador Admin
+2013-05-07 02:42:23 [pid: 14228] Main - Comienza proceso Jugador 2
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Recibo de central: REP
+2013-05-07 02:42:23 [pid: 14230] Main - Comienza proceso Jugador 4
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo de central: REP
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo de central: REP
+2013-05-07 02:42:23 [pid: 14229] Main - Comienza proceso Jugador 3
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Tomo carta: OR1
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Tomo carta: CO3
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Tomo carta: BA2
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Tomo carta: OR3
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo carta: ES2
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo carta: CO2
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo carta: CO1
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo carta: ES3
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo carta: BA3
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo de central: REP
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo carta: ES0
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo carta: BA1
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo carta: OR2
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: REC
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: REC
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo carta: CO0
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo carta: ES1
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo carta: BA0
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo carta: OR0
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: REC
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: REC
+2013-05-07 02:42:23 [pid: 14221] Central - Comienza una transferencia de cartas
+2013-05-07 02:42:23 [pid: 14221] Central - envío a todos el mensaje: VER
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo de central: VER
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo de central: VER
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Recibo de central: VER
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo de central: VER
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: WIN
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: LOS
+2013-05-07 02:42:23 [pid: 14227] Jugador 1 - Me agrego en la pila: 
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: LOS
+2013-05-07 02:42:23 [pid: 14221] Central - Recibo de jugador: LOS
+2013-05-07 02:42:23 [pid: 14221] Central - Me fijo si alguien ganó
+2013-05-07 02:42:23 [pid: 14221] Central - Ganó un jugador
+2013-05-07 02:42:23 [pid: 14221] Central - Aviso que ganó alguien
+2013-05-07 02:42:23 [pid: 14221] Central - envío a todos el mensaje: WIN
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Recibo de central: WIN
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Recibo de central: WIN
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Recibo de central: WIN
+2013-05-07 02:42:23 [pid: 14228] Jugador 2 - Me agrego en la pila: 
+2013-05-07 02:42:23 [pid: 14229] Jugador 3 - Me agrego en la pila: 
+2013-05-07 02:42:23 [pid: 14230] Jugador 4 - Me agrego en la pila: 
+2013-05-07 02:42:25 [pid: 14227] Jugador 1 - Recibo de central: WIN
+2013-05-07 02:42:25 [pid: 14221] Central - Recibo de jugador: RDY
+2013-05-07 02:42:25 [pid: 14221] Central - Recibo de jugador: RDY
+2013-05-07 02:42:25 [pid: 14221] Central - Recibo de jugador: RDY
+2013-05-07 02:42:25 [pid: 14221] Central - Recibo de jugador: RDY
+2013-05-07 02:42:25 [pid: 14221] Central - Todos los jugadores se agregaron a la pila
+2013-05-07 02:42:25 [pid: 14221] Central - envío a todos el mensaje: REP
+2013-05-07 02:42:25 [pid: 14221] Central - Comienza una ronda nueva
+2013-05-07 02:42:25 [pid: 14227] Jugador 1 - Recibo de central: REP
+2013-05-07 02:42:25 [pid: 14230] Jugador 4 - Recibo de central: REP
+2013-05-07 02:42:25 [pid: 14229] Jugador 3 - Recibo de central: REP
+2013-05-07 02:42:25 [pid: 14227] Jugador 1 - Me agrego en la pila: 
+2013-05-07 02:42:25 [pid: 14221] Central - Recibo de jugador: WIN
+2013-05-07 02:42:25 [pid: 14228] Jugador 2 - Recibo de central: REP

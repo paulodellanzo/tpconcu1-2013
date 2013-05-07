@@ -134,7 +134,7 @@ void JugadorAdministrador::jugar() {
 			}
 			//Me mando repartir ahora lo sincronizo
 			else {
-				//this->msg = this->leerMensajeCentral();
+				this->msg = this->leerMensajeCentral();
 				if (this->msg == SYNCRONIZAR) {
 					this->enviarMensajeCentral(SYNCRONIZAR);
 				}

@@ -125,9 +125,9 @@ int main() {
 
 	//Prueba de 2 jugadores
 	//jAdmin->agregarcomJugDerecha(new Comunicador);
-	Logger::log("Main - Agrego a jugador 2 su comunicador a izquierda y derecha");
-	listaJugadores.front()->agregarcomJugDerecha(jAdmin->comJugIzquierda);
-	listaJugadores.front()->agregarcomJugIzquierda(jAdmin->comJugDerecha);
+//	Logger::log("Main - Agrego a jugador 2 su comunicador a izquierda y derecha");
+//	listaJugadores.front()->agregarcomJugDerecha(jAdmin->comJugIzquierda);
+//	listaJugadores.front()->agregarcomJugIzquierda(jAdmin->comJugDerecha);
 	/*
 	 Mazo* m = new Mazo(cantJugadores);
 	 m->barajar();
