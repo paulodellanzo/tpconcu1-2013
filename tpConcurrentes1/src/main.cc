@@ -91,7 +91,6 @@ int main() {
 	//itAdmin++;
 
 	Jugador* jugadorAnterior = jAdmin;
-	Jugador* jug;
 	//El primer jugador es el administrador por eso empiezo en 1
 	for (int i = 2; i < cantJugadores + 1; i++) {
 
@@ -99,7 +98,7 @@ int main() {
 		mensaje.append(Logger::itos(i));
 		Logger::log(mensaje);
 
-		jug = new Jugador();
+		Jugador* jug = new Jugador();
 		jug->agregarcomJugadorCentral(*itDesdeJugadores);
 		jug->agregarcomCentralJugador(*itHaciaJugadores);
 		jug->agregarJugAdmin(*itAdmin);
@@ -121,7 +120,7 @@ int main() {
 
 	//El ultimo con el primero y el primero con el último
 	Comunicador* comAux = new Comunicador();
-	jug->agregarcomJugDerecha(comAux);
+	listaJugadores.back()->agregarcomJugDerecha(comAux);
 	jAdmin->agregarcomJugIzquierda(comAux);
 
 	//Prueba de 2 jugadores
