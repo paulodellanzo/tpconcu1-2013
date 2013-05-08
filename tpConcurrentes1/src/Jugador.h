@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 #include <assert.h>
+#include <limits>
 #include "Carta.h"
 #include "Comunicador.h"
 #include "LockFile.h"
@@ -18,7 +19,7 @@ public:
 	list<Carta> cartas;
 	int tipo;
 	int cantJugadores;
-	Carta dejarCartaRand();
+//	Carta dejarCartaRand();
 	//Carta dejarCartaInteligente();
 	Comunicador* comJugadorCentral;
 	Comunicador* comCentralJugador;

@@ -89,22 +89,22 @@ void Jugador::crearCarta(string cartaEnMensaje) {
 	this->tomarCarta(cartaNueva);
 }
 
-Carta Jugador::dejarCartaRand() {
-	srand(time(NULL));
-	int n_rand = rand() % CANTIDADCARTAS;
-	int i = 0;
-
-	list<Carta>::iterator it;
-	for (it = cartas.begin(); it != cartas.end(); it++) {
-		if (i == n_rand) {
-			Carta aux = *it;
-			cartas.erase(it);
-			return aux;
-		}
-		i++;
-	}
-	return Carta("00", "0");
-}
+//Carta Jugador::dejarCartaRand() {
+//	srand(time(NULL));
+//	int n_rand = rand() % CANTIDADCARTAS;
+//	int i = 0;
+//
+//	list<Carta>::iterator it;
+//	for (it = cartas.begin(); it != cartas.end(); it++) {
+//		if (i == n_rand) {
+//			Carta aux = *it;
+//			cartas.erase(it);
+//			return aux;
+//		}
+//		i++;
+//	}
+//	return Carta("00", "0");
+//}
 
 /*
  * Determina si el jugador gano si y solo si tiene todas sus cartas tienen el mismo numero
@@ -123,24 +123,74 @@ bool Jugador::gane() {
 //Deja una carta
 Carta Jugador::dejarCarta() {
 	srand(11 * getpid() * time(NULL));
-	int n_rand = rand() % 5;
 
-	if (n_rand == 0) {
-		//return dejarCartaRand();
-		Carta carta = this->cartas.front();
-		this->cartas.pop_front();
-		return carta;
-	} else {
-		list<Carta>::iterator it = this->cartas.begin();
-		it++;
-		Carta carta = *it;
-		this->cartas.erase(it);
-		return carta;
+	map<string,int> cantNumero;
+	list<Carta>::iterator it;
+	for (it = cartas.begin(); it != cartas.end(); it++){
+		string numeroCarta = it->getNumero();
+		if (cantNumero[numeroCarta]) {
+			cantNumero[numeroCarta] += 1;
+		} else {
+			cantNumero[numeroCarta] = 1;
+		}
 	}
 
+	list<string> numCartaMinimos;
+
+	int minimo = std::numeric_limits<int>::max();
+	for (map<string,int>::iterator it = cantNumero.begin(); it != cantNumero.end(); it++) {
+		if (it->second < minimo) {
+			minimo = it->second;
+			numCartaMinimos.clear();
+			numCartaMinimos.push_back(it->first);
+		} else if (it->second == minimo) {
+			numCartaMinimos.push_back(it->first);
+		}
+	}
+
+	list<Carta> cartasMinimas;
+	for (it = cartas.begin(); it != cartas.end(); it++){
+		for(list<string>::iterator itNumero = numCartaMinimos.begin(); itNumero != numCartaMinimos.end(); itNumero++) {
+			if((it->getNumero()) == (*itNumero)) {
+				cartasMinimas.push_back((*it));
+			}
+		}
+	}
+
+	int numeroCarta = rand() % (cartasMinimas.size());
+
+	int contador = 0;
+	Carta carta("","");
+	for (it = cartasMinimas.begin(); it != cartasMinimas.end(); it++){
+		if(contador==numeroCarta) {
+			carta = (*it);
+		}
+		contador++;
+	}
+
+	for (it = cartas.begin(); it != cartas.end(); it++){
+		if(it->convertir() == carta.convertir()) {
+			cartas.erase(it);
+			break;
+		}
+	}
+
+	return carta;
 }
 
 void Jugador::pasarCarta() {
+
+	string logMessage = getDescripcionJugador();
+	logMessage.append(" - Cantidad de cartas: ");
+	logMessage.append(Logger::itos((int)this->cartas.size()));
+	logMessage.append(" - [ ");
+	for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++){
+		logMessage.append(it->convertir());
+		logMessage.append(" ");
+	}
+	logMessage.append("]");
+	Logger::log(logMessage);
+
 	Carta c = this->dejarCarta();
 	string mensaje = c.convertir();
 	int bytesleidos = this->comJugDerecha->escribir((char*) mensaje.c_str(),
@@ -150,9 +200,18 @@ void Jugador::pasarCarta() {
 				SIZE);
 	}
 
-	string logMessage = getDescripcionJugador();
+	logMessage = getDescripcionJugador();
 	logMessage.append(" - Pasé carta a la derecha: ");
 	logMessage.append(mensaje);
+	Logger::log(logMessage);
+
+	logMessage = getDescripcionJugador();
+	logMessage.append(" - Me quedaron: [ ");
+	for (list<Carta>::iterator it = cartas.begin(); it != cartas.end(); it++){
+		logMessage.append(it->convertir());
+		logMessage.append(" ");
+	}
+	logMessage.append("]");
 	Logger::log(logMessage);
 }
 
