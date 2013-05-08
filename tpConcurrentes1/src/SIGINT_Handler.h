@@ -26,6 +26,10 @@ public:
 		return 0;
 	}
 
+	void restaurar(){
+		this->gracefulQuit = 1;
+	}
+
 	sig_atomic_t getGracefulQuit() {
 		return this->gracefulQuit;
 	}

@@ -7,6 +7,8 @@
 #include "LockFile.h"
 #include <fstream>
 #include "Logger.h"
+#include "SIGINT_Handler.h"
+#include "SignalHandler.h"
 
 struct perdedores {
 	int idJugador;
@@ -25,12 +27,10 @@ private:
 	list<perdedores> puntaje;
 	string chancho;
 	LockFile* pila;
+	SIGINT_Handler sigint_handler;
 
-	int verificarJugadores();
 	void escribirJugadores(string mensaje);
 	list<string> leerJugadores();
-
-	//Mensajes* protocolo = Mensajes::getInstance();
 
 public:
 	Central(int totalJugadores,
@@ -40,6 +40,7 @@ public:
 	bool actualizarPuntaje(int IDJugador);
 	int obtenerPerdedor();
 	int correr();
+	void mostrarPuntaje();
 
 };
 

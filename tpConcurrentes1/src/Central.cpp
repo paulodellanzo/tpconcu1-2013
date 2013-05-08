@@ -24,6 +24,12 @@ Central::Central(int totalJugadores,
 	mensaje.append(" jugadores");
 	Logger::log(mensaje);
 
+	/*
+	 * Registro la senial sigint
+	 */
+	SignalHandler* sigh = SignalHandler :: getInstance();
+	sigh->registrarHandler ( SIGINT,&sigint_handler );
+
 	this->chancho = "CHANCHO";
 }
 
@@ -40,10 +46,6 @@ Central::~Central() {
 
 }
 
-int Central::verificarJugadores() {
-
-	return 0;
-}
 
 void Central::escribirJugadores(string mensaje) {
 	string logMessage = "Central - envío a todos el mensaje: ";
@@ -90,6 +92,10 @@ int Central::obtenerPerdedor() {
 	this->pila->liberarLock();
 	delete this->pila;
 	return x;
+}
+
+void Central::mostrarPuntaje(){
+	sleep(1);
 }
 
 /*
@@ -189,6 +195,12 @@ int Central::correr() {
 				mensajesLeidos = this->leerJugadores();
 			}
 		}
+
+		if(this->sigint_handler.getGracefulQuit() != 0){
+				this->mostrarPuntaje();
+				sigint_handler.restaurar();
+		}
+
 	}
 
 	cout << "TERMINO JUEGO" << endl;
