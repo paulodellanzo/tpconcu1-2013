@@ -33,11 +33,6 @@ Jugador::~Jugador() {
 	if (this->comJugIzquierda != NULL) {
 		delete this->comJugIzquierda;
 	}
-	delete this->comCentralJugador;
-	delete this->comJugadorCentral;
-	if (this->comJugAdmin != NULL) {
-		delete this->comJugAdmin;
-	}
 }
 
 string Jugador::getDescripcionJugador() {

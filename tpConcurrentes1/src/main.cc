@@ -198,10 +198,12 @@ int main(int argc, char **argv) {
 				itBorrador != comunicadoresHaciaJugadores.end(); itBorrador++) {
 			delete *itBorrador;
 		}
+
 		for (itBorrador = comunicadoresDesdeJugadores.begin();
 				itBorrador != comunicadoresDesdeJugadores.end(); itBorrador++) {
 			delete *itBorrador;
 		}
+
 		for (itBorrador = comJugAdminOtrosJug.begin();
 				itBorrador != comJugAdminOtrosJug.end(); itBorrador++) {
 			delete *itBorrador;
