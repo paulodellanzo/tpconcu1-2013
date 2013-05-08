@@ -24,11 +24,7 @@ Central::Central(int totalJugadores,
 	mensaje.append(" jugadores");
 	Logger::log(mensaje);
 
-	/*
-	 * Registro la senial sigint
-	 */
-	SignalHandler* sigh = SignalHandler :: getInstance();
-	sigh->registrarHandler ( SIGINT,&sigint_handler );
+
 
 	this->chancho = "CHANCHO";
 }
@@ -94,17 +90,16 @@ int Central::obtenerPerdedor() {
 	return x;
 }
 
-void Central::mostrarPuntaje(){
-	sleep(1);
-}
-
 /*
  * Devuelve TRUE si alguien perdio el juego
  */
 bool Central::actualizarPuntaje(int IDJugador) {
 
+	this->tablaPuntaje = new LockFile((char*) TABLA);
+	this->tablaPuntaje->tomarLock();
 	bool perdioAlguien = false;
 	list<perdedores>::iterator it;
+	string puntos="PUNTOS\n";
 	for (it = this->puntaje.begin(); it != this->puntaje.end(); it++) {
 		if (it->idJugador == IDJugador) {
 			it->cantPerdidas++;
@@ -115,7 +110,15 @@ bool Central::actualizarPuntaje(int IDJugador) {
 	stringstream salida;
 	salida << it->idJugador << " - " << this->chancho.substr(0,it->cantPerdidas) << endl;
 	Logger::log(salida.str());
+
+	puntos.append(salida.str());
+
 	}
+	FILE* archivo = fopen(TABLA, "w");
+	fprintf(archivo, puntos.c_str());
+	fclose(archivo);
+	this->tablaPuntaje->liberarLock();
+	delete this->tablaPuntaje;
 	return perdioAlguien;
 }
 /*
@@ -194,11 +197,6 @@ int Central::correr() {
 				//Espero TERMINARPASAR
 				mensajesLeidos = this->leerJugadores();
 			}
-		}
-
-		if(this->sigint_handler.getGracefulQuit() != 0){
-				this->mostrarPuntaje();
-				sigint_handler.restaurar();
 		}
 
 	}

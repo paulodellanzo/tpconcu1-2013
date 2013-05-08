@@ -8,7 +8,6 @@
 #include <fstream>
 #include "Logger.h"
 #include "SIGINT_Handler.h"
-#include "SignalHandler.h"
 
 struct perdedores {
 	int idJugador;
@@ -27,6 +26,7 @@ private:
 	list<perdedores> puntaje;
 	string chancho;
 	LockFile* pila;
+	LockFile* tablaPuntaje;
 	SIGINT_Handler sigint_handler;
 
 	void escribirJugadores(string mensaje);
@@ -40,7 +40,6 @@ public:
 	bool actualizarPuntaje(int IDJugador);
 	int obtenerPerdedor();
 	int correr();
-	void mostrarPuntaje();
 
 };
 

@@ -17,6 +17,7 @@
 #define SYNCRONIZAR "SYN"
 #define SIZE 3
 #define PILA "PILA.txt"
+#define TABLA "tabla.txt"
 /*
  class Mensajes {
 
