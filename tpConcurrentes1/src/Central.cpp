@@ -114,8 +114,10 @@ bool Central::actualizarPuntaje(int IDJugador) {
 	puntos.append(salida.str());
 
 	}
+	puntos.append("\n");
 	FILE* archivo = fopen(TABLA, "w");
-	fprintf(archivo, puntos.c_str());
+	fputs(puntos.c_str(),archivo);
+	//fprintf(archivo, puntos.c_str());
 	fclose(archivo);
 	this->tablaPuntaje->liberarLock();
 	//delete this->tablaPuntaje;
