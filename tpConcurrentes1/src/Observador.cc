@@ -11,7 +11,7 @@ using namespace std;
 
 int main () {
 
-	LockFile* tablaPuntaje = new LockFile(TABLA);
+	LockFile* tablaPuntaje = new LockFile((char *)TABLA);
 	//LockFile lock ( (char *) "main1.cc" );
 	tablaPuntaje->tomarLock();
 
@@ -20,7 +20,7 @@ int main () {
 	sleep(2);
 
 	FILE* archivo = fopen(TABLA, "r");
-	int x;
+//	int x;
 	char buffer[100];
 	if ( ! archivo){
 		cout << "No hay tabla de puntaje" << endl;

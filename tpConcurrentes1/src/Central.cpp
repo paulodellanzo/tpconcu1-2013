@@ -181,6 +181,9 @@ int Central::correr() {
 				int idPerdedor = this->obtenerPerdedor();
 				fin = this->actualizarPuntaje(idPerdedor);
 
+				//Espero 5 segundos para darle tiempo a consultar;
+				sleep(5);
+
 				if (fin) {
 
 					this->escribirJugadores(FINJUEGO);
