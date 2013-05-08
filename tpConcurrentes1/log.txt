@@ -1,862 +1,343 @@
-2013-05-07 23:20:54 [pid: 8458] Main - Comienza el juego
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicadores central-jugadores
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador central-jugador 1
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador central-jugador 2
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador central-jugador 3
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador central-jugador 4
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 1-central
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 2-central
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 3-central
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 4-central
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador admin-jugador 1
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador admin-jugador 2
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador admin-jugador 3
-2013-05-07 23:20:54 [pid: 8458] Main - Creo central
-2013-05-07 23:20:54 [pid: 8458] Central - Constructor de central
-2013-05-07 23:20:54 [pid: 8458] Central - Creo la lista de perdedores con 4 jugadores
-2013-05-07 23:20:54 [pid: 8458] Main - Creo jugador admin
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 2
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 3
-2013-05-07 23:20:54 [pid: 8458] Main - Creo comunicador jugador 4
-2013-05-07 23:20:54 [pid: 8458] Main - Comienza proceso central
-2013-05-07 23:20:54 [pid: 8463] Main - Comienza proceso creador de jugadores
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una ronda nueva
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: REP
-2013-05-07 23:20:54 [pid: 8465] Main - Comienza proceso Jugador 2
-2013-05-07 23:20:54 [pid: 8467] Main - Comienza proceso Jugador 4
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Comienza la ronda
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: REP
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Comienza la ronda
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: REP
-2013-05-07 23:20:54 [pid: 8466] Main - Comienza proceso Jugador 3
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Comienza la ronda
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: REP
-2013-05-07 23:20:54 [pid: 8464] Main - Comienza proceso Jugador Admin
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Comienza la ronda
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: REP
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Tomo carta: OR2
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Tomo carta: ES3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Tomo carta: CO1
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Tomo carta: OR0
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo carta: OR3
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo carta: BA3
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo carta: ES0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo carta: OR1
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo carta: ES1
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo carta: CO0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo carta: ES2
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo carta: BA2
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo carta: BA1
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo carta: CO3
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo carta: BA0
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo carta: CO2
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ OR2 ES3 CO1 OR0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ OR3 OR1 CO0 BA2 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: OR2
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ ES3 CO1 OR0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 CO3 BA0 CO2 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: CO0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ OR3 OR1 BA2 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: OR2
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO2
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 CO3 BA0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: CO0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES0 ES1 ES2 BA1 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: ES0
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: ES0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES1 ES2 BA1 ]
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: CO2
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES1 ES2 BA1 CO2 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 CO3 BA0 CO0 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: BA1
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ ES3 CO1 OR0 ES0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ OR3 OR1 BA2 OR2 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO3
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: OR3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: ES3
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES1 ES2 CO2 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 BA0 CO0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ OR1 BA2 OR2 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ CO1 OR0 ES0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: OR3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: BA1
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: CO3
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: ES3
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 BA0 CO0 OR3 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ CO1 OR0 ES0 BA1 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES1 ES2 CO2 CO3 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: BA0
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 CO0 OR3 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: CO1
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ OR1 BA2 OR2 ES3 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ OR0 ES0 BA1 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: ES1
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: OR1
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES2 CO2 CO3 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: OR1
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: BA0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ BA2 OR2 ES3 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: ES1
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: CO1
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 CO0 OR3 OR1 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES2 CO2 CO3 BA0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: OR1
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ BA2 OR2 ES3 CO1 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 CO0 OR3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ OR0 ES0 BA1 ES1 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES2 CO2 BA0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: ES3
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: ES3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: OR0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: OR1
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ BA2 OR2 CO1 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ ES0 BA1 ES1 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: OR0
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: CO3
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 CO0 OR3 ES3 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO0
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 OR3 ES3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES2 CO2 BA0 OR1 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: BA0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ BA2 OR2 CO1 OR0 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ ES0 BA1 ES1 CO3 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: ES0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES2 CO2 OR1 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: CO1
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: CO1
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: CO0
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ BA1 ES1 CO3 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ BA2 OR2 OR0 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: BA0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: ES0
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 OR3 ES3 CO1 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO1
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 OR3 ES3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES2 CO2 OR1 CO0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: OR1
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ BA1 ES1 CO3 BA0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ BA2 OR2 OR0 ES0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: OR0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: OR0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES2 CO2 CO0 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: CO3
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ BA2 OR2 ES0 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: CO1
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ BA1 ES1 BA0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: CO3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: OR1
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 OR3 ES3 OR0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: OR0
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 OR3 ES3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES2 CO2 CO0 CO1 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ BA2 OR2 ES0 CO3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO0
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ BA1 ES1 BA0 OR1 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: ES0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: ES0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES2 CO2 CO1 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: BA0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ BA2 OR2 CO3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: OR0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: BA0
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ BA1 ES1 OR1 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: CO0
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ BA3 OR3 ES3 ES0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Pasé carta a la derecha: ES0
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me quedaron: [ BA3 OR3 ES3 ]
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES2 CO2 CO1 OR0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO1
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ BA2 OR2 CO3 BA0 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ BA1 ES1 OR1 CO0 ]
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me pasaron carta: CO3
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me quedaron: [ ES2 CO2 OR0 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Pasé carta a la derecha: CO3
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Pasé carta a la derecha: CO0
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me pasaron carta: ES0
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me quedaron: [ BA2 OR2 BA0 ]
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me quedaron: [ BA1 ES1 OR1 ]
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me pasaron carta: CO0
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me pasaron carta: CO1
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:54 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Me agrego en la pila
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: WIN
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: WIN
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:54 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:54 [pid: 8458] Central - Ganó un jugador
-2013-05-07 23:20:54 [pid: 8458] Central - Aviso que ganó alguien
-2013-05-07 23:20:54 [pid: 8458] Central - envío a todos el mensaje: WIN
-2013-05-07 23:20:54 [pid: 8466] Jugador 3 - Recibo de central: WIN
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Recibo de central: WIN
-2013-05-07 23:20:54 [pid: 8467] Jugador 4 - Me agrego en la pila
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Recibo de central: WIN
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Me agrego en la pila
-2013-05-07 23:20:54 [pid: 8465] Jugador 2 - Me agrego en la pila
-2013-05-07 23:20:54 [pid: 8464] Jugador 1 - Recibo de central: WIN
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:54 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:54 [pid: 8458] Central - Todos los jugadores se agregaron a la pila
-2013-05-07 23:20:54 [pid: 8458] 1 - 
+2013-05-07 23:24:09 [pid: 8587] Main - Comienza el juego
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicadores central-jugadores
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador central-jugador 1
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador central-jugador 2
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador central-jugador 3
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador central-jugador 4
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 1-central
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 2-central
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 3-central
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 4-central
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador admin-jugador 1
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador admin-jugador 2
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador admin-jugador 3
+2013-05-07 23:24:09 [pid: 8587] Main - Creo central
+2013-05-07 23:24:09 [pid: 8587] Central - Constructor de central
+2013-05-07 23:24:09 [pid: 8587] Central - Creo la lista de perdedores con 4 jugadores
+2013-05-07 23:24:09 [pid: 8587] Main - Creo jugador admin
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 2
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 3
+2013-05-07 23:24:09 [pid: 8587] Main - Creo comunicador jugador 4
+2013-05-07 23:24:09 [pid: 8587] Main - Comienza proceso central
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una ronda nueva
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: REP
+2013-05-07 23:24:09 [pid: 8592] Main - Comienza proceso creador de jugadores
+2013-05-07 23:24:09 [pid: 8596] Main - Comienza proceso Jugador 4
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Comienza la ronda
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: REP
+2013-05-07 23:24:09 [pid: 8595] Main - Comienza proceso Jugador 3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Comienza la ronda
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: REP
+2013-05-07 23:24:09 [pid: 8594] Main - Comienza proceso Jugador 2
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Comienza la ronda
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: REP
+2013-05-07 23:24:09 [pid: 8593] Main - Comienza proceso Jugador Admin
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Comienza la ronda
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: REP
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Tomo carta: CO1
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Tomo carta: BA0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Tomo carta: ES2
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Tomo carta: BA2
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo carta: CO2
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo carta: OR2
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo carta: ES1
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo carta: OR1
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo carta: BA3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo carta: ES3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo carta: ES0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo carta: BA1
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo carta: CO3
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo carta: OR0
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo carta: CO0
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo carta: OR3
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: REC
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: REC
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: REC
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: REC
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ CO3 OR0 CO0 OR3 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: CO3
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ OR0 CO0 OR3 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 ES3 ES0 BA1 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: BA1
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: BA1
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 ES3 ES0 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 OR1 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: OR1
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: OR1
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 BA0 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: BA0
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: BA0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: CO3
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ OR0 CO0 OR3 BA1 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 ES3 ES0 OR1 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: OR3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: OR1
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ OR0 CO0 BA1 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 ES3 ES0 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: OR1
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 ES2 BA2 CO3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 BA0 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: CO3
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: BA0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: BA0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: OR3
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: CO3
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ OR0 CO0 BA1 OR1 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 ES3 ES0 BA0 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: OR0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: ES3
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ CO0 BA1 OR1 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 ES0 BA0 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: ES3
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 ES2 BA2 OR3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 CO3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: CO3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: CO3
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: OR3
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: OR3
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: OR0
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ CO0 BA1 OR1 ES3 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 ES0 BA0 CO3 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: CO0
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ BA1 OR1 ES3 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: ES0
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: ES0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 BA0 CO3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 OR3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: OR3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: OR3
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 ES2 BA2 OR0 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: OR0
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: OR0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: CO0
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ BA1 OR1 ES3 ES0 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: ES3
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ BA1 OR1 ES0 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 BA0 CO3 OR3 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: BA0
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: BA0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 CO3 OR3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 OR0 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: OR0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: OR0
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 ES2 BA2 CO0 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: CO0
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: CO0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: ES3
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 CO3 OR3 OR0 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: OR0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 CO3 OR3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 CO0 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: CO0
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ BA1 OR1 ES0 BA0 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: BA1
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 ES2 BA2 ES3 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ OR1 ES0 BA0 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: ES3
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: OR0
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: ES3
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: CO0
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: BA1
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: DER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Cantidad de cartas: 4 - [ CO1 ES2 BA2 BA1 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Cantidad de cartas: 4 - [ OR1 ES0 BA0 OR0 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Pasé carta a la derecha: BA1
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Pasé carta a la derecha: OR1
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me quedaron: [ CO1 ES2 BA2 ]
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me quedaron: [ ES0 BA0 OR0 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Cantidad de cartas: 4 - [ BA3 CO3 OR3 CO0 ]
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Pasé carta a la derecha: CO0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me quedaron: [ BA3 CO3 OR3 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Cantidad de cartas: 4 - [ CO2 OR2 ES1 ES3 ]
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me pasaron carta: OR1
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Pasé carta a la derecha: ES3
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me pasaron carta: CO0
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me pasaron carta: ES3
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me quedaron: [ CO2 OR2 ES1 ]
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me pasaron carta: BA1
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: PAS
+2013-05-07 23:24:09 [pid: 8587] Central - Comienza una transferencia de cartas
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Me agrego en la pila
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Me agrego en la pila
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: VER
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: LOS
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: WIN
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: WIN
+2013-05-07 23:24:09 [pid: 8587] Central - Me fijo si alguien ganó
+2013-05-07 23:24:09 [pid: 8587] Central - Ganó un jugador
+2013-05-07 23:24:09 [pid: 8587] Central - Aviso que ganó alguien
+2013-05-07 23:24:09 [pid: 8587] Central - envío a todos el mensaje: WIN
+2013-05-07 23:24:09 [pid: 8596] Jugador 4 - Recibo de central: WIN
+2013-05-07 23:24:09 [pid: 8595] Jugador 3 - Recibo de central: WIN
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Recibo de central: WIN
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Recibo de central: WIN
+2013-05-07 23:24:09 [pid: 8593] Jugador 1 - Me agrego en la pila
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: RDY
+2013-05-07 23:24:09 [pid: 8594] Jugador 2 - Me agrego en la pila
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: RDY
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: RDY
+2013-05-07 23:24:09 [pid: 8587] Central - Recibo de jugador: RDY
+2013-05-07 23:24:09 [pid: 8587] Central - Todos los jugadores se agregaron a la pila
+2013-05-07 23:24:09 [pid: 8587] 1 - 
 
-2013-05-07 23:20:54 [pid: 8458] 2 - C
+2013-05-07 23:24:09 [pid: 8587] 2 - C
 
-2013-05-07 23:20:54 [pid: 8458] 3 - 
+2013-05-07 23:24:09 [pid: 8587] 3 - 
 
-2013-05-07 23:20:54 [pid: 8458] 4 - 
-
-2013-05-07 23:20:59 [pid: 8458] Central - Comienza una ronda nueva
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: REP
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: REP
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Comienza la ronda
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: REP
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: REP
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: REP
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Comienza la ronda
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Comienza la ronda
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Tomo carta: BA1
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Comienza la ronda
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Tomo carta: OR3
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Tomo carta: BA3
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Tomo carta: ES3
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo carta: CO3
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo carta: CO1
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo carta: CO0
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo carta: OR2
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo carta: BA0
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo carta: ES0
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo carta: OR1
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo carta: BA2
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo carta: CO2
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo carta: ES2
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo carta: ES1
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo carta: OR0
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:20:59 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ BA1 OR3 BA3 ES3 ]
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ OR2 OR1 CO2 ES2 ]
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ CO1 BA0 ES1 OR0 ]
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Pasé carta a la derecha: BA1
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Me quedaron: [ OR3 BA3 ES3 ]
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Pasé carta a la derecha: OR0
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Pasé carta a la derecha: OR1
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Me quedaron: [ CO1 BA0 ES1 ]
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Me quedaron: [ OR2 CO2 ES2 ]
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ CO3 CO0 ES0 BA2 ]
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Me pasaron carta: BA1
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Me pasaron carta: OR0
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Me pasaron carta: CO3
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO3
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Me quedaron: [ CO0 ES0 BA2 ]
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Me pasaron carta: OR1
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ OR3 BA3 ES3 OR0 ]
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ OR2 CO2 ES2 BA1 ]
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ CO1 BA0 ES1 CO3 ]
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Pasé carta a la derecha: OR0
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO3
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Pasé carta a la derecha: BA1
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Me quedaron: [ CO1 BA0 ES1 ]
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Me quedaron: [ OR3 BA3 ES3 ]
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Me quedaron: [ OR2 CO2 ES2 ]
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ CO0 ES0 BA2 OR1 ]
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Me pasaron carta: CO3
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Me pasaron carta: OR0
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Pasé carta a la derecha: BA2
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Me quedaron: [ CO0 ES0 OR1 ]
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Me pasaron carta: BA1
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Me pasaron carta: BA2
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:20:59 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Me agrego en la pila
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: WIN
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:20:59 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:20:59 [pid: 8458] Central - Ganó un jugador
-2013-05-07 23:20:59 [pid: 8458] Central - Aviso que ganó alguien
-2013-05-07 23:20:59 [pid: 8458] Central - envío a todos el mensaje: WIN
-2013-05-07 23:20:59 [pid: 8464] Jugador 1 - Recibo de central: WIN
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Recibo de central: WIN
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Recibo de central: WIN
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Recibo de central: WIN
-2013-05-07 23:20:59 [pid: 8465] Jugador 2 - Me agrego en la pila
-2013-05-07 23:20:59 [pid: 8467] Jugador 4 - Me agrego en la pila
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:59 [pid: 8466] Jugador 3 - Me agrego en la pila
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:59 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:20:59 [pid: 8458] Central - Todos los jugadores se agregaron a la pila
-2013-05-07 23:20:59 [pid: 8458] 1 - 
-
-2013-05-07 23:20:59 [pid: 8458] 2 - C
-
-2013-05-07 23:20:59 [pid: 8458] 3 - 
-
-2013-05-07 23:20:59 [pid: 8458] 4 - C
-
-2013-05-07 23:21:04 [pid: 8458] Central - Comienza una ronda nueva
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: REP
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: REP
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: REP
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: REP
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Comienza la ronda
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: REP
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Comienza la ronda
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Comienza la ronda
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Comienza la ronda
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Tomo carta: BA2
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Tomo carta: OR2
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Tomo carta: BA3
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Tomo carta: OR3
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo carta: CO2
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo carta: ES1
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo carta: ES0
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo carta: OR0
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo carta: OR1
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo carta: CO1
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo carta: BA0
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo carta: ES3
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo carta: CO0
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo carta: ES2
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo carta: CO3
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo carta: BA1
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:04 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ BA2 OR2 BA3 OR3 ]
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES1 OR1 BA0 CO0 ]
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ ES0 CO1 ES3 ES2 ]
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Pasé carta a la derecha: BA2
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Pasé carta a la derecha: BA0
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Me quedaron: [ OR2 BA3 OR3 ]
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Pasé carta a la derecha: CO1
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Me quedaron: [ ES1 OR1 CO0 ]
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Me pasaron carta: BA0
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Me quedaron: [ ES0 ES3 ES2 ]
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Me pasaron carta: BA2
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ CO2 OR0 CO3 BA1 ]
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Pasé carta a la derecha: BA1
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Me quedaron: [ CO2 OR0 CO3 ]
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Me pasaron carta: CO1
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Me pasaron carta: BA1
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ ES0 ES3 ES2 BA2 ]
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ CO2 OR0 CO3 CO1 ]
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Pasé carta a la derecha: ES3
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ ES1 OR1 CO0 BA1 ]
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Me quedaron: [ ES0 ES2 BA2 ]
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO0
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ OR2 BA3 OR3 BA0 ]
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Me quedaron: [ ES1 OR1 BA1 ]
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Pasé carta a la derecha: OR2
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Me pasaron carta: CO1
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Me quedaron: [ BA3 OR3 BA0 ]
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Me pasaron carta: OR2
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Me pasaron carta: CO0
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO1
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Me quedaron: [ CO2 OR0 CO3 ]
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Me pasaron carta: ES3
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:04 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Me agrego en la pila
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: WIN
-2013-05-07 23:21:04 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:04 [pid: 8458] Central - Ganó un jugador
-2013-05-07 23:21:04 [pid: 8458] Central - Aviso que ganó alguien
-2013-05-07 23:21:04 [pid: 8458] Central - envío a todos el mensaje: WIN
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Recibo de central: WIN
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Recibo de central: WIN
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Recibo de central: WIN
-2013-05-07 23:21:04 [pid: 8467] Jugador 4 - Recibo de central: WIN
-2013-05-07 23:21:04 [pid: 8466] Jugador 3 - Me agrego en la pila
-2013-05-07 23:21:04 [pid: 8465] Jugador 2 - Me agrego en la pila
-2013-05-07 23:21:04 [pid: 8464] Jugador 1 - Me agrego en la pila
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:04 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:04 [pid: 8458] Central - Todos los jugadores se agregaron a la pila
-2013-05-07 23:21:04 [pid: 8458] 1 - C
-
-2013-05-07 23:21:04 [pid: 8458] 2 - C
-
-2013-05-07 23:21:04 [pid: 8458] 3 - 
-
-2013-05-07 23:21:04 [pid: 8458] 4 - C
-
-2013-05-07 23:21:09 [pid: 8458] Central - Comienza una ronda nueva
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: REP
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: REP
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: REP
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: REP
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: REP
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Comienza la ronda
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Comienza la ronda
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Comienza la ronda
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Comienza la ronda
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Tomo carta: ES3
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Tomo carta: OR3
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Tomo carta: ES0
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Tomo carta: BA2
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo carta: OR0
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo carta: BA3
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo carta: ES1
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo carta: OR1
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo carta: OR2
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo carta: CO3
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo carta: ES2
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo carta: BA1
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo carta: BA0
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo carta: CO2
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo carta: CO0
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo carta: CO1
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: REC
-2013-05-07 23:21:09 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ ES3 OR3 ES0 BA2 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ OR1 CO3 BA1 CO0 ]
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Pasé carta a la derecha: ES0
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO0
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me quedaron: [ ES3 OR3 BA2 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ OR0 ES1 ES2 CO2 ]
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me quedaron: [ OR1 CO3 BA1 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ BA3 OR2 BA0 CO1 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Pasé carta a la derecha: OR0
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me pasaron carta: OR0
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Pasé carta a la derecha: OR2
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me pasaron carta: OR2
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me quedaron: [ ES1 ES2 CO2 ]
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me quedaron: [ BA3 BA0 CO1 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me pasaron carta: ES0
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me pasaron carta: CO0
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ ES3 OR3 BA2 OR2 ]
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Pasé carta a la derecha: ES3
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ ES1 ES2 CO2 ES0 ]
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me quedaron: [ OR3 BA2 OR2 ]
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ OR1 CO3 BA1 OR0 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Pasé carta a la derecha: ES1
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ BA3 BA0 CO1 CO0 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me quedaron: [ ES2 CO2 ES0 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me pasaron carta: ES3
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Pasé carta a la derecha: OR0
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me pasaron carta: CO1
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO1
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me quedaron: [ OR1 CO3 BA1 ]
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me quedaron: [ BA3 BA0 CO0 ]
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me pasaron carta: ES1
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me pasaron carta: OR0
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ OR3 BA2 OR2 CO1 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ ES2 CO2 ES0 ES3 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Pasé carta a la derecha: OR3
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Pasé carta a la derecha: ES0
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ BA3 BA0 CO0 OR0 ]
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me quedaron: [ BA2 OR2 CO1 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me quedaron: [ ES2 CO2 ES3 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Pasé carta a la derecha: BA3
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me pasaron carta: BA3
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me pasaron carta: OR3
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ OR1 CO3 BA1 ES1 ]
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Pasé carta a la derecha: CO3
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me quedaron: [ OR1 BA1 ES1 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me quedaron: [ BA0 CO0 OR0 ]
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me pasaron carta: ES0
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me pasaron carta: CO3
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Cantidad de cartas: 4 - [ BA2 OR2 CO1 BA3 ]
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: DER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Pasé carta a la derecha: CO1
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Cantidad de cartas: 4 - [ OR1 BA1 ES1 ES0 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Cantidad de cartas: 4 - [ BA0 CO0 OR0 CO3 ]
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me quedaron: [ BA2 OR2 BA3 ]
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Cantidad de cartas: 4 - [ ES2 CO2 ES3 OR3 ]
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Pasé carta a la derecha: ES0
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me pasaron carta: CO3
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me quedaron: [ OR1 BA1 ES1 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Pasé carta a la derecha: CO3
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Pasé carta a la derecha: ES2
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me quedaron: [ BA0 CO0 OR0 ]
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me pasaron carta: ES2
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me quedaron: [ CO2 ES3 OR3 ]
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me pasaron carta: ES0
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me pasaron carta: CO1
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: PAS
-2013-05-07 23:21:09 [pid: 8458] Central - Comienza una transferencia de cartas
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: VER
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: VER
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Me agrego en la pila
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: LOS
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: WIN
-2013-05-07 23:21:09 [pid: 8458] Central - Me fijo si alguien ganó
-2013-05-07 23:21:09 [pid: 8458] Central - Ganó un jugador
-2013-05-07 23:21:09 [pid: 8458] Central - Aviso que ganó alguien
-2013-05-07 23:21:09 [pid: 8458] Central - envío a todos el mensaje: WIN
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Recibo de central: WIN
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Recibo de central: WIN
-2013-05-07 23:21:09 [pid: 8464] Jugador 1 - Me agrego en la pila
-2013-05-07 23:21:09 [pid: 8466] Jugador 3 - Me agrego en la pila
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Recibo de central: WIN
-2013-05-07 23:21:09 [pid: 8467] Jugador 4 - Recibo de central: WIN
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:09 [pid: 8465] Jugador 2 - Me agrego en la pila
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:09 [pid: 8458] Central - Recibo de jugador: RDY
-2013-05-07 23:21:09 [pid: 8458] Central - Todos los jugadores se agregaron a la pila
-2013-05-07 23:21:09 [pid: 8458] 1 - C
-
-2013-05-07 23:21:09 [pid: 8458] 2 - CH
-
-2013-05-07 23:21:09 [pid: 8458] 3 - 
-
-2013-05-07 23:21:09 [pid: 8458] 4 - C
+2013-05-07 23:24:09 [pid: 8587] 4 - 
 
