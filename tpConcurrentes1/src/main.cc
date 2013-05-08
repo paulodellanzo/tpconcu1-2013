@@ -24,8 +24,8 @@ int main(int argc, char **argv) {
 	cout << "Donde n es el numero de jugadores y d es modo debug" << endl;
 	cout << "Deben haber mas de 1 jugador y "<< MAXJUGADORES << " como maximo" << endl;
 
-	int cant = 4;
-	/*
+	//int cant = 4;
+
 	if (argc <= 1 || argc > 3){
 		cout << "Incorrecto uso del programa, adios" << endl;
 		return 0;
@@ -43,11 +43,13 @@ int main(int argc, char **argv) {
 			cout << "Se debe pasar d ultimo parametro para debuggear" << endl;
 			return 0;
 		}
-	}*/
+	}
+
+	cout << "INICIA Partida de : " << cant << " jugadores " << endl;
 
 	Logger::emptyLog();
 
-	Logger::setDebug();
+	//Logger::setDebug();
 
 	Logger::log("Main - Comienza el juego");
 
