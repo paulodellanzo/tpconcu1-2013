@@ -118,7 +118,7 @@ bool Central::actualizarPuntaje(int IDJugador) {
 	fprintf(archivo, puntos.c_str());
 	fclose(archivo);
 	this->tablaPuntaje->liberarLock();
-	delete this->tablaPuntaje;
+	//delete this->tablaPuntaje;
 	return perdioAlguien;
 }
 /*
