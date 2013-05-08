@@ -13,17 +13,8 @@ int main () {
 
 	LockFile* tablaPuntaje = new LockFile((char *)TABLA);
 	tablaPuntaje->tomarLock();
-	FILE* archivo = fopen(TABLA, "r");
+
 	char buffer[100];
-	if ( ! archivo){
-		cout << "No hay tabla de puntaje" << endl;
-		return 0;
-	}
-	while (!feof(archivo)) {
-		fgets(buffer,100,archivo);
-	}
-	cout << buffer;
-	fclose(archivo);
 
 	int fileDes = open ( TABLA , O_RDONLY );
 	int buffSize = 100;
