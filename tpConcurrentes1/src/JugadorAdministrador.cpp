@@ -20,6 +20,7 @@ JugadorAdministrador::JugadorAdministrador(int cantJugadores,
 void JugadorAdministrador::repartir() {
 	this->mazo = new Mazo(this->cantJugadores);
 	this->mazo->barajar();
+	this->cartas.clear();
 	list<Comunicador*>::iterator it;
 	for (int i = 0; i < 4; i++) {
 		Carta carta = this->mazo->getCarta();

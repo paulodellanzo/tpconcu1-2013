@@ -260,6 +260,7 @@ string Jugador::leerMensajeCentral() {
 }
 
 void Jugador::recibirCartaRepartida() {
+	this->cartas.clear();
 	for (int i = 0; i < 4; i++) {
 		char buffer[SIZE];
 		int bytesleidos = this->comJugAdmin->leer(buffer, SIZE);
